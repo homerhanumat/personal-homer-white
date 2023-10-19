@@ -9,8 +9,29 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "About Homer",
     "section": "",
-    "text": "About this site"
+    "text": "Homer White is a math professor."
+  },
+  {
+    "objectID": "about.html#basic-info",
+    "href": "about.html#basic-info",
+    "title": "About Homer",
+    "section": "",
+    "text": "Homer White is a math professor."
+  },
+  {
+    "objectID": "about.html#life-story",
+    "href": "about.html#life-story",
+    "title": "About Homer",
+    "section": "Life Story",
+    "text": "Life Story"
+  },
+  {
+    "objectID": "about.html#important-projects-i-have-done",
+    "href": "about.html#important-projects-i-have-done",
+    "title": "About Homer",
+    "section": "Important Projects I Have Done",
+    "text": "Important Projects I Have Done"
   }
 ]

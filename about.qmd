@@ -1,5 +1,14 @@
 ---
-title: "About"
+title: "About Homer"
 ---
 
-About this site
+## Basic Info
+
+Homer White is a *math* professor.
+
+## Life Story
+
+
+## Important Projects I Have Done
+
+
