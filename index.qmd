@@ -1,7 +1,9 @@
 ---
-title: "warmup-homer-white"
+title: "Welcome!"
 ---
 
 This is a Quarto website.
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+*TODO:*  replace the above text with appropriate front-page material.
