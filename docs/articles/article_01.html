@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -212,30 +246,61 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="reading-in-the-data">Reading in the Data</h2>
 <p>Suppose that the problem data is contained in a file called <code>input.txt</code> located in the same dirctory as the JavaScript file.</p>
 <p>We will be importing data from a source outside the Node envionment, so we’ll be working with file-systems. Accordingly, we import the <code>fs</code> and <code>path</code> modules:</p>
-<pre><code>const fs = require("fs");
-const path = require("path");</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> fs <span class="op">=</span> <span class="pp">require</span>(<span class="st">"fs"</span>)<span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> path <span class="op">=</span> <span class="pp">require</span>(<span class="st">"path"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<script>
+const fs = require("fs");
+const path = require("path");
+</script>
+</div>
 <section id="determining-the-pathname-of-the-input-file" class="level3">
 <h3 class="anchored" data-anchor-id="determining-the-pathname-of-the-input-file">Determining the Pathname of the Input File</h3>
 <p>We now use the functionality of the <code>path</code> module to construct a string that gives the pathname of the <code>input.txt</code> file.</p>
-<pre><code>let targetFile = path.resolve(__dirname, "input.txt");</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> targetFile <span class="op">=</span> path<span class="op">.</span><span class="fu">resolve</span>(<span class="bu">__dirname</span><span class="op">,</span> <span class="st">"input.txt"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<script>
+let targetFile = path.resolve(__dirname, "input.txt");
+</script>
+</div>
 <p>In the above code, <code>__dirname</code> evaluates to the full name of the directory containing the file being run, and <code>path.resolve</code> puts it together with the second argument to get the full pathnamename of the input file.</p>
 </section>
 <section id="reading-in-the-input-file" class="level3">
 <h3 class="anchored" data-anchor-id="reading-in-the-input-file">Reading in the Input File</h3>
 <p>Next, we use the <code>fs</code> module tp read in the file, and the we and convert it to a string:</p>
-<pre><code>const input = fs.readFileSync(targetFile).toString();</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> input <span class="op">=</span> fs<span class="op">.</span><span class="fu">readFileSync</span>(targetFile)<span class="op">.</span><span class="fu">toString</span>()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<script>
+const input = fs.readFileSync(targetFile).toString();
+</script>
+</div>
 </section>
 <section id="processing-the-input-file" class="level3">
 <h3 class="anchored" data-anchor-id="processing-the-input-file">Processing the Input File</h3>
 <p>We wish to convert the string into an array of values, where each element of the array is the calorie-value of an item.</p>
 <p>To this end, we must split the string along the newlines within it. To this end we define a splitting function:</p>
-<pre><code>const splitLines = str =&gt; str.split(/\n/);</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> splitLines <span class="op">=</span> str <span class="kw">=&gt;</span> str<span class="op">.</span><span class="fu">split</span>(<span class="ss">/</span><span class="sc">\n</span><span class="ss">/</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<script>
+const splitLines = str => str.split(/\n/);
+</script>
+</div>
 <p>Note the use of the Javacript regular expression <code>/\n/</code>). (In Javascript regular expressions to not start life as strings, as they do in R. Instead they are a special type of object, delimited by the forward-slash: <code>/</code>. For more on regular expressions in JavaScript, see <a href="https://eloquentjavascript.net/09_regexp.html">Chapter 8</a> of the <em>Eloquent JavaScript</em> textbook.)</p>
 <p>We now apply the function to split the input into an array of strings;</p>
-<pre><code>const caloriesAsStrings = splitLines(input);</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> caloriesAsStrings <span class="op">=</span> <span class="fu">splitLines</span>(input)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<script>
+const caloriesAsStrings = splitLines(input);
+</script>
+</div>
 <p>The array is full of strings. (Some of them are the empty strinf—wherever there were two consecutive newlines in the oringal input to separate the pack of one elf from the pack of the next elf.)</p>
 <p>We need to convert them to numbers. To that end, we apply the higher-order array-method <code>map()</code> to the <code>caloriesAsStrings</code>:</p>
-<pre><code>const calories = caloriesAsStrings.map(str =&gt; parseInt(str));</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> calories <span class="op">=</span> caloriesAsStrings<span class="op">.</span><span class="fu">map</span>(str <span class="kw">=&gt;</span> <span class="pp">parseInt</span>(str))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<script>
+const calories = caloriesAsStrings.map(str => parseInt(str));
+</script>
+</div>
 <p>It is important to note that <code>parseInt()</code> converts the empty string to the value <code>NaN</code>: “not a number”.</p>
 </section>
 </section>
@@ -243,9 +308,25 @@ const path = require("path");</code></pre>
 <h2 class="anchored" data-anchor-id="looping-to-compute-pack-totals">Looping to Compute Pack-Totals</h2>
 <p>The array <code>calories</code> consists of calorie counts, with <code>NaNs</code> separatng items in different packs. We’ll work with this array to find the sums of the calorie-counts in each pack.</p>
 <p>First, we make an array to hold the total calories for each pack:</p>
-<pre><code>const packTotals = [];</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> packTotals <span class="op">=</span> []<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<script>
+const packTotals = [];
+</script>
+</div>
 <p>One by one, we pull items from the beginning of the calories array, making the pack totals:</p>
-<pre><code>while (calories.length &gt; 0) {
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (calories<span class="op">.</span><span class="at">length</span> <span class="op">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> packTotal <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> currentItem <span class="op">=</span> calories<span class="op">.</span><span class="fu">shift</span>()<span class="op">;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (<span class="op">!</span><span class="pp">isNaN</span>(currentItem)) {</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    packTotal <span class="op">+=</span> currentItem<span class="op">;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    currentItem <span class="op">=</span> calories<span class="op">.</span><span class="fu">shift</span>()<span class="op">;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  packTotals<span class="op">.</span><span class="fu">push</span>(packTotal)<span class="op">;</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<script>
+while (calories.length > 0) {
   let packTotal = 0;
   let currentItem = calories.shift();
   while (!isNaN(currentItem)) {
@@ -253,16 +334,28 @@ const path = require("path");</code></pre>
     currentItem = calories.shift();
   }
   packTotals.push(packTotal);
-};</code></pre>
+};
+</script>
+</div>
 <p><code>packTotals</code> is now an array of the total calories in each pack.</p>
 </section>
 <section id="reporting-the-maximum-pack-total" class="level2">
 <h2 class="anchored" data-anchor-id="reporting-the-maximum-pack-total">Reporting the Maximum Pack-Total</h2>
 <p>Finally, we compute the maximum of the pack totals:</p>
-<pre><code>let maxPackTotal = Math.max(...packTotals);</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> maxPackTotal <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="op">...</span>packTotals)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<script>
+let maxPackTotal = Math.max(...packTotals);
+</script>
+</div>
 <p>(Math.max() takes as arguments all of the numbers of whihc we wish to find the maximum. Note the use of the three-dot notation notation <code>...</code> to convert the single array into separate arguments. For a review of the three-dot notation, see the section <a href="https://eloquentjavascript.net/04_data.html#h_hX9DkIBp9y">Rest Parameters</a> in <em>Eloquent JavaScript</em>. )</p>
 <p>Finally, we report the maximum to the console:</p>
-<pre><code>console.log(maxPackTotal);</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(maxPackTotal)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<script>
+console.log(maxPackTotal);
+</script>
+</div>
 <p>We are done!</p>
 
 
