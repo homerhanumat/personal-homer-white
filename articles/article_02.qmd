@@ -1,5 +1,16 @@
 ---
-title: "Article Two"
+title: "Advent Solution in the Browser"
 ---
 
-TODO
+This article is an application of the Advent of Code 2022 Day 1 solution to the context of the browser.
+
+To see it in action, you would create a properly-formatted input file. That is, each line would contain just one number, or would be blank to indicate separation between packs.  Save the file somewhere on your computer and then use the input-filed below to select it.
+
+
+<input id="fileInput" type="file" name="file" />
+
+<p id = "result">After you select your file, the max pack-total will appear here!<p>
+
+The relevant JavaScript file is [here](/js/advent_in_action.js).  Use the Web Inspector tool on your browser to identify the elements on the html page that are accessed by the code.
+
+<script src="/js/advent_in_action.js"></script>

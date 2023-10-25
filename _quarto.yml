@@ -22,7 +22,7 @@ website:
       contents: 
         - text: "Advent of Code 2022"
           href:  articles/article_01.qmd
-        - text: "Article Two"
+        - text: "Browser Implementation"
           href:  articles/article_02.qmd
 
 format:
