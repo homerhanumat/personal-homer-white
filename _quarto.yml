@@ -20,7 +20,7 @@ website:
       background: light
       collapse-level: 2
       contents: 
-        - text: "Article One"
+        - text: "Advent of Code 2022"
           href:  articles/article_01.qmd
         - text: "Article Two"
           href:  articles/article_02.qmd

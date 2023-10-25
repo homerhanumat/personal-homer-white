@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Homer White’s Website Warmup - Article One</title>
+<title>Homer White’s Website Warmup - Advent of Code 2022, Day 1: A Solution Using Javascript</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../articles/article_01.html">Article One</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../articles/article_01.html">Advent of Code 2022</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../articles/article_01.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Article One</span></a>
+ <span class="menu-text">Advent of Code 2022</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -137,14 +137,28 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-the-problem" id="toc-introduction-to-the-problem" class="nav-link active" data-scroll-target="#introduction-to-the-problem">Introduction to the Problem</a></li>
+  <li><a href="#reading-in-the-data" id="toc-reading-in-the-data" class="nav-link" data-scroll-target="#reading-in-the-data">Reading in the Data</a>
+  <ul class="collapse">
+  <li><a href="#determining-the-pathname-of-the-input-file" id="toc-determining-the-pathname-of-the-input-file" class="nav-link" data-scroll-target="#determining-the-pathname-of-the-input-file">Determining the Pathname of the Input File</a></li>
+  <li><a href="#reading-in-the-input-file" id="toc-reading-in-the-input-file" class="nav-link" data-scroll-target="#reading-in-the-input-file">Reading in the Input File</a></li>
+  <li><a href="#processing-the-input-file" id="toc-processing-the-input-file" class="nav-link" data-scroll-target="#processing-the-input-file">Processing the Input File</a></li>
+  </ul></li>
+  <li><a href="#looping-to-compute-pack-totals" id="toc-looping-to-compute-pack-totals" class="nav-link" data-scroll-target="#looping-to-compute-pack-totals">Looping to Compute Pack-Totals</a></li>
+  <li><a href="#reporting-the-maximum-pack-total" id="toc-reporting-the-maximum-pack-total" class="nav-link" data-scroll-target="#reporting-the-maximum-pack-total">Reporting the Maximum Pack-Total</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Article One</h1>
+<h1 class="title">Advent of Code 2022, Day 1: A Solution Using Javascript</h1>
 </div>
 
 
@@ -159,9 +173,100 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>TODO</p>
+<section id="introduction-to-the-problem" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-the-problem">Introduction to the Problem</h2>
+<p>We describe a solution, in the JavaScrpt running in the Node environment, to the Day 1 problem of the 2022 edition of the highly-popular Advent of Code challenge.</p>
+<p>The problem is described in full <a href="https://adventofcode.com/2022/day/1">here</a>. (The reader may need to create an account in order to view it.) A band og eleves is on a quest to provide energy to santa’s reindeer. Their quest begins with a hike through a jungle area. Below is an excerpt from the Advent of Code website that describes the problem.</p>
+<blockquote class="blockquote">
+<p>The jungle must be too overgrown and difficult to navigate in vehicles or access from the air; the Elves’ expedition traditionally goes on foot. As your boats approach land, the Elves begin taking inventory of their supplies. One important consideration is food - in particular, the number of Calories each Elf is carrying (your puzzle input).</p>
+<p>The Elves take turns writing down the number of Calories contained by the various meals, snacks, rations, etc. that they’ve brought with them, one item per line. Each Elf separates their own inventory from the previous Elf’s inventory (if any) by a blank line.</p>
+<p>For example, suppose the Elves finish writing their items’ Calories and end up with the following list:</p>
+<pre><code>1000
+2000
+3000
+
+4000
+
+5000
+6000
+
+7000
+8000
+9000
+
+10000</code></pre>
+<p>This list represents the Calories of the food carried by five Elves:</p>
+<ul>
+<li>The first Elf is carrying food with 1000, 2000, and 3000 Calories, a total of 6000 Calories.</li>
+<li>The second Elf is carrying one food item with 4000 Calories.</li>
+<li>The third Elf is carrying food with 5000 and 6000 Calories, a total of 11000 Calories.</li>
+<li>The fourth Elf is carrying food with 7000, 8000, and 9000 Calories, a total of 24000 Calories.</li>
+<li>The fifth Elf is carrying one food item with 10000 Calories.</li>
+</ul>
+<p>In case the Elves get hungry and need extra snacks, they need to know which Elf to ask: they’d like to know how many Calories are being carried by the Elf carrying the most Calories. In the example above, this is 24000 (carried by the fourth Elf).</p>
+<p>Find the Elf carrying the most Calories. <em>How many total Calories is that Elf carrying?</em></p>
+</blockquote>
+<p>A complete solution to the problem may be found <a href="../js/advent_2022-01.js">here</a>. In the remainder of the article we provide a detailed explanation of the solution-code.</p>
+</section>
+<section id="reading-in-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="reading-in-the-data">Reading in the Data</h2>
+<p>Suppose that the problem data is contained in a file called <code>input.txt</code> located in the same dirctory as the JavaScript file.</p>
+<p>We will be importing data from a source outside the Node envionment, so we’ll be working with file-systems. Accordingly, we import the <code>fs</code> and <code>path</code> modules:</p>
+<pre><code>const fs = require("fs");
+const path = require("path");</code></pre>
+<section id="determining-the-pathname-of-the-input-file" class="level3">
+<h3 class="anchored" data-anchor-id="determining-the-pathname-of-the-input-file">Determining the Pathname of the Input File</h3>
+<p>We now use the functionality of the <code>path</code> module to construct a string that gives the pathname of the <code>input.txt</code> file.</p>
+<pre><code>let targetFile = path.resolve(__dirname, "input.txt");</code></pre>
+<p>In the above code, <code>__dirname</code> evaluates to the full name of the directory containing the file being run, and <code>path.resolve</code> puts it together with the second argument to get the full pathnamename of the input file.</p>
+</section>
+<section id="reading-in-the-input-file" class="level3">
+<h3 class="anchored" data-anchor-id="reading-in-the-input-file">Reading in the Input File</h3>
+<p>Next, we use the <code>fs</code> module tp read in the file, and the we and convert it to a string:</p>
+<pre><code>const input = fs.readFileSync(targetFile).toString();</code></pre>
+</section>
+<section id="processing-the-input-file" class="level3">
+<h3 class="anchored" data-anchor-id="processing-the-input-file">Processing the Input File</h3>
+<p>We wish to convert the string into an array of values, where each element of the array is the calorie-value of an item.</p>
+<p>To this end, we must split the string along the newlines within it. To this end we define a splitting function:</p>
+<pre><code>const splitLines = str =&gt; str.split(/\n/);</code></pre>
+<p>Note the use of the Javacript regular expression <code>/\n/</code>). (In Javascript regular expressions to not start life as strings, as they do in R. Instead they are a special type of object, delimited by the forward-slash: <code>/</code>. For more on regular expressions in JavaScript, see <a href="https://eloquentjavascript.net/09_regexp.html">Chapter 8</a> of the <em>Eloquent JavaScript</em> textbook.)</p>
+<p>We now apply the function to split the input into an array of strings;</p>
+<pre><code>const caloriesAsStrings = splitLines(input);</code></pre>
+<p>The array is full of strings. (Some of them are the empty strinf—wherever there were two consecutive newlines in the oringal input to separate the pack of one elf from the pack of the next elf.)</p>
+<p>We need to convert them to numbers. To that end, we apply the higher-order array-method <code>map()</code> to the <code>caloriesAsStrings</code>:</p>
+<pre><code>const calories = caloriesAsStrings.map(str =&gt; parseInt(str));</code></pre>
+<p>It is important to note that <code>parseInt()</code> converts the empty string to the value <code>NaN</code>: “not a number”.</p>
+</section>
+</section>
+<section id="looping-to-compute-pack-totals" class="level2">
+<h2 class="anchored" data-anchor-id="looping-to-compute-pack-totals">Looping to Compute Pack-Totals</h2>
+<p>The array <code>calories</code> consists of calorie counts, with <code>NaNs</code> separatng items in different packs. We’ll work with this array to find the sums of the calorie-counts in each pack.</p>
+<p>First, we make an array to hold the total calories for each pack:</p>
+<pre><code>const packTotals = [];</code></pre>
+<p>One by one, we pull items from the beginning of the calories array, making the pack totals:</p>
+<pre><code>while (calories.length &gt; 0) {
+  let packTotal = 0;
+  let currentItem = calories.shift();
+  while (!isNaN(currentItem)) {
+    packTotal += currentItem;
+    currentItem = calories.shift();
+  }
+  packTotals.push(packTotal);
+};</code></pre>
+<p><code>packTotals</code> is now an array of the total calories in each pack.</p>
+</section>
+<section id="reporting-the-maximum-pack-total" class="level2">
+<h2 class="anchored" data-anchor-id="reporting-the-maximum-pack-total">Reporting the Maximum Pack-Total</h2>
+<p>Finally, we compute the maximum of the pack totals:</p>
+<pre><code>let maxPackTotal = Math.max(...packTotals);</code></pre>
+<p>(Math.max() takes as arguments all of the numbers of whihc we wish to find the maximum. Note the use of the three-dot notation notation <code>...</code> to convert the single array into separate arguments. For a review of the three-dot notation, see the section <a href="https://eloquentjavascript.net/04_data.html#h_hX9DkIBp9y">Rest Parameters</a> in <em>Eloquent JavaScript</em>. )</p>
+<p>Finally, we report the maximum to the console:</p>
+<pre><code>console.log(maxPackTotal);</code></pre>
+<p>We are done!</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
