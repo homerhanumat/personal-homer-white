@@ -1,5 +1,5 @@
 /***************************************************
- * Script to apply the Adevent 2022-1
+ * Script to apply the Advent 2022-1
  * solution in the browser.
  * 
  * Idea adapted from:
@@ -10,13 +10,13 @@
  * https://developer.mozilla.org/en-US/docs/Web/API/FileReader
  ***************************************************/
 
-const fileInputElement = document.getElementById('fileInput')
+const fileInputElement = document.getElementById('fileInput');
 fileInputElement.addEventListener('change', handleFileSelect);
 
 function handleFileSelect(event) {
-  const reader = new FileReader()
-  reader.onload = handleFileLoad;
-  reader.readAsText(event.target.files[0])
+  const reader = new FileReader();
+  reader.addEventListener("load", handleFileLoad);
+  reader.readAsText(event.target.files[0]);
 }
 
 function handleFileLoad(event) {
