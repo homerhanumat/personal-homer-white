@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -167,76 +167,11 @@ After you select your file, the max pack-total will appear here!
 </p><p>
 </p><p>The relevant JavaScript file is <a href="../js/advent_in_action.js">here</a>. Use the Web Inspector tool on your browser to identify the elements on the html page that are accessed by the code.</p>
 <p><strong>Note:</strong> You do not have to implement any of yuor Eloquent JavaScript solutions in the browser. I wrote this article only to teach myself about reading user-provided files in the browser.</p>
+<script src="../js/advent_in_action.js"></script>
 
 
 
 </main> <!-- /main -->
-/***************************************************
- * Script to apply the Advent 2022-1
- * solution in the browser.
- * 
- * Idea adapted from:
- * https://plnkr.co/edit/DbBfnc6XaMppCvkEoqql
- * 
- * It was also helpful to study the documentation
- * on FileReader:
- * https://developer.mozilla.org/en-US/docs/Web/API/FileReader
- ***************************************************/
-
-const fileInputElement = document.getElementById('fileInput');
-fileInputElement.addEventListener('change', handleFileSelect);
-
-function handleFileSelect(event) {
-  const reader = new FileReader();
-  reader.addEventListener("load", handleFileLoad);
-  reader.readAsText(event.target.files[0]);
-}
-
-function handleFileLoad(event) {
-  // the "event" here is the loading of
-  // the file into the reader object
-  // created in hndleFileSelect.
-  // the target is that reader object,
-  // and the result is the file read
-  // in, as a string:
-  const input = event.target.result;
-
-  // We now make an array of the items:
-  const splitLines = function(str) {
-    return str.split(/\n/);
-  };
-  const caloriesAsStrings = splitLines(input);
-
-  // The array is full of strings, so convert them to 
-  // numbers.  Blank lines will be converted 
-  // to NaN ("not a number").
-  const calories = caloriesAsStrings.map(str =&gt; parseInt(str));
-
-  // Make an array to hold the total calories for each pack:
-  const packTotals = [];
-
-  // One by one, pull items from the beginning of 
-  // the calories array, making the pack totals:
-  while (calories.length &gt; 0) {
-  let packTotal = 0;
-  let currentItem = calories.shift();
-  while (!isNaN(currentItem)) {
-    packTotal += currentItem;
-    currentItem = calories.shift();
-  }
-  packTotals.push(packTotal);
-  }
-
-  // Finally, we compute the maximum of the pack totals,
-  // and report it to the console.
-  // (Note the use of ... to spread the array
-  // into arguments for the Math.max function!)
-  let maxPackTotal = Math.max(...packTotals);
-  let resultsReport = `The max pack-total is: ${maxPackTotal}.`;
-  document.getElementById('result').textContent = resultsReport;
-};
-
-
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
