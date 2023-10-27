@@ -1,6 +1,5 @@
 ---
 title: "Advent of Code 2022, Day 1:  A Solution Using Javascript"
-engine: knitr
 ---
 
 ## Introduction to the Problem
@@ -56,7 +55,7 @@ Suppose that the problem data is contained in a file called `input.txt` located 
 
 We will be importing data from a source outside the Node envionment, so we'll be working with file-systems.  Accordingly, we import the `fs` and `path` modules:
 
-```{js}
+```{.js}
 const fs = require("fs");
 const path = require("path");
 ```
@@ -65,7 +64,7 @@ const path = require("path");
 
 We now use the functionality of the `path` module to construct a string that gives the pathname of the `input.txt` file.  
 
-```{js}
+```{.js}
 let targetFile = path.resolve(__dirname, "input.txt");
 ```
 
@@ -76,7 +75,7 @@ to get the full pathnamename of the input file.
 
 Next, we use the `fs` module tp read in the file, and the we and convert it to a string:
 
-```{js}
+```{.js}
 const input = fs.readFileSync(targetFile).toString();
 ```
 
@@ -86,7 +85,7 @@ We wish to convert the string into an array of values, where each element of the
 
 To this end, we must split the string along the newlines within it.  To this end we define a splitting function:
 
-```{js}
+```{.js}
 const splitLines = str => str.split(/\n/);
 ```
 
@@ -94,7 +93,7 @@ Note the use of the Javacript regular expression `/\n/`).  (In Javascript regula
 
 We now apply the function to split the input into an array of strings;
 
-```{js}
+```{.js}
 const caloriesAsStrings = splitLines(input);
 ```
 
@@ -102,7 +101,7 @@ The array is full of strings.  (Some of them are the empty strinf---wherever the
 
 We need to convert them to numbers.  To that end, we apply the higher-order array-method `map()` to the `caloriesAsStrings`:
 
-```{js}
+```{.js}
 const calories = caloriesAsStrings.map(str => parseInt(str));
 ```
 
@@ -114,14 +113,14 @@ The array `calories` consists of calorie counts, with `NaNs` separatng items in 
 
 First, we make an array to hold the total calories for each pack:
 
-```{js}
+```{.js}
 const packTotals = [];
 ```
 
 
 One by one, we pull items from the beginning of the calories array, making the pack totals:
 
-```{js}
+```{.js}
 while (calories.length > 0) {
   let packTotal = 0;
   let currentItem = calories.shift();
@@ -139,7 +138,7 @@ while (calories.length > 0) {
 
 Finally, we compute the maximum of the pack totals:
 
-```{js}
+```{.js}
 let maxPackTotal = Math.max(...packTotals);
 ```
 
@@ -147,7 +146,7 @@ let maxPackTotal = Math.max(...packTotals);
 
 Finally, we report the maximum to the console:
 
-```{js}
+```{.js}
 console.log(maxPackTotal);
 ```
 

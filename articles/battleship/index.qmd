@@ -1,0 +1,52 @@
+---
+title:  "Battleship with Canvas"
+format:
+  html: 
+    grid:
+      sidebar-width: 250px
+      body-width: 450px
+      margin-width: 600px
+      gutter-width: 1.5rem
+    page-layout: full
+---
+
+Here is a simple game of Battleship!
+
+You play against the computer.  Select a point at which to drop a bomb by clicking in the computer's area, which is the upper part of the above "ocean".  The bomb explodes, and any ship that is within a set radius of the point of explosion sustains a hit.  Each ship has a hit-capacity; when it takes a number of hits equal to its capacity it is sunk.
+
+The game is a work in progress (see the [Github repository](https://github.com/homerhanumat/battleship)).  It is implemented in the browser with the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API).
+
+```{=html}
+<canvas id="canvas" width="400" height="400">game intended here</canvas>
+```
+
+
+
+::: {.column-margin}
+
+```{=html}
+<fieldset style="margin-bottom: 20px">
+    <legend style="font-size: 1.1em">Show shot history:</legend>
+  
+    <div>
+      <input type="checkbox" id="user-shots" name="user-shots" />
+      <label for="user-shots">Yours</label>
+    </div>
+  
+    <div>
+      <input type="checkbox" id="computer-shots" name="computer-shots" />
+      <label for="computer-shots">Computer's</label>
+    </div>
+  </fieldset>
+
+<p id="narrative" style="margin-bottom: 20px"></p>
+
+<table id="ship-report"></table>
+```
+:::
+
+
+
+```{=html}
+<script src="main.js"></script>
+```

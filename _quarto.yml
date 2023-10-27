@@ -11,7 +11,7 @@ website:
       - href: about.qmd
         text: About
       - href: articles/index.qmd
-        text: Articles
+        text: Articles 
 
   sidebar:
     - id: articles
@@ -24,6 +24,8 @@ website:
           href:  articles/article_01.qmd
         - text: "Browser Implementation"
           href:  articles/article_02.qmd
+        - href:  articles/battleship/index.qmd
+        - text: "Canvas Battleship"
 
 format:
   html:
