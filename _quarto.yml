@@ -24,8 +24,8 @@ website:
           href:  articles/article_01.qmd
         - text: "Browser Implementation"
           href:  articles/article_02.qmd
-        - href:  articles/battleship/index.qmd
         - text: "Canvas Battleship"
+          href:  articles/battleship/index.qmd
 
 format:
   html:
