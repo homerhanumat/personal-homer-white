@@ -2,4 +2,4 @@
 title:  "Articles"
 ---
 
-*TODO:*  Suitable introductory remarks about articles.
+The articles on this site document the use of JavaScript in various contexts, and serve as examples for students looking to write about JavaScript in the Quarto framework.

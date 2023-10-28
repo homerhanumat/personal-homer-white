@@ -47,11 +47,28 @@ Find the Elf carrying the most Calories. *How many total Calories is that Elf ca
 
 </blockquote>
 
-A complete solution to the problem may be found [here](/js/advent_2022-01.js).  In the remainder of the article we provide a detailed explanation of the solution-code.
+In the remainder of the article we provide a detailed explanation of the solution-code.
 
 ## Reading in the Data
 
-Suppose that the problem data is contained in a file called `input.txt` located in the same dirctory as the JavaScript file.
+Suppose that the problem data is contained in a file called `input.txt` located in the same dirctory as the JavaScript file, for example:
+
+```{filename="input.txt"}
+1000
+2000
+3000
+
+4000
+
+5000
+6000
+
+7000
+8000
+9000
+
+10000
+```
 
 We will be importing data from a source outside the Node envionment, so we'll be working with file-systems.  Accordingly, we import the `fs` and `path` modules:
 
@@ -151,3 +168,36 @@ console.log(maxPackTotal);
 ```
 
 We are done!
+
+## Full Code
+
+A complete solution to the problem may be found [here](/js/advent_2022-01.js), or the reader may view it below:
+
+```{.javascript filename="adevent_2022-01.js"}
+const fs = require("fs");
+const path = require("path");
+
+let targetFile = path.resolve(__dirname, "input.txt");
+
+const input = fs.readFileSync(targetFile).toString();
+
+const splitLines = str => str.split(/\n/);
+const caloriesAsStrings = splitLines(input);
+
+const calories = caloriesAsStrings.map(str => parseInt(str));
+
+const packTotals = [];
+
+while (calories.length > 0) {
+  let packTotal = 0;
+  let currentItem = calories.shift();
+  while (!isNaN(currentItem)) {
+    packTotal += currentItem;
+    currentItem = calories.shift();
+  }
+  packTotals.push(packTotal);
+}
+
+let maxPackTotal = Math.max(...packTotals);
+console.log(maxPackTotal);
+```

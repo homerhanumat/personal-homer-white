@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -190,6 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#looping-to-compute-pack-totals" id="toc-looping-to-compute-pack-totals" class="nav-link" data-scroll-target="#looping-to-compute-pack-totals">Looping to Compute Pack-Totals</a></li>
   <li><a href="#reporting-the-maximum-pack-total" id="toc-reporting-the-maximum-pack-total" class="nav-link" data-scroll-target="#reporting-the-maximum-pack-total">Reporting the Maximum Pack-Total</a></li>
+  <li><a href="#full-code" id="toc-full-code" class="nav-link" data-scroll-target="#full-code">Full Code</a></li>
   </ul>
 </nav>
     </div>
@@ -246,36 +247,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In case the Elves get hungry and need extra snacks, they need to know which Elf to ask: they’d like to know how many Calories are being carried by the Elf carrying the most Calories. In the example above, this is 24000 (carried by the fourth Elf).</p>
 <p>Find the Elf carrying the most Calories. <em>How many total Calories is that Elf carrying?</em></p>
 </blockquote>
-<p>A complete solution to the problem may be found <a href="../js/advent_2022-01.js">here</a>. In the remainder of the article we provide a detailed explanation of the solution-code.</p>
+<p>In the remainder of the article we provide a detailed explanation of the solution-code.</p>
 </section>
 <section id="reading-in-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="reading-in-the-data">Reading in the Data</h2>
-<p>Suppose that the problem data is contained in a file called <code>input.txt</code> located in the same dirctory as the JavaScript file.</p>
+<p>Suppose that the problem data is contained in a file called <code>input.txt</code> located in the same dirctory as the JavaScript file, for example:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>input.txt</strong></pre>
+</div>
+<pre><code>1000
+2000
+3000
+
+4000
+
+5000
+6000
+
+7000
+8000
+9000
+
+10000</code></pre>
+</div>
 <p>We will be importing data from a source outside the Node envionment, so we’ll be working with file-systems. Accordingly, we import the <code>fs</code> and <code>path</code> modules:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> fs <span class="op">=</span> <span class="pp">require</span>(<span class="st">"fs"</span>)<span class="op">;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> path <span class="op">=</span> <span class="pp">require</span>(<span class="st">"path"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> fs <span class="op">=</span> <span class="pp">require</span>(<span class="st">"fs"</span>)<span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> path <span class="op">=</span> <span class="pp">require</span>(<span class="st">"path"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="determining-the-pathname-of-the-input-file" class="level3">
 <h3 class="anchored" data-anchor-id="determining-the-pathname-of-the-input-file">Determining the Pathname of the Input File</h3>
 <p>We now use the functionality of the <code>path</code> module to construct a string that gives the pathname of the <code>input.txt</code> file.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> targetFile <span class="op">=</span> path<span class="op">.</span><span class="fu">resolve</span>(<span class="bu">__dirname</span><span class="op">,</span> <span class="st">"input.txt"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> targetFile <span class="op">=</span> path<span class="op">.</span><span class="fu">resolve</span>(<span class="bu">__dirname</span><span class="op">,</span> <span class="st">"input.txt"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In the above code, <code>__dirname</code> evaluates to the full name of the directory containing the file being run, and <code>path.resolve</code> puts it together with the second argument to get the full pathnamename of the input file.</p>
 </section>
 <section id="reading-in-the-input-file" class="level3">
 <h3 class="anchored" data-anchor-id="reading-in-the-input-file">Reading in the Input File</h3>
 <p>Next, we use the <code>fs</code> module tp read in the file, and the we and convert it to a string:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> input <span class="op">=</span> fs<span class="op">.</span><span class="fu">readFileSync</span>(targetFile)<span class="op">.</span><span class="fu">toString</span>()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> input <span class="op">=</span> fs<span class="op">.</span><span class="fu">readFileSync</span>(targetFile)<span class="op">.</span><span class="fu">toString</span>()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="processing-the-input-file" class="level3">
 <h3 class="anchored" data-anchor-id="processing-the-input-file">Processing the Input File</h3>
 <p>We wish to convert the string into an array of values, where each element of the array is the calorie-value of an item.</p>
 <p>To this end, we must split the string along the newlines within it. To this end we define a splitting function:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> splitLines <span class="op">=</span> str <span class="kw">=&gt;</span> str<span class="op">.</span><span class="fu">split</span>(<span class="ss">/</span><span class="sc">\n</span><span class="ss">/</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> splitLines <span class="op">=</span> str <span class="kw">=&gt;</span> str<span class="op">.</span><span class="fu">split</span>(<span class="ss">/</span><span class="sc">\n</span><span class="ss">/</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Note the use of the Javacript regular expression <code>/\n/</code>). (In Javascript regular expressions to not start life as strings, as they do in R. Instead they are a special type of object, delimited by the forward-slash: <code>/</code>. For more on regular expressions in JavaScript, see <a href="https://eloquentjavascript.net/09_regexp.html">Chapter 8</a> of the <em>Eloquent JavaScript</em> textbook.)</p>
 <p>We now apply the function to split the input into an array of strings;</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> caloriesAsStrings <span class="op">=</span> <span class="fu">splitLines</span>(input)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> caloriesAsStrings <span class="op">=</span> <span class="fu">splitLines</span>(input)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The array is full of strings. (Some of them are the empty strinf—wherever there were two consecutive newlines in the oringal input to separate the pack of one elf from the pack of the next elf.)</p>
 <p>We need to convert them to numbers. To that end, we apply the higher-order array-method <code>map()</code> to the <code>caloriesAsStrings</code>:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> calories <span class="op">=</span> caloriesAsStrings<span class="op">.</span><span class="fu">map</span>(str <span class="kw">=&gt;</span> <span class="pp">parseInt</span>(str))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> calories <span class="op">=</span> caloriesAsStrings<span class="op">.</span><span class="fu">map</span>(str <span class="kw">=&gt;</span> <span class="pp">parseInt</span>(str))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>It is important to note that <code>parseInt()</code> converts the empty string to the value <code>NaN</code>: “not a number”.</p>
 </section>
 </section>
@@ -283,27 +303,62 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="looping-to-compute-pack-totals">Looping to Compute Pack-Totals</h2>
 <p>The array <code>calories</code> consists of calorie counts, with <code>NaNs</code> separatng items in different packs. We’ll work with this array to find the sums of the calorie-counts in each pack.</p>
 <p>First, we make an array to hold the total calories for each pack:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> packTotals <span class="op">=</span> []<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> packTotals <span class="op">=</span> []<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>One by one, we pull items from the beginning of the calories array, making the pack totals:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (calories<span class="op">.</span><span class="at">length</span> <span class="op">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> packTotal <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> currentItem <span class="op">=</span> calories<span class="op">.</span><span class="fu">shift</span>()<span class="op">;</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (<span class="op">!</span><span class="pp">isNaN</span>(currentItem)) {</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    packTotal <span class="op">+=</span> currentItem<span class="op">;</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    currentItem <span class="op">=</span> calories<span class="op">.</span><span class="fu">shift</span>()<span class="op">;</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  packTotals<span class="op">.</span><span class="fu">push</span>(packTotal)<span class="op">;</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (calories<span class="op">.</span><span class="at">length</span> <span class="op">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> packTotal <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> currentItem <span class="op">=</span> calories<span class="op">.</span><span class="fu">shift</span>()<span class="op">;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (<span class="op">!</span><span class="pp">isNaN</span>(currentItem)) {</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    packTotal <span class="op">+=</span> currentItem<span class="op">;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    currentItem <span class="op">=</span> calories<span class="op">.</span><span class="fu">shift</span>()<span class="op">;</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  packTotals<span class="op">.</span><span class="fu">push</span>(packTotal)<span class="op">;</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>packTotals</code> is now an array of the total calories in each pack.</p>
 </section>
 <section id="reporting-the-maximum-pack-total" class="level2">
 <h2 class="anchored" data-anchor-id="reporting-the-maximum-pack-total">Reporting the Maximum Pack-Total</h2>
 <p>Finally, we compute the maximum of the pack totals:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> maxPackTotal <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="op">...</span>packTotals)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> maxPackTotal <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="op">...</span>packTotals)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>(Math.max() takes as arguments all of the numbers of whihc we wish to find the maximum. Note the use of the three-dot notation notation <code>...</code> to convert the single array into separate arguments. For a review of the three-dot notation, see the section <a href="https://eloquentjavascript.net/04_data.html#h_hX9DkIBp9y">Rest Parameters</a> in <em>Eloquent JavaScript</em>. )</p>
 <p>Finally, we report the maximum to the console:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(maxPackTotal)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(maxPackTotal)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We are done!</p>
+</section>
+<section id="full-code" class="level2">
+<h2 class="anchored" data-anchor-id="full-code">Full Code</h2>
+<p>A complete solution to the problem may be found <a href="../js/advent_2022-01.js">here</a>, or the reader may view it below:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>adevent_2022-01.js</strong></pre>
+</div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> fs <span class="op">=</span> <span class="pp">require</span>(<span class="st">"fs"</span>)<span class="op">;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> path <span class="op">=</span> <span class="pp">require</span>(<span class="st">"path"</span>)<span class="op">;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> targetFile <span class="op">=</span> path<span class="op">.</span><span class="fu">resolve</span>(<span class="bu">__dirname</span><span class="op">,</span> <span class="st">"input.txt"</span>)<span class="op">;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> input <span class="op">=</span> fs<span class="op">.</span><span class="fu">readFileSync</span>(targetFile)<span class="op">.</span><span class="fu">toString</span>()<span class="op">;</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> splitLines <span class="op">=</span> str <span class="kw">=&gt;</span> str<span class="op">.</span><span class="fu">split</span>(<span class="ss">/</span><span class="sc">\n</span><span class="ss">/</span>)<span class="op">;</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> caloriesAsStrings <span class="op">=</span> <span class="fu">splitLines</span>(input)<span class="op">;</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> calories <span class="op">=</span> caloriesAsStrings<span class="op">.</span><span class="fu">map</span>(str <span class="kw">=&gt;</span> <span class="pp">parseInt</span>(str))<span class="op">;</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> packTotals <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (calories<span class="op">.</span><span class="at">length</span> <span class="op">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> packTotal <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> currentItem <span class="op">=</span> calories<span class="op">.</span><span class="fu">shift</span>()<span class="op">;</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (<span class="op">!</span><span class="pp">isNaN</span>(currentItem)) {</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    packTotal <span class="op">+=</span> currentItem<span class="op">;</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    currentItem <span class="op">=</span> calories<span class="op">.</span><span class="fu">shift</span>()<span class="op">;</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  packTotals<span class="op">.</span><span class="fu">push</span>(packTotal)<span class="op">;</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> maxPackTotal <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="op">...</span>packTotals)<span class="op">;</span></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(maxPackTotal)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>

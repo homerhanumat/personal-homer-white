@@ -2,8 +2,8 @@
 title: "Welcome!"
 ---
 
-This is a Quarto website.
+Welcome to my Warmup Website!  It serves an example site for students in CSC 324 at Georgetown College, who are building their own website using the Quarto framework.
+
+You can read a bit about me [here](about.html).
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-*TODO:*  replace the above text with appropriate front-page material.
