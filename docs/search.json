@@ -103,5 +103,47 @@
     "title": "Welcome!",
     "section": "",
     "text": "Welcome to my Warmup Website! It serves an example site for students in CSC 324 at Georgetown College, who are building their own website using the Quarto framework.\nYou can read a bit about me here.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "articles/scatterplot/index.html",
+    "href": "articles/scatterplot/index.html",
+    "title": "An Interactive Scatterplot Using Observables",
+    "section": "",
+    "text": "It is not hard to learn to use Observables to perform data anlysis and prodcue interactive graphs like the one shown below.\nIf you would like to enhance your project website with Observables, give it a try! Setting up an account is free.\nThe plot below is based on data from the 2005 Cherry Blossom Race. For documentation see here."
+  },
+  {
+    "objectID": "articles/scatterplot/index.html#introduction",
+    "href": "articles/scatterplot/index.html#introduction",
+    "title": "An Interactive Scatterplot Using Observables",
+    "section": "",
+    "text": "It is not hard to learn to use Observables to perform data anlysis and prodcue interactive graphs like the one shown below.\nIf you would like to enhance your project website with Observables, give it a try! Setting up an account is free.\nThe plot below is based on data from the 2005 Cherry Blossom Race. For documentation see here."
+  },
+  {
+    "objectID": "articles/scatterplot/index.html#data-import-and-preparation",
+    "href": "articles/scatterplot/index.html#data-import-and-preparation",
+    "title": "An Interactive Scatterplot Using Observables",
+    "section": "Data Import and Preparation",
+    "text": "Data Import and Preparation\nWe load in the data from a local csv file:\n\nrace = FileAttachment(\"TenMileRace.csv\").csv({typed: true})\n\n\n\n\n\n\nNext we use a bit of JavaScript to add a new “column” giving the finishing time converted from seconds to minutes:\n\nrace.forEach(function(runner) {runner.timeMinutes = runner.time / 60;})\n\n\n\n\n\n\nWe would like our scatterplot to have the same bounds for the hotizontal and vertical axes, no matter what subset of the data is plotted. Accordingly we compute the following minima and maxima.\n\nminTime = d3.min(d3.map(race, d =&gt; d.timeMinutes))\n\n\n\n\n\n\n\nmaxTime = d3.max(d3.map(race, d =&gt; d.timeMinutes))\n\n\n\n\n\n\n\nminAge = d3.min(d3.map(race, d =&gt; d.age))\n\n\n\n\n\n\n\nmaxAge = d3.max(d3.map(race, d =&gt; d.age))"
+  },
+  {
+    "objectID": "articles/scatterplot/index.html#usser-inputs",
+    "href": "articles/scatterplot/index.html#usser-inputs",
+    "title": "An Interactive Scatterplot Using Observables",
+    "section": "Usser Inputs",
+    "text": "Usser Inputs\nWe would like the user to be able to choose the sex of the runners plotted:\n\nviewof sex = Inputs.select([\"F\", \"M\"], {label: \"Sex of runner: \"})\n\n\n\n\n\n\nTwo or more runners may have the the same age and finishing times that are identical or close to identical, so over-plotting is likely be an issue. Therefore we allow the user to set the opacity of the points:\n\nviewof opacity = Inputs.range([0, 1], {label: \"Opacity: \", step: 0.01})"
+  },
+  {
+    "objectID": "articles/scatterplot/index.html#the-scatterplot",
+    "href": "articles/scatterplot/index.html#the-scatterplot",
+    "title": "An Interactive Scatterplot Using Observables",
+    "section": "The Scatterplot",
+    "text": "The Scatterplot\nFinally we make the scatterplot. Note how some of its elements are reactive to the user-inputs defined previously.\n\nPlot.plot({\n  inset: 8,\n  grid: true,\n  marks: [\n    Plot.dot(\n      d3.filter(race, d =&gt; d.sex == sex), \n      {x: \"age\", y: \"timeMinutes\", fill: \"black\", fillOpacity: opacity}\n    )\n  ],\n  x: {domain: [minAge, maxAge]},\n  y: {label: \"time (minutes)\", domain: [minTime, maxTime]},\n})"
+  },
+  {
+    "objectID": "articles/scatterplot/index.html#note",
+    "href": "articles/scatterplot/index.html#note",
+    "title": "An Interactive Scatterplot Using Observables",
+    "section": "Note",
+    "text": "Note\nThis work was first done as a Notebook on the Observable site. It is often easiest to do one’s development there, then transfer the code to Quarto for publication."
   }
 ]

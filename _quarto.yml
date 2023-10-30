@@ -26,6 +26,8 @@ website:
           href:  articles/article_02.qmd
         - text: "Canvas Battleship"
           href:  articles/battleship/index.qmd
+        - text: "Observables Scatterplot"
+          href: articles/scatterplot/index.qmd
 
 format:
   html:
