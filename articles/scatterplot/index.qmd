@@ -1,5 +1,7 @@
 ---
 title:  "An Interactive Scatterplot Using Observables"
+execute:
+  echo: false
 ---
 
 ## Introduction
@@ -10,23 +12,18 @@ If you would like to enhance your project website with Observables, give it a tr
 
 The plot below is based on data from the 2005 Cherry Blossom Race.  For documentation see [here](https://rdrr.io/cran/mosaicData/man/TenMileRace.html).
 
-## Data Import and Preparation
+The user can choose the sex of the runners plotted, and the opacity of the points.  (The latter feature is useful, as over-plotting is an issue in this dataset.)
 
-We load in the data from a local `csv` file:
 
 ```{ojs}
 race = FileAttachment("TenMileRace.csv").csv({typed: true})
 ```
 
 
-Next we use a bit of JavaScript to add a new "column" giving the finishing time converted from seconds to minutes:
-
 ```{ojs}
 //| output: false
 race.forEach(function(runner) {runner.timeMinutes = runner.time / 60;})
 ```
-
-We would like our scatterplot to have the same bounds for the hotizontal and vertical axes, no matter what subset of the data is plotted.  Accordingly we compute the following minima and maxima.
 
 
 ```{ojs}
@@ -46,26 +43,20 @@ maxAge = d3.max(d3.map(race, d => d.age))
 ```
     
     
-    
-## User Inputs
 
-We would like the user to be able to choose the sex of the runners plotted:
+
+
 
 
 ```{ojs}
 viewof sex = Inputs.select(["F", "M"], {label: "Sex of runner: "})
 ```
 
-Two or more runners may have the the same age and finishing times that are identical or close to identical, so over-plotting is likely be an issue.  Therefore we allow the user to set the opacity of the points:
-
 
 ```{ojs}
 viewof opacity = Inputs.range([0, 1], {label: "Opacity: ", step: 0.01})
 ```
 
-## The Scatterplot
-
-Finally we make the scatterplot.  Note how some of its elements are reactive to the user-inputs defined previously.
 
 ```{ojs}
 Plot.plot({
@@ -82,6 +73,5 @@ Plot.plot({
 })
 ```
 
-## Note
 
-This work was first done as a [Notebook](https://observablehq.com/d/1664118c11075582) on the [Observable](https://observablehq.com) site.  It is often easiest to do one's development there, then transfer the code to Quarto for publication.
+**Note**:  This work was first done as a [Notebook](https://observablehq.com/d/1664118c11075582) on the [Observable](https://observablehq.com) site.  It is often easiest to do one's development there, then transfer the code to Quarto for publication.
