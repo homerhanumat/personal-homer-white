@@ -51,13 +51,13 @@ maxAge = d3.max(d3.map(race, d => d.age))
 
 
 ```{ojs}
+//| panel: input
 viewof sex = Inputs.select(["F", "M"], {label: "Sex of runner: "})
-```
-
-
-```{ojs}
 viewof opacity = Inputs.range([0, 1], {label: "Opacity: ", step: 0.01})
 ```
+
+
+
 
 
 ```{ojs}
