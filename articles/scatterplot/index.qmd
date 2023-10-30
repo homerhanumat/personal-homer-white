@@ -47,7 +47,7 @@ maxAge = d3.max(d3.map(race, d => d.age))
     
     
     
-## Usser Inputs
+## User Inputs
 
 We would like the user to be able to choose the sex of the runners plotted:
 

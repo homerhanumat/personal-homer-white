@@ -145,5 +145,19 @@
     "title": "Welcome!",
     "section": "",
     "text": "Welcome to my Warmup Website! It serves an example site for students in CSC 324 at Georgetown College, who are building their own website using the Quarto framework.\nYou can read a bit about me here.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "articles/scatterplot/penguins.html",
+    "href": "articles/scatterplot/penguins.html",
+    "title": "Penguins",
+    "section": "",
+    "text": "A simple example based on Allison Horst’s Palmer Penguins dataset. Here we look at how penguin body mass varies across both sex and species (use the provided inputs to filter the dataset by bill length and island):\n\nviewof bill_length_min = Inputs.range(\n  [32, 50], \n  {value: 35, step: 1, label: \"Bill length (min):\"}\n)\nviewof islands = Inputs.checkbox(\n  [\"Torgersen\", \"Biscoe\", \"Dream\"], \n  { value: [\"Torgersen\", \"Biscoe\"], \n    label: \"Islands:\"\n  }\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlotData\n\n\n\nPlot.rectY(filtered, \n  Plot.binX(\n    {y: \"count\"}, \n    {x: \"body_mass_g\", fill: \"species\", thresholds: 20}\n  ))\n  .plot({\n    facet: {\n      data: filtered,\n      x: \"sex\",\n      y: \"species\",\n      marginRight: 80\n    },\n    marks: [\n      Plot.frame(),\n    ]\n  }\n)\n\n\n\n\n\n\n\n\n\nInputs.table(filtered)\n\n\n\n\n\n\n\n\n\n\ndata = FileAttachment(\"../../penguins.csv\").csv({ typed: true })\n\n\n\n\n\n\n\nfiltered = data.filter(function(penguin) {\n  return bill_length_min &lt; penguin.bill_length_mm &&\n         islands.includes(penguin.island);\n})"
+  },
+  {
+    "objectID": "articles/scatterplot/index.html#user-inputs",
+    "href": "articles/scatterplot/index.html#user-inputs",
+    "title": "An Interactive Scatterplot Using Observables",
+    "section": "User Inputs",
+    "text": "User Inputs\nWe would like the user to be able to choose the sex of the runners plotted:\n\nviewof sex = Inputs.select([\"F\", \"M\"], {label: \"Sex of runner: \"})\n\n\n\n\n\n\nTwo or more runners may have the the same age and finishing times that are identical or close to identical, so over-plotting is likely be an issue. Therefore we allow the user to set the opacity of the points:\n\nviewof opacity = Inputs.range([0, 1], {label: \"Opacity: \", step: 0.01})"
   }
 ]
