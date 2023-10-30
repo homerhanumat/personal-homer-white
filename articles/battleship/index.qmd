@@ -12,7 +12,7 @@ format:
 
 Here is a simple game of Battleship!
 
-You play against the computer.  Select a point at which to drop a bomb by clicking in the computer's area, which is the upper part of the above "ocean".  The bomb explodes, and any ship that is within a set radius of the point of explosion sustains a hit.  Each ship has a hit-capacity; when it takes a number of hits equal to its capacity it is sunk.
+You play against the computer.  Select a point at which to drop a bomb by clicking in the computer's area, which is the upper part of the "ocean" shown belw.  The bomb explodes, and any ship that is within a set radius of the point of explosion sustains a hit.  Each ship has a hit-capacity; when it takes a number of hits equal to its capacity it is sunk.
 
 The game is a work in progress (see the [Github repository](https://github.com/homerhanumat/battleship)).  It is implemented in the browser with the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API).
 
