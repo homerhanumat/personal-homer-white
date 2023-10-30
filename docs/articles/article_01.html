@@ -283,7 +283,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="determining-the-pathname-of-the-input-file" class="level3">
 <h3 class="anchored" data-anchor-id="determining-the-pathname-of-the-input-file">Determining the Pathname of the Input File</h3>
 <p>We now use the functionality of the <code>path</code> module to construct a string that gives the pathname of the <code>input.txt</code> file.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> targetFile <span class="op">=</span> path<span class="op">.</span><span class="fu">resolve</span>(<span class="bu">__dirname</span><span class="op">,</span> <span class="st">"input.txt"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode .js code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> targetFile <span class="op">=</span> path<span class="op">.</span><span class="fu">resolve</span>(<span class="bu">__dirname</span><span class="op">,</span> <span class="st">"input.txt"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In the above code, <code>__dirname</code> evaluates to the full name of the directory containing the file being run, and <code>path.resolve</code> puts it together with the second argument to get the full pathnamename of the input file.</p>
 </section>
 <section id="reading-in-the-input-file" class="level3">
@@ -336,7 +336,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>A complete solution to the problem may be found <a href="../js/advent_2022-01.js">here</a>, or the reader may view it below:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>adevent_2022-01.js</strong></pre>
+<pre><strong>advent_2022-01.js</strong></pre>
 </div>
 <div class="sourceCode" id="cb13"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> fs <span class="op">=</span> <span class="pp">require</span>(<span class="st">"fs"</span>)<span class="op">;</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> path <span class="op">=</span> <span class="pp">require</span>(<span class="st">"path"</span>)<span class="op">;</span></span>
