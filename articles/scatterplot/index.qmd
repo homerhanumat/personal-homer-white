@@ -10,6 +10,8 @@ It is not hard to learn to use [Observables](https://observablehq.com) to perfor
 
 If you would like to enhance your project website with Observables, give it a try!  Setting up an account is free.
 
+## The Plot
+
 The plot below is based on data from the 2005 Cherry Blossom Race.  For documentation see [here](https://rdrr.io/cran/mosaicData/man/TenMileRace.html).
 
 The user can choose the sex of the runners plotted, and the opacity of the points.  (The latter feature is useful, as over-plotting is an issue in this dataset.)
