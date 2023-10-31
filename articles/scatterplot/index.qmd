@@ -2,10 +2,11 @@
 title:  "An Interactive Scatterplot Using Observables"
 execute:
   echo: false
+  freeze: auto
 ---
 
 ```{ojs}
-Plot = import("https://esm.run/@observablehq/plot")
+Plot = import("https://esm.run/@observablehq/plot@0.6.11")
 ```
 
 ## Introduction
@@ -22,13 +23,12 @@ The user can choose the sex of the runners plotted, and the opacity of the point
 
 
 ```{ojs}
-race = FileAttachment("TenMileRace.csv").csv({typed: true})
-```
-
-
-```{ojs}
 //| output: false
-race.forEach(function(runner) {runner.timeMinutes = runner.time / 60;})
+race = {
+  const race = await FileAttachment("TenMileRace.csv").csv({typed: true});
+  race.forEach(function(runner) {runner.timeMinutes = runner.time / 60;});
+  return race;
+}
 ```
 
 
@@ -81,7 +81,7 @@ Plot.plot({
 
 ## Non-interactive Alternatives
 
-To investigate the relationship of age, time and sex all at once, it might be preferable to include `sex` as an aesthetic property in the graph.  The over-plotting could als be addressed by a different sort of glyph:  density contours, for example, rather than points.  Below is a non-interactive graph of the data:
+To investigate the relationship of age, time and sex all at once, it might be preferable to include `sex` as an aesthetic property in the graph.  The over-plotting could also be addressed by a different sort of glyph:  density contours, for example, rather than points.  Below is a non-interactive graph of the data:
 
 ```{ojs}
 Plot.plot({
@@ -94,7 +94,7 @@ Plot.plot({
 })
 ```
 
-Since the density contours of the two sexes overlay each other somewhat, it may be best to facet by `sex` rather than making it as aesthetic property of our glyphs:
+Since the density contours of the two sexes overlay each other somewhat, it may be best to facet by `sex` rather than making it an aesthetic property of our glyphs:
 
 ```{ojs}
 Plot.plot({
