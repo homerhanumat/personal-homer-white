@@ -75,5 +75,38 @@ Plot.plot({
 })
 ```
 
+## Non-interactive Alternatives
 
-**Note**:  This work was first done as a [Notebook](https://observablehq.com/d/1664118c11075582) on the [Observable](https://observablehq.com) site.  It is often easiest to do one's development there, then transfer the code to Quarto for publication.
+To investigate the relationship of age, time and sex all at once, it might be preferable to include `sex` as an aesthetic property in the graph.  The over-plotting could als be addressed by a different sort of glyph:  density contours, for example, rather than points.  Below is a non-interactive graph of the data:
+
+```{ojs}
+Plot.plot({
+  marks: [Plot.density(
+    race.map(d => ({age: d.age, timeMinutes: d.timeMinutes, sex: d.sex == "M" ? "male" : "female"})), 
+    {x: "age", y: "timeMinutes", stroke: "sex"}
+  )],
+  y: {label: "time (minutes)"},
+  color: {legend: true}
+})
+```
+
+Since the density contours of the two sexes overlay each other somewhat, it may be best to facet by `sex` rather than making it as aesthetic property of our glyphs:
+
+```{ojs}
+//| echo: true
+Plot.plot({
+  marks: [
+    Plot.frame(),
+    Plot.density(
+      race.map(d => ({age: d.age, timeMinutes: d.timeMinutes, sex: d.sex == "M" ? "male" : "female"})), 
+      {x: "age", y: "timeMinutes", fx: "sex"}
+    )],
+  y: {label: "time (minutes)"}
+})
+```
+
+**Note**:  The above plot ignores the desired facetting.  (Investigate and file an issue with Quarto.)
+
+## Note
+
+This work was first done as a [Notebook](https://observablehq.com/d/1664118c11075582) on the [Observable](https://observablehq.com) site.  It is often easiest to do one's development there, then transfer the code to Quarto for publication.
