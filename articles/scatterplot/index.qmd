@@ -2,7 +2,6 @@
 title:  "An Interactive Scatterplot Using Observables"
 execute:
   echo: false
-  freeze: auto
 ---
 
 ```{ojs}
@@ -11,7 +10,7 @@ Plot = import("https://esm.run/@observablehq/plot@0.6.11")
 
 ## Introduction
 
-It is not hard to learn to use [Observables](https://observablehq.com) to perform data anlysis and prodcue interactive graphs like the one shown below.
+It is not hard to learn to use [Observables](https://observablehq.com) to perform data anlysis and produce interactive graphs like the one shown below.
 
 If you would like to enhance your project website with Observables, give it a try!  Setting up an account is free.
 
@@ -114,9 +113,7 @@ Plot.plot({
 
 This work was first done as a [Notebook](https://observablehq.com/d/1664118c11075582) on the [Observable](https://observablehq.com) site.  It is often easiest to do one's development there, then transfer the code to Quarto for publication.
 
-The version of Plot porvided with Quarto often lags well behind the latest version as [documented](```{ojs}
-Plot = import("https://esm.run/@observablehq/plot")
-```) by Observables.  In order to keep your Quarto project current with what works in your Observables notebooks, it is advisable to import the latest version of Plot, like this:
+The version of Plot porvided with Quarto often lags well behind the latest version as [documented](https://observablehq.com/plot/) by Observables.  In order to keep your Quarto project current with what works in your Observables notebooks, it is advisable to import the latest version of Plot, like this:
 
 ```js
 Plot = import("https://esm.run/@observablehq/plot")
