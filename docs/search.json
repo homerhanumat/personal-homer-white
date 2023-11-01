@@ -67,7 +67,7 @@
     "href": "articles/scatterplot/index.html#notes",
     "title": "An Interactive Scatterplot Using Observables",
     "section": "Notes",
-    "text": "Notes\nThis work was first done as a Notebook on the Observable site. It is often easiest to do one’s development there, then transfer the code to Quarto for publication.\nThe version of Plot porvided with Quarto often lags well behind the latest version as documented by Observables. In order to keep your Quarto project current with what works in your Observables notebooks, it is advisable to import the latest version of Plot, like this:\nPlot = import(\"https://esm.run/@observablehq/plot\")"
+    "text": "Notes\nThis work was first done as a Notebook on the Observable site. It is often easiest to do one’s development there, then transfer the code to Quarto for publication.\nThe version of Plot provided with Quarto often lags well behind the latest version as documented by Observables. In order to keep your Quarto project current with what works in your Observables notebooks, it is advisable to import the latest version of Plot, like this:\nPlot = import(\"https://esm.run/@observablehq/plot\")"
   },
   {
     "objectID": "articles/battleship/index.html",
