@@ -1,8 +1,12 @@
 ---
 title:  "Stock Prices"
+format:
+  html:
+    echo: false
+    code-tools: true
 ---
 
-Not much explanation here, just a proof-of-concept that one can use R for data import and manipulation, then turn to Observable for interactive graphs.
+Not much explanation here (see the source code for comments) just a proof-of-concept that one can use R for data import and manipulation, then turn to Observable for interactive graphs.
 
 
 ```{r warning=FALSE, message=FALSE}
@@ -47,16 +51,25 @@ all_stocks <- map_dfr(stocks, get_stock)
 ojs_define(df = all_stocks)
 ```
 
-Now we begin work with Observable:
+
 
 ```{ojs}
+// Now we begin work with Observable:
 Plot = import("https://esm.run/@observablehq/plot@0.6.11")
 ```
 
-We should transpose from an array of variable-values to array of trading days. Also, the dates conme into Observables as strings, so we must convert them back to dates:
+
 
 
 ```{ojs}
+/*****************************
+ * We should transpose from an
+ * array of variable-values to
+ * an  array of trading days.
+ * Also, the dates conme into
+ * Observables as strings, so we
+ * must convert them back to dates:
+ ******************************/
 allStocks = {
   const df2 = transpose(df);
   const parseTime = d3.utcParse("%Y-%m-%d")
@@ -67,9 +80,12 @@ allStocks = {
 }
 ```
 
-Create an array of names of the stocks:
+
 
 ```{ojs}
+/****************************
+ * Create an array of names of the stocks:
+ *****************************/
 stockNames = {
   let names = [];
   allStocks.forEach(function(d) {
