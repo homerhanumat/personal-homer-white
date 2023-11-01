@@ -28,6 +28,8 @@ website:
           href:  articles/battleship/index.qmd
         - text: "Observables Scatterplot"
           href: articles/scatterplot/index.qmd
+        - text: "Stock Prices"
+          href: articles/stocks/index.qmd
 
 format:
   html:

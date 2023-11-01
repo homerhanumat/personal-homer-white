@@ -1,0 +1,104 @@
+---
+title:  "Stock Prices"
+---
+
+Not much explanation here, just a proof-of-concept that one can use R for data import and manipulation, then turn to Observable for interactive graphs.
+
+
+```{r warning=FALSE, message=FALSE}
+library(tidyverse)
+library(quantmod)
+```
+
+```{r}
+## year to date:
+sdate <- as.Date("2023-01-01")
+edate <- as.Date("2023-11-01")
+
+## found a few from
+## https://stockanalysis.com/stocks/
+stocks <- list(
+  c(code ="AAPL", name = "Apple Inc."),
+  c(code = "ABNB", name = "Airbnb, Inc."),
+  c(code = "CAT", name = "Caterpillar Inc.")
+)
+
+## helper-function to
+## get get info for one stock:
+get_stock <- function(stock) {
+  ss_stock <- 
+    getSymbols(
+      stock["code"],
+      from = sdate,
+      to = edate,
+      auto.assign = FALSE
+    )
+    ## get the price time series:
+    df <- fortify(ss_stock[, 6])
+    names(df) <- c("date", "close")
+    df$name <- rep(stock["name"], times = nrow(df))
+    df
+}
+
+## get all stock info into one data frame:
+all_stocks <- map_dfr(stocks, get_stock)
+
+## pass the data frame to Observable:
+ojs_define(df = all_stocks)
+```
+
+Now we begin work with Observable:
+
+```{ojs}
+Plot = import("https://esm.run/@observablehq/plot@0.6.11")
+```
+
+We should transpose from an array of variable-values to array of trading days. Also, the dates conme into Observables as strings, so we must convert them back to dates:
+
+
+```{ojs}
+allStocks = {
+  const df2 = transpose(df);
+  const parseTime = d3.utcParse("%Y-%m-%d")
+  df2.forEach(function(d) {
+    d.date = parseTime(d.date)
+  });
+  return df2;
+}
+```
+
+Create an array of names of the stocks:
+
+```{ojs}
+stockNames = {
+  let names = [];
+  allStocks.forEach(function(d) {
+    if (!names.includes(d.name)) {
+      names.push(d.name)
+    }
+  });
+  return names;
+}
+```
+
+
+```{ojs}
+//| panel: input
+viewof stockName = Inputs.select(stockNames, {label: "Select a stock: "})
+viewof n = Inputs.range([1, 30], {label:"Window size: ", step: 1, value: 10})
+viewof r = Inputs.range([1, 5], {label: "Radius: ", step: 0.1, value: 2})
+```
+
+
+```{ojs}
+Plot.plot({
+    caption: `Closing prices for ${stockName}`,
+    marks: [
+      Plot.frame(),
+      Plot.bollingerY(
+        allStocks.filter(d => d.name == stockName), 
+        {x: "date", y: "close", n: n, k: r}
+        )  
+    ]
+})
+```
