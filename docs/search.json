@@ -1,87 +1,31 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Homer’s Musings",
     "section": "",
-    "text": "Hello, I’m Homer! I’m a professor of Mathematics and Computer Science, and I’m the instructor for CSC 324."
+    "text": "Yellow Throttles Make Terrible Toys for Toddlers\n\n\n\n\n\n\n\nrants\n\n\ntoys\n\n\ncolors\n\n\n\n\nMy thoughts on yellow throttles and very small children.\n\n\n\n\n\n\nNov 2, 2023\n\n\nHomer White\n\n\n\n\n\n\n  \n\n\n\n\nGreen Turtles Make Peevish Pets\n\n\n\n\n\n\n\nrants\n\n\nanimals\n\n\ncolors\n\n\n\n\nProfound wisdom on turtles and the color green.\n\n\n\n\n\n\nOct 15, 2023\n\n\nHomer White\n\n\n\n\n\n\n  \n\n\n\n\nPink Parabolas Make For the Merriest Mathematics\n\n\n\n\n\n\n\nmath\n\n\ncolors\n\n\n\n\nFind the area of segments of pink parabolas.\n\n\n\n\n\n\nSep 5, 2022\n\n\nHomer White\n\n\n\n\n\n\n  \n\n\n\n\nToddlers Will Eat Your Legos, But Feed Them Checkers, Too!\n\n\n\n\n\n\n\nrants\n\n\ntoys\n\n\nfine dining\n\n\n\n\nMy thoughts on good nutrition for very small children.\n\n\n\n\n\n\nJan 1, 2022\n\n\nHomer White\n\n\n\n\n\n\n  \n\n\n\n\nLet Your Toddler Set Off Freaky Fireworks\n\n\n\n\n\n\n\nrants\n\n\ntoys\n\n\n\n\nFireworks, oddity, very small children and national holidays.\n\n\n\n\n\n\nJul 4, 2021\n\n\nHomer White\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "about.html#early-life",
-    "href": "about.html#early-life",
-    "title": "About Me",
-    "section": "Early Life",
-    "text": "Early Life\nI’m a Southerner, born in Georgia and raised in Durham, North Carolina. From an early age I was interested in science and mathematics, and discovered philosophy at age twelve, reading first some of the dialogues of Plato and then moving on to Freiderich Nietzche. I doubt that at the time I understood much of Nietzche beyond Thus Spake Zarathustra, but these early encounters with philosophers awoke in me a great central, guiding Question:\n\nHow does the Universe work, at its most fundamental levels?"
-  },
-  {
-    "objectID": "about.html#studies",
-    "href": "about.html#studies",
-    "title": "About Me",
-    "section": "Studies",
-    "text": "Studies\nI went up North for College, majoring in Philosopy at Princeton University. My great loves were mathematical logic, the foundations of mathematics, metaphysics and Ancient Philosophy, especially Aristotle. The professor to whom I felt closest was the late Michael Frede.\nFor my graduate studies I turned to Mathematics, taking a PhD at the University of North Carolina at Chapel Hill, not far from where I grew up. I worked in ergodic theory, which is more or less the study of the long-run orderly properties of dynamical systems that might appear quite chaotic and unpredictable in the short run. Along the way I became acquainted with the writings of the great Roman Catholic monk and author Thomas Merton, who lived at the Abby of Gethsamani in Kentucky, about an hour’s drive West of Georgetown College. Under the influence of Merton my Question shifted from “How does the Universe work at its most fundamental levels?” to:\n\nHow might we experience God, not in some future life but here and now, and not just personally but also in community?"
-  },
-  {
-    "objectID": "about.html#putting-things-into-practice",
-    "href": "about.html#putting-things-into-practice",
-    "title": "About Me",
-    "section": "Putting Things Into Practice",
-    "text": "Putting Things Into Practice\nI became active in the Catholic Worker Movement, a loose network of houses of hospitality all over the country that are devoted to voluntary poverty, service of the poor, and action for peace and social justice. One of their founders was Dorothy Day, a mentor of Thomas Merton. She was also a prominent author. If you get a chance, read her autobiography The Long Loneliness.\nDuring that time I was also involved, through the Catholic Worker, with the Plowshares Movement, taking part in numerous demonstrations against the nuclear arms race, spending a fair amount of time—during extended breaks from my mathematical studies—in prison for civil disobedience. I was mamber of the Thames River Plowshares. To the left is a picture taken of us a few weeks after our action, which took place on September 2, 1989. At that time I was twenty-seven years old and newly-married.\nA couple of years later I finished my doctorate in Mathematics. My wife and I considered staying in North Carolina to help found a Catholic Worker House there, but eventually we decided that I should make use of my studies and teach Mathematics. In 1991 I took a position at Pikeville College in Eastern Kentucky, not far from where my grandparents had worked as coal miners. In 1996 we moved to Georgetown College."
-  },
-  {
-    "objectID": "about.html#life-at-georgetown",
-    "href": "about.html#life-at-georgetown",
-    "title": "About Me",
-    "section": "Life At Georgetown",
-    "text": "Life At Georgetown\nAt Georgetown I have pursued the history of mathematics, statistics and, of course, computer programming, especially for data analysis. The history of mathematics, along with an interest—inspired by Thomas Merton—in Asian religions, led me to the study of Sanskrit, the scholarly classical language of India.\nSomewhat in connection with my studies in Sanskrit and my reading of Thomas Merton, I am a long-time practitioner of Ashtanga Yoga; in fact I taught it several times as a KHS activity class at Georgetown. To the right is an old picture of me teaching one of those classes. I appear to be coming down out of the posture known as utpluthihi, and offering advice to some students out of the camera to my right. In addition to Ashtanga Yoga I enjoy weight-lifting and working in our backyard garden and at Twisted Trunk, the community garden on the Georgetown Campus that I helped found in 2009. And lately I and my family have come to love very much the company of dogs. We have a wonderful, compact pit-bull mix named Demi."
-  },
-  {
-    "objectID": "articles/scatterplot/index.html",
-    "href": "articles/scatterplot/index.html",
-    "title": "An Interactive Scatterplot Using Observables",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome!",
     "section": "",
-    "text": "Plot = import(\"https://esm.run/@observablehq/plot@0.6.11\")"
+    "text": "Welcome to my Personal Website! It serves an example site for students in CSC 324 at Georgetown College, who are building their own website using the Quarto framework.\nYou can read a bit about me here.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
-    "objectID": "articles/scatterplot/index.html#introduction",
-    "href": "articles/scatterplot/index.html#introduction",
-    "title": "An Interactive Scatterplot Using Observables",
-    "section": "Introduction",
-    "text": "Introduction\nIt is not hard to learn to use Observables to perform data anlysis and produce interactive graphs like the one shown below.\nIf you would like to enhance your project website with Observables, give it a try! Setting up an account is free."
-  },
-  {
-    "objectID": "articles/scatterplot/index.html#the-plot",
-    "href": "articles/scatterplot/index.html#the-plot",
-    "title": "An Interactive Scatterplot Using Observables",
-    "section": "The Plot",
-    "text": "The Plot\nThe plot below is based on data from the 2005 Cherry Blossom Race. For documentation see here.\nThe user can choose the sex of the runners plotted, and the opacity of the points. (The latter feature is useful, as over-plotting is an issue in this dataset.)\n\nrace = {\n  const race = await FileAttachment(\"TenMileRace.csv\").csv({typed: true});\n  race.forEach(function(runner) {runner.timeMinutes = runner.time / 60;});\n  return race;\n}\n\n\n\n\n\n\n\nminTime = d3.min(d3.map(race, d =&gt; d.timeMinutes))\n\n\n\n\n\n\n\nmaxTime = d3.max(d3.map(race, d =&gt; d.timeMinutes))\n\n\n\n\n\n\n\nminAge = d3.min(d3.map(race, d =&gt; d.age))\n\n\n\n\n\n\n\nmaxAge = d3.max(d3.map(race, d =&gt; d.age))\n\n\n\n\n\n\n\nviewof sex = Inputs.select([\"F\", \"M\"], {label: \"Sex of runner: \"})\nviewof opacity = Inputs.range([0, 1], {label: \"Opacity: \", step: 0.01})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlot.plot({\n  inset: 8,\n  grid: true,\n  marks: [\n    Plot.dot(\n      d3.filter(race, d =&gt; d.sex == sex), \n      {x: \"age\", y: \"timeMinutes\", fill: \"black\", fillOpacity: opacity}\n    )\n  ],\n  x: {domain: [minAge, maxAge]},\n  y: {label: \"time (minutes)\", domain: [minTime, maxTime]},\n})"
-  },
-  {
-    "objectID": "articles/scatterplot/index.html#non-interactive-alternatives",
-    "href": "articles/scatterplot/index.html#non-interactive-alternatives",
-    "title": "An Interactive Scatterplot Using Observables",
-    "section": "Non-interactive Alternatives",
-    "text": "Non-interactive Alternatives\nTo investigate the relationship of age, time and sex all at once, it might be preferable to include sex as an aesthetic property in the graph. The over-plotting could also be addressed by a different sort of glyph: density contours, for example, rather than points. Below is a non-interactive graph of the data:\n\nPlot.plot({\n  marks: [Plot.density(\n    race.map(d =&gt; ({age: d.age, timeMinutes: d.timeMinutes, sex: d.sex == \"M\" ? \"male\" : \"female\"})), \n    {x: \"age\", y: \"timeMinutes\", stroke: \"sex\"}\n  )],\n  y: {label: \"time (minutes)\"},\n  color: {legend: true}\n})\n\n\n\n\n\n\nSince the density contours of the two sexes overlay each other somewhat, it may be best to facet by sex rather than making it an aesthetic property of our glyphs:\n\nPlot.plot({\n  marks: [\n    Plot.frame(),\n    Plot.density(\n      race.map(d =&gt; ({age: d.age, timeMinutes: d.timeMinutes, sex: d.sex == \"M\" ? \"male\" : \"female\"})), \n      {x: \"age\", y: \"timeMinutes\", fx: \"sex\"}\n    )],\n  y: {label: \"time (minutes)\"}\n})"
-  },
-  {
-    "objectID": "articles/scatterplot/index.html#notes",
-    "href": "articles/scatterplot/index.html#notes",
-    "title": "An Interactive Scatterplot Using Observables",
-    "section": "Notes",
-    "text": "Notes\nThis work was first done as a Notebook on the Observable site. It is often easiest to do one’s development there, then transfer the code to Quarto for publication.\nThe version of Plot provided with Quarto often lags well behind the latest version as documented by Observables. In order to keep your Quarto project current with what works in your Observables notebooks, it is advisable to import the latest version of Plot, like this:\nPlot = import(\"https://esm.run/@observablehq/plot\")"
-  },
-  {
-    "objectID": "articles/battleship/index.html",
-    "href": "articles/battleship/index.html",
-    "title": "Battleship with Canvas",
+    "objectID": "articles/index.html",
+    "href": "articles/index.html",
+    "title": "Articles",
     "section": "",
-    "text": "Here is a simple game of Battleship!\nYou play against the computer. Select a point at which to drop a bomb by clicking in the computer’s area, which is the upper part of the “ocean” shown belw. The bomb explodes, and any ship that is within a set radius of the point of explosion sustains a hit. Each ship has a hit-capacity; when it takes a number of hits equal to its capacity it is sunk.\nThe game is a work in progress (see the Github repository). It is implemented in the browser with the Canvas API.\ngame intended here\n\n\n\n\n    Show shot history:\n  \n    \n      \n      Yours\n    \n  \n    \n      \n      Computer's"
+    "text": "The articles on this site document the use of JavaScript in various contexts, and serve as examples for students looking to write about JavaScript in the Quarto framework."
   },
   {
-    "objectID": "articles/article_02.html",
-    "href": "articles/article_02.html",
-    "title": "Advent Solution in the Browser",
+    "objectID": "articles/stocks/index.html",
+    "href": "articles/stocks/index.html",
+    "title": "Stock Prices",
     "section": "",
-    "text": "This article is an application of the Advent of Code 2022 Day 1 solution to the context of the browser.\nTo see it in action, you would create a properly-formatted input file. That is, each line would contain just one number, or would be blank to indicate separation between packs. Save the file somewhere on your computer and then use the input-field below to select it.\n\n\nAfter you select your file, the max pack-total will appear here!\nThe relevant JavaScript file is here. Use the Web Inspector tool on your browser to identify the elements on the html page that are accessed by the code.\nNote: You do not have to implement any of your Eloquent JavaScript solutions in the browser. I wrote this article only to teach myself about reading user-provided files in the browser."
+    "text": "Not much explanation here (see the source code for comments) just a proof-of-concept that one can use R for data import and manipulation, then turn to Observable for interactive graphs.\n\n// Now we begin work with Observable:\nPlot = import(\"https://esm.run/@observablehq/plot@0.6.11\")\n\n\n\n\n\n\n\n/*****************************\n * We should transpose from an\n * array of variable-values to\n * an  array of trading days.\n * Also, the dates conme into\n * Observables as strings, so we\n * must convert them back to dates:\n ******************************/\nallStocks = {\n  const df2 = transpose(df);\n  const parseTime = d3.utcParse(\"%Y-%m-%d\")\n  df2.forEach(function(d) {\n    d.date = parseTime(d.date)\n  });\n  return df2;\n}\n\n\n\n\n\n\n\n/****************************\n * Create an array of names of the stocks:\n *****************************/\nstockNames = {\n  let names = [];\n  allStocks.forEach(function(d) {\n    if (!names.includes(d.name)) {\n      names.push(d.name)\n    }\n  });\n  return names;\n}\n\n\n\n\n\n\n\nviewof stockName = Inputs.select(stockNames, {label: \"Select a stock: \"})\nviewof n = Inputs.range([1, 30], {label:\"Window size: \", step: 1, value: 10})\nviewof r = Inputs.range([1, 5], {label: \"Radius: \", step: 0.1, value: 2})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlot.plot({\n    caption: `Closing prices for ${stockName}`,\n    marks: [\n      Plot.frame(),\n      Plot.bollingerY(\n        allStocks.filter(d =&gt; d.name == stockName), \n        {x: \"date\", y: \"close\", n: n, k: r}\n        )  \n    ]\n})"
   },
   {
     "objectID": "articles/article_01.html",
@@ -126,34 +70,6 @@
     "text": "Full Code\nA complete solution to the problem may be found here, or the reader may view it below:\n\n\nadvent_2022-01.js\n\nconst fs = require(\"fs\");\nconst path = require(\"path\");\n\nlet targetFile = path.resolve(__dirname, \"input.txt\");\n\nconst input = fs.readFileSync(targetFile).toString();\n\nconst splitLines = str =&gt; str.split(/\\n/);\nconst caloriesAsStrings = splitLines(input);\n\nconst calories = caloriesAsStrings.map(str =&gt; parseInt(str));\n\nconst packTotals = [];\n\nwhile (calories.length &gt; 0) {\n  let packTotal = 0;\n  let currentItem = calories.shift();\n  while (!isNaN(currentItem)) {\n    packTotal += currentItem;\n    currentItem = calories.shift();\n  }\n  packTotals.push(packTotal);\n}\n\nlet maxPackTotal = Math.max(...packTotals);\nconsole.log(maxPackTotal);"
   },
   {
-    "objectID": "articles/stocks/index.html",
-    "href": "articles/stocks/index.html",
-    "title": "Stock Prices",
-    "section": "",
-    "text": "Not much explanation here (see the source code for comments) just a proof-of-concept that one can use R for data import and manipulation, then turn to Observable for interactive graphs.\n\n// Now we begin work with Observable:\nPlot = import(\"https://esm.run/@observablehq/plot@0.6.11\")\n\n\n\n\n\n\n\n/*****************************\n * We should transpose from an\n * array of variable-values to\n * an  array of trading days.\n * Also, the dates conme into\n * Observables as strings, so we\n * must convert them back to dates:\n ******************************/\nallStocks = {\n  const df2 = transpose(df);\n  const parseTime = d3.utcParse(\"%Y-%m-%d\")\n  df2.forEach(function(d) {\n    d.date = parseTime(d.date)\n  });\n  return df2;\n}\n\n\n\n\n\n\n\n/****************************\n * Create an array of names of the stocks:\n *****************************/\nstockNames = {\n  let names = [];\n  allStocks.forEach(function(d) {\n    if (!names.includes(d.name)) {\n      names.push(d.name)\n    }\n  });\n  return names;\n}\n\n\n\n\n\n\n\nviewof stockName = Inputs.select(stockNames, {label: \"Select a stock: \"})\nviewof n = Inputs.range([1, 30], {label:\"Window size: \", step: 1, value: 10})\nviewof r = Inputs.range([1, 5], {label: \"Radius: \", step: 0.1, value: 2})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlot.plot({\n    caption: `Closing prices for ${stockName}`,\n    marks: [\n      Plot.frame(),\n      Plot.bollingerY(\n        allStocks.filter(d =&gt; d.name == stockName), \n        {x: \"date\", y: \"close\", n: n, k: r}\n        )  \n    ]\n})"
-  },
-  {
-    "objectID": "articles/index.html",
-    "href": "articles/index.html",
-    "title": "Articles",
-    "section": "",
-    "text": "The articles on this site document the use of JavaScript in various contexts, and serve as examples for students looking to write about JavaScript in the Quarto framework."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome!",
-    "section": "",
-    "text": "Welcome to my Personal Website! It serves an example site for students in CSC 324 at Georgetown College, who are building their own website using the Quarto framework.\nYou can read a bit about me here.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
-  },
-  {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Homer’s Musings",
-    "section": "",
-    "text": "Yellow Throttles Make Terrible Toys for Toddlers\n\n\n\n\n\n\n\nrants\n\n\ntoys\n\n\ncolors\n\n\n\n\nMy thoughts on yellow throttles and very small children.\n\n\n\n\n\n\nNov 2, 2023\n\n\nHomer White\n\n\n\n\n\n\n  \n\n\n\n\nGreen Turtles Make Peevish Pets\n\n\n\n\n\n\n\nrants\n\n\nanimals\n\n\ncolors\n\n\n\n\nProfound wisdom on turtles and the color green.\n\n\n\n\n\n\nOct 15, 2023\n\n\nHomer White\n\n\n\n\n\n\n  \n\n\n\n\nPink Parabolas Make For the Merriest Mathematics\n\n\n\n\n\n\n\nmath\n\n\ncolors\n\n\n\n\nFind the area of segments of pink parabolas.\n\n\n\n\n\n\nSep 5, 2022\n\n\nHomer White\n\n\n\n\n\n\n  \n\n\n\n\nToddlers Will Eat Your Legos, But Feed Them Checkers, Too!\n\n\n\n\n\n\n\nrants\n\n\ntoys\n\n\nfine dining\n\n\n\n\nMy thoughts on good nutrition for very small children.\n\n\n\n\n\n\nJan 1, 2022\n\n\nHomer White\n\n\n\n\n\n\n  \n\n\n\n\nLet Your Toddler Set Off Freaky Fireworks\n\n\n\n\n\n\n\nrants\n\n\ntoys\n\n\n\n\nFireworks, oddity, very small children and national holidays.\n\n\n\n\n\n\nJul 4, 2021\n\n\nHomer White\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "posts/2023-11-02-yellow-throttles/index.html",
     "href": "posts/2023-11-02-yellow-throttles/index.html",
     "title": "Yellow Throttles Make Terrible Toys for Toddlers",
@@ -182,34 +98,6 @@
     "text": "A Sad Day Indeed\nDonec lectus lacus, eleifend vitae mollis eu, laoreet a mi. Maecenas sit amet auctor tellus, vitae accumsan turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce eleifend pharetra commodo. Fusce tempor velit dolor, ac rutrum enim consectetur sed. Sed eget metus eget odio euismod convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam interdum, mauris et imperdiet pellentesque, turpis quam blandit elit, sed ornare nulla lectus a odio. Maecenas eget justo ipsum. Phasellus libero dui, congue eu venenatis et, ullamcorper in odio. Curabitur iaculis lectus est, ac placerat est aliquam blandit. Cras sed elit ac ipsum convallis cursus ut nec tellus. Vestibulum in ipsum ante. Aenean condimentum quam in suscipit pulvinar. Suspendisse auctor id erat non placerat. Nam egestas purus ultrices dolor molestie scelerisque.\nAenean aliquet augue a dui porta, ut condimentum diam blandit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas faucibus finibus odio ut posuere. Aenean est lorem, lacinia id turpis a, congue bibendum erat. Sed ac nibh lacinia, rutrum dui sed, efficitur tortor. Donec imperdiet, arcu commodo ultricies sagittis, sapien metus auctor sapien, quis venenatis mauris felis non mi. Integer sodales nulla in mi aliquet pretium. Integer ut varius mi. Ut lacinia quis risus vitae suscipit. Maecenas cursus dolor id dolor pretium, sed vestibulum erat accumsan. Mauris purus erat, ultricies nec auctor vel, semper id nulla.\nDonec at est non lectus imperdiet viverra. Vestibulum enim nisi, porttitor sit amet massa ac, lacinia sodales mauris. Aliquam vestibulum sapien ac arcu pellentesque luctus. Sed aliquet efficitur nisl, id ornare ipsum tempus non. In maximus odio vitae dui semper facilisis. Aliquam erat volutpat. Etiam vel justo pulvinar, lacinia magna eget, pharetra dolor. Nunc porta erat in hendrerit suscipit. Fusce felis tellus, rutrum ac dolor nec, iaculis egestas ante. Praesent nisl libero, ultrices ac est ut, consectetur congue ex. Aenean venenatis enim vitae augue tempor vestibulum. Fusce in nulla dolor. Suspendisse fringilla magna et quam consectetur, sed pellentesque tortor bibendum.\nNunc at viverra lorem, sit amet pulvinar ligula. Sed iaculis odio at commodo consectetur. Proin posuere diam in dapibus pellentesque. Cras vitae egestas ligula. Phasellus tempus porta diam id molestie. Quisque a luctus velit. Suspendisse pellentesque quam a leo auctor, vel tincidunt massa dapibus. Vivamus porttitor, ipsum a congue imperdiet, neque urna finibus eros, in tristique lacus massa sit amet odio. Vestibulum et laoreet purus, pulvinar vulputate mi. Pellentesque ultrices efficitur mauris nec ultricies. Quisque efficitur magna orci, et maximus justo malesuada at. Nulla hendrerit dui et ligula sagittis efficitur. Ut erat dolor, rutrum ac ex eget, malesuada molestie turpis.\nAenean eget vehicula mi, in rutrum elit. Mauris pulvinar est non sagittis tempor. Sed quis finibus nisi. Pellentesque commodo, nibh at sagittis vulputate, tortor massa iaculis mi, quis sodales risus lorem vel enim. Nunc faucibus ante ut dolor eleifend, tempor efficitur lacus aliquet. Praesent nec sapien et lacus fermentum ultricies. Aenean ut pharetra lectus. Sed et lacus a nisl gravida cursus."
   },
   {
-    "objectID": "posts/2021-07-04-freaky-fireworks/index.html",
-    "href": "posts/2021-07-04-freaky-fireworks/index.html",
-    "title": "Let Your Toddler Set Off Freaky Fireworks",
-    "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar sem quis maximus condimentum. Aliquam volutpat velit arcu, ut blandit erat iaculis quis. Vestibulum metus leo, condimentum vel fringilla vel, malesuada in mauris. Suspendisse condimentum lorem arcu, congue auctor nisi ullamcorper ut. Nam mollis venenatis odio, a tincidunt metus malesuada quis. Integer euismod ut purus eu euismod. Donec sit amet finibus purus. Proin non nisl in lorem pretium rutrum. Vivamus fringilla nibh in mauris rhoncus varius. Sed ut mi quam. Sed non enim et odio laoreet feugiat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam ac dui nec eros pharetra volutpat.\nMaecenas vitae est vitae tortor egestas sodales. Nullam nec purus vel elit porta consectetur. Fusce nec elementum eros. Duis sollicitudin est quis dui rhoncus, a luctus tortor elementum. Nullam purus eros, semper vitae pellentesque sit amet, rutrum vitae risus. Vestibulum at lectus vitae purus dignissim eleifend. Nam aliquet posuere nunc vel dapibus. Nam eleifend est sapien, eget commodo ante scelerisque ut. Cras vel massa vulputate, feugiat sapien id, porttitor neque. Suspendisse a libero vitae quam molestie vehicula. Nunc dapibus justo pharetra est gravida porttitor. Duis rutrum congue egestas. Maecenas imperdiet risus ac sapien imperdiet mattis a vitae purus."
-  },
-  {
-    "objectID": "posts/2021-07-04-freaky-fireworks/index.html#introduction",
-    "href": "posts/2021-07-04-freaky-fireworks/index.html#introduction",
-    "title": "Let Your Toddler Set Off Freaky Fireworks",
-    "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar sem quis maximus condimentum. Aliquam volutpat velit arcu, ut blandit erat iaculis quis. Vestibulum metus leo, condimentum vel fringilla vel, malesuada in mauris. Suspendisse condimentum lorem arcu, congue auctor nisi ullamcorper ut. Nam mollis venenatis odio, a tincidunt metus malesuada quis. Integer euismod ut purus eu euismod. Donec sit amet finibus purus. Proin non nisl in lorem pretium rutrum. Vivamus fringilla nibh in mauris rhoncus varius. Sed ut mi quam. Sed non enim et odio laoreet feugiat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam ac dui nec eros pharetra volutpat.\nMaecenas vitae est vitae tortor egestas sodales. Nullam nec purus vel elit porta consectetur. Fusce nec elementum eros. Duis sollicitudin est quis dui rhoncus, a luctus tortor elementum. Nullam purus eros, semper vitae pellentesque sit amet, rutrum vitae risus. Vestibulum at lectus vitae purus dignissim eleifend. Nam aliquet posuere nunc vel dapibus. Nam eleifend est sapien, eget commodo ante scelerisque ut. Cras vel massa vulputate, feugiat sapien id, porttitor neque. Suspendisse a libero vitae quam molestie vehicula. Nunc dapibus justo pharetra est gravida porttitor. Duis rutrum congue egestas. Maecenas imperdiet risus ac sapien imperdiet mattis a vitae purus."
-  },
-  {
-    "objectID": "posts/2021-07-04-freaky-fireworks/index.html#incredible",
-    "href": "posts/2021-07-04-freaky-fireworks/index.html#incredible",
-    "title": "Let Your Toddler Set Off Freaky Fireworks",
-    "section": "Incredible",
-    "text": "Incredible\nCurabitur nibh mi, accumsan quis sodales quis, vestibulum id nisi. Nunc ipsum libero, maximus egestas tellus at, convallis vestibulum ipsum. Nullam at velit enim. Nullam tincidunt magna tincidunt libero vestibulum aliquam. Aenean feugiat lacinia interdum. Curabitur pulvinar ornare aliquet. Donec in blandit est, in accumsan nulla. Nunc finibus placerat velit, sagittis venenatis lacus porta in. Fusce ornare quis erat ut rhoncus.\nVestibulum nec fringilla ligula. Donec feugiat laoreet lacus, vitae egestas nisl tempus ultricies. Nunc eget turpis velit. Mauris eget tempor elit, nec aliquet velit. Ut hendrerit, orci id sollicitudin auctor, nisi metus pulvinar tellus, quis vehicula magna leo vel quam. Fusce varius massa vel tortor elementum consequat. Ut pulvinar elementum dolor. Mauris pretium sem nec lorem molestie porta. In condimentum gravida nisi, at pretium libero viverra ut. Mauris mollis eros eu gravida finibus. Ut pellentesque turpis felis, sed egestas lacus ullamcorper vel. Sed aliquam eros nec ligula bibendum pharetra.\nMorbi hendrerit augue lorem, at facilisis massa elementum interdum. Vestibulum fermentum maximus mollis. Nulla interdum erat ac nisi sodales sagittis. Sed tempor volutpat neque vel suscipit. Sed nec dapibus dui. Donec eu elementum ipsum. Integer vel cursus justo. Morbi ut tortor ac nibh vestibulum efficitur. Phasellus nec dapibus justo, non dapibus urna. Donec faucibus, magna in tincidunt rutrum, turpis risus posuere arcu, at fermentum magna tortor non metus."
-  },
-  {
-    "objectID": "posts/2021-07-04-freaky-fireworks/index.html#a-sad-day-indeed",
-    "href": "posts/2021-07-04-freaky-fireworks/index.html#a-sad-day-indeed",
-    "title": "Let Your Toddler Set Off Freaky Fireworks",
-    "section": "A Sad Day Indeed",
-    "text": "A Sad Day Indeed\nDonec lectus lacus, eleifend vitae mollis eu, laoreet a mi. Maecenas sit amet auctor tellus, vitae accumsan turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce eleifend pharetra commodo. Fusce tempor velit dolor, ac rutrum enim consectetur sed. Sed eget metus eget odio euismod convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam interdum, mauris et imperdiet pellentesque, turpis quam blandit elit, sed ornare nulla lectus a odio. Maecenas eget justo ipsum. Phasellus libero dui, congue eu venenatis et, ullamcorper in odio. Curabitur iaculis lectus est, ac placerat est aliquam blandit. Cras sed elit ac ipsum convallis cursus ut nec tellus. Vestibulum in ipsum ante. Aenean condimentum quam in suscipit pulvinar. Suspendisse auctor id erat non placerat. Nam egestas purus ultrices dolor molestie scelerisque.\nAenean aliquet augue a dui porta, ut condimentum diam blandit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas faucibus finibus odio ut posuere. Aenean est lorem, lacinia id turpis a, congue bibendum erat. Sed ac nibh lacinia, rutrum dui sed, efficitur tortor. Donec imperdiet, arcu commodo ultricies sagittis, sapien metus auctor sapien, quis venenatis mauris felis non mi. Integer sodales nulla in mi aliquet pretium. Integer ut varius mi. Ut lacinia quis risus vitae suscipit. Maecenas cursus dolor id dolor pretium, sed vestibulum erat accumsan. Mauris purus erat, ultricies nec auctor vel, semper id nulla.\nDonec at est non lectus imperdiet viverra. Vestibulum enim nisi, porttitor sit amet massa ac, lacinia sodales mauris. Aliquam vestibulum sapien ac arcu pellentesque luctus. Sed aliquet efficitur nisl, id ornare ipsum tempus non. In maximus odio vitae dui semper facilisis. Aliquam erat volutpat. Etiam vel justo pulvinar, lacinia magna eget, pharetra dolor. Nunc porta erat in hendrerit suscipit. Fusce felis tellus, rutrum ac dolor nec, iaculis egestas ante. Praesent nisl libero, ultrices ac est ut, consectetur congue ex. Aenean venenatis enim vitae augue tempor vestibulum. Fusce in nulla dolor. Suspendisse fringilla magna et quam consectetur, sed pellentesque tortor bibendum.\nNunc at viverra lorem, sit amet pulvinar ligula. Sed iaculis odio at commodo consectetur. Proin posuere diam in dapibus pellentesque. Cras vitae egestas ligula. Phasellus tempus porta diam id molestie. Quisque a luctus velit. Suspendisse pellentesque quam a leo auctor, vel tincidunt massa dapibus. Vivamus porttitor, ipsum a congue imperdiet, neque urna finibus eros, in tristique lacus massa sit amet odio. Vestibulum et laoreet purus, pulvinar vulputate mi. Pellentesque ultrices efficitur mauris nec ultricies. Quisque efficitur magna orci, et maximus justo malesuada at. Nulla hendrerit dui et ligula sagittis efficitur. Ut erat dolor, rutrum ac ex eget, malesuada molestie turpis.\nAenean eget vehicula mi, in rutrum elit. Mauris pulvinar est non sagittis tempor. Sed quis finibus nisi. Pellentesque commodo, nibh at sagittis vulputate, tortor massa iaculis mi, quis sodales risus lorem vel enim. Nunc faucibus ante ut dolor eleifend, tempor efficitur lacus aliquet. Praesent nec sapien et lacus fermentum ultricies. Aenean ut pharetra lectus. Sed et lacus a nisl gravida cursus."
-  },
-  {
     "objectID": "posts/2022-01-01-legos-checkers/index.html",
     "href": "posts/2022-01-01-legos-checkers/index.html",
     "title": "Toddlers Will Eat Your Legos, But Feed Them Checkers, Too!",
@@ -234,6 +122,34 @@
     "objectID": "posts/2022-01-01-legos-checkers/index.html#a-sad-day-indeed",
     "href": "posts/2022-01-01-legos-checkers/index.html#a-sad-day-indeed",
     "title": "Toddlers Will Eat Your Legos, But Feed Them Checkers, Too!",
+    "section": "A Sad Day Indeed",
+    "text": "A Sad Day Indeed\nDonec lectus lacus, eleifend vitae mollis eu, laoreet a mi. Maecenas sit amet auctor tellus, vitae accumsan turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce eleifend pharetra commodo. Fusce tempor velit dolor, ac rutrum enim consectetur sed. Sed eget metus eget odio euismod convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam interdum, mauris et imperdiet pellentesque, turpis quam blandit elit, sed ornare nulla lectus a odio. Maecenas eget justo ipsum. Phasellus libero dui, congue eu venenatis et, ullamcorper in odio. Curabitur iaculis lectus est, ac placerat est aliquam blandit. Cras sed elit ac ipsum convallis cursus ut nec tellus. Vestibulum in ipsum ante. Aenean condimentum quam in suscipit pulvinar. Suspendisse auctor id erat non placerat. Nam egestas purus ultrices dolor molestie scelerisque.\nAenean aliquet augue a dui porta, ut condimentum diam blandit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas faucibus finibus odio ut posuere. Aenean est lorem, lacinia id turpis a, congue bibendum erat. Sed ac nibh lacinia, rutrum dui sed, efficitur tortor. Donec imperdiet, arcu commodo ultricies sagittis, sapien metus auctor sapien, quis venenatis mauris felis non mi. Integer sodales nulla in mi aliquet pretium. Integer ut varius mi. Ut lacinia quis risus vitae suscipit. Maecenas cursus dolor id dolor pretium, sed vestibulum erat accumsan. Mauris purus erat, ultricies nec auctor vel, semper id nulla.\nDonec at est non lectus imperdiet viverra. Vestibulum enim nisi, porttitor sit amet massa ac, lacinia sodales mauris. Aliquam vestibulum sapien ac arcu pellentesque luctus. Sed aliquet efficitur nisl, id ornare ipsum tempus non. In maximus odio vitae dui semper facilisis. Aliquam erat volutpat. Etiam vel justo pulvinar, lacinia magna eget, pharetra dolor. Nunc porta erat in hendrerit suscipit. Fusce felis tellus, rutrum ac dolor nec, iaculis egestas ante. Praesent nisl libero, ultrices ac est ut, consectetur congue ex. Aenean venenatis enim vitae augue tempor vestibulum. Fusce in nulla dolor. Suspendisse fringilla magna et quam consectetur, sed pellentesque tortor bibendum.\nNunc at viverra lorem, sit amet pulvinar ligula. Sed iaculis odio at commodo consectetur. Proin posuere diam in dapibus pellentesque. Cras vitae egestas ligula. Phasellus tempus porta diam id molestie. Quisque a luctus velit. Suspendisse pellentesque quam a leo auctor, vel tincidunt massa dapibus. Vivamus porttitor, ipsum a congue imperdiet, neque urna finibus eros, in tristique lacus massa sit amet odio. Vestibulum et laoreet purus, pulvinar vulputate mi. Pellentesque ultrices efficitur mauris nec ultricies. Quisque efficitur magna orci, et maximus justo malesuada at. Nulla hendrerit dui et ligula sagittis efficitur. Ut erat dolor, rutrum ac ex eget, malesuada molestie turpis.\nAenean eget vehicula mi, in rutrum elit. Mauris pulvinar est non sagittis tempor. Sed quis finibus nisi. Pellentesque commodo, nibh at sagittis vulputate, tortor massa iaculis mi, quis sodales risus lorem vel enim. Nunc faucibus ante ut dolor eleifend, tempor efficitur lacus aliquet. Praesent nec sapien et lacus fermentum ultricies. Aenean ut pharetra lectus. Sed et lacus a nisl gravida cursus."
+  },
+  {
+    "objectID": "posts/2021-07-04-freaky-fireworks/index.html",
+    "href": "posts/2021-07-04-freaky-fireworks/index.html",
+    "title": "Let Your Toddler Set Off Freaky Fireworks",
+    "section": "",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar sem quis maximus condimentum. Aliquam volutpat velit arcu, ut blandit erat iaculis quis. Vestibulum metus leo, condimentum vel fringilla vel, malesuada in mauris. Suspendisse condimentum lorem arcu, congue auctor nisi ullamcorper ut. Nam mollis venenatis odio, a tincidunt metus malesuada quis. Integer euismod ut purus eu euismod. Donec sit amet finibus purus. Proin non nisl in lorem pretium rutrum. Vivamus fringilla nibh in mauris rhoncus varius. Sed ut mi quam. Sed non enim et odio laoreet feugiat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam ac dui nec eros pharetra volutpat.\nMaecenas vitae est vitae tortor egestas sodales. Nullam nec purus vel elit porta consectetur. Fusce nec elementum eros. Duis sollicitudin est quis dui rhoncus, a luctus tortor elementum. Nullam purus eros, semper vitae pellentesque sit amet, rutrum vitae risus. Vestibulum at lectus vitae purus dignissim eleifend. Nam aliquet posuere nunc vel dapibus. Nam eleifend est sapien, eget commodo ante scelerisque ut. Cras vel massa vulputate, feugiat sapien id, porttitor neque. Suspendisse a libero vitae quam molestie vehicula. Nunc dapibus justo pharetra est gravida porttitor. Duis rutrum congue egestas. Maecenas imperdiet risus ac sapien imperdiet mattis a vitae purus."
+  },
+  {
+    "objectID": "posts/2021-07-04-freaky-fireworks/index.html#introduction",
+    "href": "posts/2021-07-04-freaky-fireworks/index.html#introduction",
+    "title": "Let Your Toddler Set Off Freaky Fireworks",
+    "section": "",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar sem quis maximus condimentum. Aliquam volutpat velit arcu, ut blandit erat iaculis quis. Vestibulum metus leo, condimentum vel fringilla vel, malesuada in mauris. Suspendisse condimentum lorem arcu, congue auctor nisi ullamcorper ut. Nam mollis venenatis odio, a tincidunt metus malesuada quis. Integer euismod ut purus eu euismod. Donec sit amet finibus purus. Proin non nisl in lorem pretium rutrum. Vivamus fringilla nibh in mauris rhoncus varius. Sed ut mi quam. Sed non enim et odio laoreet feugiat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam ac dui nec eros pharetra volutpat.\nMaecenas vitae est vitae tortor egestas sodales. Nullam nec purus vel elit porta consectetur. Fusce nec elementum eros. Duis sollicitudin est quis dui rhoncus, a luctus tortor elementum. Nullam purus eros, semper vitae pellentesque sit amet, rutrum vitae risus. Vestibulum at lectus vitae purus dignissim eleifend. Nam aliquet posuere nunc vel dapibus. Nam eleifend est sapien, eget commodo ante scelerisque ut. Cras vel massa vulputate, feugiat sapien id, porttitor neque. Suspendisse a libero vitae quam molestie vehicula. Nunc dapibus justo pharetra est gravida porttitor. Duis rutrum congue egestas. Maecenas imperdiet risus ac sapien imperdiet mattis a vitae purus."
+  },
+  {
+    "objectID": "posts/2021-07-04-freaky-fireworks/index.html#incredible",
+    "href": "posts/2021-07-04-freaky-fireworks/index.html#incredible",
+    "title": "Let Your Toddler Set Off Freaky Fireworks",
+    "section": "Incredible",
+    "text": "Incredible\nCurabitur nibh mi, accumsan quis sodales quis, vestibulum id nisi. Nunc ipsum libero, maximus egestas tellus at, convallis vestibulum ipsum. Nullam at velit enim. Nullam tincidunt magna tincidunt libero vestibulum aliquam. Aenean feugiat lacinia interdum. Curabitur pulvinar ornare aliquet. Donec in blandit est, in accumsan nulla. Nunc finibus placerat velit, sagittis venenatis lacus porta in. Fusce ornare quis erat ut rhoncus.\nVestibulum nec fringilla ligula. Donec feugiat laoreet lacus, vitae egestas nisl tempus ultricies. Nunc eget turpis velit. Mauris eget tempor elit, nec aliquet velit. Ut hendrerit, orci id sollicitudin auctor, nisi metus pulvinar tellus, quis vehicula magna leo vel quam. Fusce varius massa vel tortor elementum consequat. Ut pulvinar elementum dolor. Mauris pretium sem nec lorem molestie porta. In condimentum gravida nisi, at pretium libero viverra ut. Mauris mollis eros eu gravida finibus. Ut pellentesque turpis felis, sed egestas lacus ullamcorper vel. Sed aliquam eros nec ligula bibendum pharetra.\nMorbi hendrerit augue lorem, at facilisis massa elementum interdum. Vestibulum fermentum maximus mollis. Nulla interdum erat ac nisi sodales sagittis. Sed tempor volutpat neque vel suscipit. Sed nec dapibus dui. Donec eu elementum ipsum. Integer vel cursus justo. Morbi ut tortor ac nibh vestibulum efficitur. Phasellus nec dapibus justo, non dapibus urna. Donec faucibus, magna in tincidunt rutrum, turpis risus posuere arcu, at fermentum magna tortor non metus."
+  },
+  {
+    "objectID": "posts/2021-07-04-freaky-fireworks/index.html#a-sad-day-indeed",
+    "href": "posts/2021-07-04-freaky-fireworks/index.html#a-sad-day-indeed",
+    "title": "Let Your Toddler Set Off Freaky Fireworks",
     "section": "A Sad Day Indeed",
     "text": "A Sad Day Indeed\nDonec lectus lacus, eleifend vitae mollis eu, laoreet a mi. Maecenas sit amet auctor tellus, vitae accumsan turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce eleifend pharetra commodo. Fusce tempor velit dolor, ac rutrum enim consectetur sed. Sed eget metus eget odio euismod convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam interdum, mauris et imperdiet pellentesque, turpis quam blandit elit, sed ornare nulla lectus a odio. Maecenas eget justo ipsum. Phasellus libero dui, congue eu venenatis et, ullamcorper in odio. Curabitur iaculis lectus est, ac placerat est aliquam blandit. Cras sed elit ac ipsum convallis cursus ut nec tellus. Vestibulum in ipsum ante. Aenean condimentum quam in suscipit pulvinar. Suspendisse auctor id erat non placerat. Nam egestas purus ultrices dolor molestie scelerisque.\nAenean aliquet augue a dui porta, ut condimentum diam blandit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas faucibus finibus odio ut posuere. Aenean est lorem, lacinia id turpis a, congue bibendum erat. Sed ac nibh lacinia, rutrum dui sed, efficitur tortor. Donec imperdiet, arcu commodo ultricies sagittis, sapien metus auctor sapien, quis venenatis mauris felis non mi. Integer sodales nulla in mi aliquet pretium. Integer ut varius mi. Ut lacinia quis risus vitae suscipit. Maecenas cursus dolor id dolor pretium, sed vestibulum erat accumsan. Mauris purus erat, ultricies nec auctor vel, semper id nulla.\nDonec at est non lectus imperdiet viverra. Vestibulum enim nisi, porttitor sit amet massa ac, lacinia sodales mauris. Aliquam vestibulum sapien ac arcu pellentesque luctus. Sed aliquet efficitur nisl, id ornare ipsum tempus non. In maximus odio vitae dui semper facilisis. Aliquam erat volutpat. Etiam vel justo pulvinar, lacinia magna eget, pharetra dolor. Nunc porta erat in hendrerit suscipit. Fusce felis tellus, rutrum ac dolor nec, iaculis egestas ante. Praesent nisl libero, ultrices ac est ut, consectetur congue ex. Aenean venenatis enim vitae augue tempor vestibulum. Fusce in nulla dolor. Suspendisse fringilla magna et quam consectetur, sed pellentesque tortor bibendum.\nNunc at viverra lorem, sit amet pulvinar ligula. Sed iaculis odio at commodo consectetur. Proin posuere diam in dapibus pellentesque. Cras vitae egestas ligula. Phasellus tempus porta diam id molestie. Quisque a luctus velit. Suspendisse pellentesque quam a leo auctor, vel tincidunt massa dapibus. Vivamus porttitor, ipsum a congue imperdiet, neque urna finibus eros, in tristique lacus massa sit amet odio. Vestibulum et laoreet purus, pulvinar vulputate mi. Pellentesque ultrices efficitur mauris nec ultricies. Quisque efficitur magna orci, et maximus justo malesuada at. Nulla hendrerit dui et ligula sagittis efficitur. Ut erat dolor, rutrum ac ex eget, malesuada molestie turpis.\nAenean eget vehicula mi, in rutrum elit. Mauris pulvinar est non sagittis tempor. Sed quis finibus nisi. Pellentesque commodo, nibh at sagittis vulputate, tortor massa iaculis mi, quis sodales risus lorem vel enim. Nunc faucibus ante ut dolor eleifend, tempor efficitur lacus aliquet. Praesent nec sapien et lacus fermentum ultricies. Aenean ut pharetra lectus. Sed et lacus a nisl gravida cursus."
   },
@@ -292,5 +208,89 @@
     "title": "Pink Parabolas Make For the Merriest Mathematics",
     "section": "A Sad Day Indeed",
     "text": "A Sad Day Indeed\nDonec lectus lacus, eleifend vitae mollis eu, laoreet a mi. Maecenas sit amet auctor tellus, vitae accumsan turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce eleifend pharetra commodo. Fusce tempor velit dolor, ac rutrum enim consectetur sed. Sed eget metus eget odio euismod convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam interdum, mauris et imperdiet pellentesque, turpis quam blandit elit, sed ornare nulla lectus a odio. Maecenas eget justo ipsum. Phasellus libero dui, congue eu venenatis et, ullamcorper in odio. Curabitur iaculis lectus est, ac placerat est aliquam blandit. Cras sed elit ac ipsum convallis cursus ut nec tellus. Vestibulum in ipsum ante. Aenean condimentum quam in suscipit pulvinar. Suspendisse auctor id erat non placerat. Nam egestas purus ultrices dolor molestie scelerisque.\nAenean aliquet augue a dui porta, ut condimentum diam blandit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas faucibus finibus odio ut posuere. Aenean est lorem, lacinia id turpis a, congue bibendum erat. Sed ac nibh lacinia, rutrum dui sed, efficitur tortor. Donec imperdiet, arcu commodo ultricies sagittis, sapien metus auctor sapien, quis venenatis mauris felis non mi. Integer sodales nulla in mi aliquet pretium. Integer ut varius mi. Ut lacinia quis risus vitae suscipit. Maecenas cursus dolor id dolor pretium, sed vestibulum erat accumsan. Mauris purus erat, ultricies nec auctor vel, semper id nulla.\nDonec at est non lectus imperdiet viverra. Vestibulum enim nisi, porttitor sit amet massa ac, lacinia sodales mauris. Aliquam vestibulum sapien ac arcu pellentesque luctus. Sed aliquet efficitur nisl, id ornare ipsum tempus non. In maximus odio vitae dui semper facilisis. Aliquam erat volutpat. Etiam vel justo pulvinar, lacinia magna eget, pharetra dolor. Nunc porta erat in hendrerit suscipit. Fusce felis tellus, rutrum ac dolor nec, iaculis egestas ante. Praesent nisl libero, ultrices ac est ut, consectetur congue ex. Aenean venenatis enim vitae augue tempor vestibulum. Fusce in nulla dolor. Suspendisse fringilla magna et quam consectetur, sed pellentesque tortor bibendum.\nNunc at viverra lorem, sit amet pulvinar ligula. Sed iaculis odio at commodo consectetur. Proin posuere diam in dapibus pellentesque. Cras vitae egestas ligula. Phasellus tempus porta diam id molestie. Quisque a luctus velit. Suspendisse pellentesque quam a leo auctor, vel tincidunt massa dapibus. Vivamus porttitor, ipsum a congue imperdiet, neque urna finibus eros, in tristique lacus massa sit amet odio. Vestibulum et laoreet purus, pulvinar vulputate mi. Pellentesque ultrices efficitur mauris nec ultricies. Quisque efficitur magna orci, et maximus justo malesuada at. Nulla hendrerit dui et ligula sagittis efficitur. Ut erat dolor, rutrum ac ex eget, malesuada molestie turpis.\nAenean eget vehicula mi, in rutrum elit. Mauris pulvinar est non sagittis tempor. Sed quis finibus nisi. Pellentesque commodo, nibh at sagittis vulputate, tortor massa iaculis mi, quis sodales risus lorem vel enim. Nunc faucibus ante ut dolor eleifend, tempor efficitur lacus aliquet. Praesent nec sapien et lacus fermentum ultricies. Aenean ut pharetra lectus. Sed et lacus a nisl gravida cursus."
+  },
+  {
+    "objectID": "articles/article_02.html",
+    "href": "articles/article_02.html",
+    "title": "Advent Solution in the Browser",
+    "section": "",
+    "text": "This article is an application of the Advent of Code 2022 Day 1 solution to the context of the browser.\nTo see it in action, you would create a properly-formatted input file. That is, each line would contain just one number, or would be blank to indicate separation between packs. Save the file somewhere on your computer and then use the input-field below to select it.\n\n\nAfter you select your file, the max pack-total will appear here!\nThe relevant JavaScript file is here. Use the Web Inspector tool on your browser to identify the elements on the html page that are accessed by the code.\nNote: You do not have to implement any of your Eloquent JavaScript solutions in the browser. I wrote this article only to teach myself about reading user-provided files in the browser."
+  },
+  {
+    "objectID": "articles/battleship/index.html",
+    "href": "articles/battleship/index.html",
+    "title": "Battleship with Canvas",
+    "section": "",
+    "text": "Here is a simple game of Battleship!\nYou play against the computer. Select a point at which to drop a bomb by clicking in the computer’s area, which is the upper part of the “ocean” shown belw. The bomb explodes, and any ship that is within a set radius of the point of explosion sustains a hit. Each ship has a hit-capacity; when it takes a number of hits equal to its capacity it is sunk.\nThe game is a work in progress (see the Github repository). It is implemented in the browser with the Canvas API.\ngame intended here\n\n\n\n\n    Show shot history:\n  \n    \n      \n      Yours\n    \n  \n    \n      \n      Computer's"
+  },
+  {
+    "objectID": "articles/scatterplot/index.html",
+    "href": "articles/scatterplot/index.html",
+    "title": "An Interactive Scatterplot Using Observables",
+    "section": "",
+    "text": "Plot = import(\"https://esm.run/@observablehq/plot@0.6.11\")"
+  },
+  {
+    "objectID": "articles/scatterplot/index.html#introduction",
+    "href": "articles/scatterplot/index.html#introduction",
+    "title": "An Interactive Scatterplot Using Observables",
+    "section": "Introduction",
+    "text": "Introduction\nIt is not hard to learn to use Observables to perform data anlysis and produce interactive graphs like the one shown below.\nIf you would like to enhance your project website with Observables, give it a try! Setting up an account is free."
+  },
+  {
+    "objectID": "articles/scatterplot/index.html#the-plot",
+    "href": "articles/scatterplot/index.html#the-plot",
+    "title": "An Interactive Scatterplot Using Observables",
+    "section": "The Plot",
+    "text": "The Plot\nThe plot below is based on data from the 2005 Cherry Blossom Race. For documentation see here.\nThe user can choose the sex of the runners plotted, and the opacity of the points. (The latter feature is useful, as over-plotting is an issue in this dataset.)\n\nrace = {\n  const race = await FileAttachment(\"TenMileRace.csv\").csv({typed: true});\n  race.forEach(function(runner) {runner.timeMinutes = runner.time / 60;});\n  return race;\n}\n\n\n\n\n\n\n\nminTime = d3.min(d3.map(race, d =&gt; d.timeMinutes))\n\n\n\n\n\n\n\nmaxTime = d3.max(d3.map(race, d =&gt; d.timeMinutes))\n\n\n\n\n\n\n\nminAge = d3.min(d3.map(race, d =&gt; d.age))\n\n\n\n\n\n\n\nmaxAge = d3.max(d3.map(race, d =&gt; d.age))\n\n\n\n\n\n\n\nviewof sex = Inputs.select([\"F\", \"M\"], {label: \"Sex of runner: \"})\nviewof opacity = Inputs.range([0, 1], {label: \"Opacity: \", step: 0.01})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlot.plot({\n  inset: 8,\n  grid: true,\n  marks: [\n    Plot.dot(\n      d3.filter(race, d =&gt; d.sex == sex), \n      {x: \"age\", y: \"timeMinutes\", fill: \"black\", fillOpacity: opacity}\n    )\n  ],\n  x: {domain: [minAge, maxAge]},\n  y: {label: \"time (minutes)\", domain: [minTime, maxTime]},\n})"
+  },
+  {
+    "objectID": "articles/scatterplot/index.html#non-interactive-alternatives",
+    "href": "articles/scatterplot/index.html#non-interactive-alternatives",
+    "title": "An Interactive Scatterplot Using Observables",
+    "section": "Non-interactive Alternatives",
+    "text": "Non-interactive Alternatives\nTo investigate the relationship of age, time and sex all at once, it might be preferable to include sex as an aesthetic property in the graph. The over-plotting could also be addressed by a different sort of glyph: density contours, for example, rather than points. Below is a non-interactive graph of the data:\n\nPlot.plot({\n  marks: [Plot.density(\n    race.map(d =&gt; ({age: d.age, timeMinutes: d.timeMinutes, sex: d.sex == \"M\" ? \"male\" : \"female\"})), \n    {x: \"age\", y: \"timeMinutes\", stroke: \"sex\"}\n  )],\n  y: {label: \"time (minutes)\"},\n  color: {legend: true}\n})\n\n\n\n\n\n\nSince the density contours of the two sexes overlay each other somewhat, it may be best to facet by sex rather than making it an aesthetic property of our glyphs:\n\nPlot.plot({\n  marks: [\n    Plot.frame(),\n    Plot.density(\n      race.map(d =&gt; ({age: d.age, timeMinutes: d.timeMinutes, sex: d.sex == \"M\" ? \"male\" : \"female\"})), \n      {x: \"age\", y: \"timeMinutes\", fx: \"sex\"}\n    )],\n  y: {label: \"time (minutes)\"}\n})"
+  },
+  {
+    "objectID": "articles/scatterplot/index.html#notes",
+    "href": "articles/scatterplot/index.html#notes",
+    "title": "An Interactive Scatterplot Using Observables",
+    "section": "Notes",
+    "text": "Notes\nThis work was first done as a Notebook on the Observable site. It is often easiest to do one’s development there, then transfer the code to Quarto for publication.\nThe version of Plot provided with Quarto often lags well behind the latest version as documented by Observables. In order to keep your Quarto project current with what works in your Observables notebooks, it is advisable to import the latest version of Plot, like this:\nPlot = import(\"https://esm.run/@observablehq/plot\")"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Hello, I’m Homer! I’m a professor of Mathematics and Computer Science, and I’m the instructor for CSC 324."
+  },
+  {
+    "objectID": "about.html#early-life",
+    "href": "about.html#early-life",
+    "title": "About Me",
+    "section": "Early Life",
+    "text": "Early Life\nI’m a Southerner, born in Georgia and raised in Durham, North Carolina. From an early age I was interested in science and mathematics, and discovered philosophy at age twelve, reading first some of the dialogues of Plato and then moving on to Freiderich Nietzche. I doubt that at the time I understood much of Nietzche beyond Thus Spake Zarathustra, but these early encounters with philosophers awoke in me a great central, guiding Question:\n\nHow does the Universe work, at its most fundamental levels?"
+  },
+  {
+    "objectID": "about.html#studies",
+    "href": "about.html#studies",
+    "title": "About Me",
+    "section": "Studies",
+    "text": "Studies\nI went up North for College, majoring in Philosopy at Princeton University. My great loves were mathematical logic, the foundations of mathematics, metaphysics and Ancient Philosophy, especially Aristotle. The professor to whom I felt closest was the late Michael Frede.\nFor my graduate studies I turned to Mathematics, taking a PhD at the University of North Carolina at Chapel Hill, not far from where I grew up. I worked in ergodic theory, which is more or less the study of the long-run orderly properties of dynamical systems that might appear quite chaotic and unpredictable in the short run. Along the way I became acquainted with the writings of the great Roman Catholic monk and author Thomas Merton, who lived at the Abby of Gethsamani in Kentucky, about an hour’s drive West of Georgetown College. Under the influence of Merton my Question shifted from “How does the Universe work at its most fundamental levels?” to:\n\nHow might we experience God, not in some future life but here and now, and not just personally but also in community?"
+  },
+  {
+    "objectID": "about.html#putting-things-into-practice",
+    "href": "about.html#putting-things-into-practice",
+    "title": "About Me",
+    "section": "Putting Things Into Practice",
+    "text": "Putting Things Into Practice\nI became active in the Catholic Worker Movement, a loose network of houses of hospitality all over the country that are devoted to voluntary poverty, service of the poor, and action for peace and social justice. One of their founders was Dorothy Day, a mentor of Thomas Merton. She was also a prominent author. If you get a chance, read her autobiography The Long Loneliness.\nDuring that time I was also involved, through the Catholic Worker, with the Plowshares Movement, taking part in numerous demonstrations against the nuclear arms race, spending a fair amount of time—during extended breaks from my mathematical studies—in prison for civil disobedience. I was mamber of the Thames River Plowshares. To the left is a picture taken of us a few weeks after our action, which took place on September 2, 1989. At that time I was twenty-seven years old and newly-married.\nA couple of years later I finished my doctorate in Mathematics. My wife and I considered staying in North Carolina to help found a Catholic Worker House there, but eventually we decided that I should make use of my studies and teach Mathematics. In 1991 I took a position at Pikeville College in Eastern Kentucky, not far from where my grandparents had worked as coal miners. In 1996 we moved to Georgetown College."
+  },
+  {
+    "objectID": "about.html#life-at-georgetown",
+    "href": "about.html#life-at-georgetown",
+    "title": "About Me",
+    "section": "Life At Georgetown",
+    "text": "Life At Georgetown\nAt Georgetown I have pursued the history of mathematics, statistics and, of course, computer programming, especially for data analysis. The history of mathematics, along with an interest—inspired by Thomas Merton—in Asian religions, led me to the study of Sanskrit, the scholarly classical language of India.\nSomewhat in connection with my studies in Sanskrit and my reading of Thomas Merton, I am a long-time practitioner of Ashtanga Yoga; in fact I taught it several times as a KHS activity class at Georgetown. To the right is an old picture of me teaching one of those classes. I appear to be coming down out of the posture known as utpluthihi, and offering advice to some students out of the camera to my right. In addition to Ashtanga Yoga I enjoy weight-lifting and working in our backyard garden and at Twisted Trunk, the community garden on the Georgetown Campus that I helped found in 2009. And lately I and my family have come to love very much the company of dogs. We have a wonderful, compact pit-bull mix named Demi."
   }
 ]
