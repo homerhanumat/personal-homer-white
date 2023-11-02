@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Homer White’s Website - Articles</title>
+<title>Homer White’s Website - Homer’s Musings</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -59,19 +61,50 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Homer White’s Website</span>
     </a>
   </div>
@@ -82,19 +115,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../about.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../articles/index.html" rel="" target="">
+    <a class="nav-link" href="./articles/index.html" rel="" target="">
  <span class="menu-text">Articles</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../blog.html" rel="" target="">
+    <a class="nav-link active" href="./blog.html" rel="" target="" aria-current="page">
  <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -103,131 +136,20 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../articles/index.html">Articles</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../about.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">About Me</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../blog.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Homer’s Musings</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../articles/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Articles</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../articles/article_01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Advent of Code 2022, Day 1: A Solution Using Javascript</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../articles/article_02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Advent Solution in the Browser</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../articles/stocks/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Stock Prices</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../articles/battleship/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Battleship with Canvas</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../articles/scatterplot/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">An Interactive Scatterplot Using Observables</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Posts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../posts/2021-07-04-freaky-fireworks/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Let Your Toddler Set Off Freaky Fireworks</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../posts/2023-10-15-green-turtles/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Green Turtles Make Peevish Pets</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../posts/2022-01-01-legos-checkers/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Toddlers Will Eat Your Legos, But Feed Them Checkers, Too!</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../posts/2022-09-05-pink-parabolas/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pink Parabolas Make For the Merriest Mathematics</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../posts/2023-11-02-yellow-throttles/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Yellow Throttles Make Terrible Toys for Toddlers</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="animals">animals <span class="quarto-category-count">(1)</span></div><div class="category" data-category="colors">colors <span class="quarto-category-count">(3)</span></div><div class="category" data-category="fine dining">fine dining <span class="quarto-category-count">(1)</span></div><div class="category" data-category="math">math <span class="quarto-category-count">(1)</span></div><div class="category" data-category="rants">rants <span class="quarto-category-count">(4)</span></div><div class="category" data-category="toys">toys <span class="quarto-category-count">(3)</span></div></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Articles</h1>
+<h1 class="title">Homer’s Musings</h1>
 </div>
 
 
@@ -242,11 +164,219 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>The articles on this site document the use of JavaScript in various contexts, and serve as examples for students looking to write about JavaScript in the Quarto framework.</p>
+<div class="column-page">
+
+</div>
 
 
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="rants,toys,colors" data-listing-date-sort="1698897600000" data-listing-file-modified-sort="1698964446231" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="thumbnail">
+<p><a href="./posts/2023-11-02-yellow-throttles/index.html"> <img src="./posts/2023-11-02-yellow-throttles/banner.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/2023-11-02-yellow-throttles/index.html">
+<h3 class="no-anchor listing-title">
+Yellow Throttles Make Terrible Toys for Toddlers
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('rants'); return false;">
+rants
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('toys'); return false;">
+toys
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('colors'); return false;">
+colors
+</div>
+</div>
+<a href="./posts/2023-11-02-yellow-throttles/index.html">
+<div class="listing-description">
+<p>My thoughts on yellow throttles and very small children.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2023-11-02-yellow-throttles/index.html">
+<div class="listing-date">
+Nov 2, 2023
+</div>
+<div class="listing-author">
+Homer White
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="rants,animals,colors" data-listing-date-sort="1697342400000" data-listing-file-modified-sort="1698965918771" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="thumbnail">
+<p><a href="./posts/2023-10-15-green-turtles/index.html"> <img src="./posts/2023-10-15-green-turtles/banner.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/2023-10-15-green-turtles/index.html">
+<h3 class="no-anchor listing-title">
+Green Turtles Make Peevish Pets
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('rants'); return false;">
+rants
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('animals'); return false;">
+animals
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('colors'); return false;">
+colors
+</div>
+</div>
+<a href="./posts/2023-10-15-green-turtles/index.html">
+<div class="listing-description">
+<p>Profound wisdom on turtles and the color green.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2023-10-15-green-turtles/index.html">
+<div class="listing-date">
+Oct 15, 2023
+</div>
+<div class="listing-author">
+Homer White
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="math,colors" data-listing-date-sort="1662350400000" data-listing-file-modified-sort="1698965898772" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="thumbnail">
+<p><a href="./posts/2022-09-05-pink-parabolas/index.html"> <img src="./posts/2022-09-05-pink-parabolas/banner.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/2022-09-05-pink-parabolas/index.html">
+<h3 class="no-anchor listing-title">
+Pink Parabolas Make For the Merriest Mathematics
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('math'); return false;">
+math
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('colors'); return false;">
+colors
+</div>
+</div>
+<a href="./posts/2022-09-05-pink-parabolas/index.html">
+<div class="listing-description">
+<p>Find the area of segments of pink parabolas.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2022-09-05-pink-parabolas/index.html">
+<div class="listing-date">
+Sep 5, 2022
+</div>
+<div class="listing-author">
+Homer White
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="rants,toys,fine dining" data-listing-date-sort="1641013200000" data-listing-file-modified-sort="1698966134060" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="thumbnail">
+<p><a href="./posts/2022-01-01-legos-checkers/index.html"> <img src="./posts/2022-01-01-legos-checkers/banner.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/2022-01-01-legos-checkers/index.html">
+<h3 class="no-anchor listing-title">
+Toddlers Will Eat Your Legos, But Feed Them Checkers, Too!
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('rants'); return false;">
+rants
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('toys'); return false;">
+toys
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('fine dining'); return false;">
+fine dining
+</div>
+</div>
+<a href="./posts/2022-01-01-legos-checkers/index.html">
+<div class="listing-description">
+<p>My thoughts on good nutrition for very small children.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2022-01-01-legos-checkers/index.html">
+<div class="listing-date">
+Jan 1, 2022
+</div>
+<div class="listing-author">
+Homer White
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="rants,toys" data-listing-date-sort="1625371200000" data-listing-file-modified-sort="1698966044265" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="thumbnail">
+<p><a href="./posts/2021-07-04-freaky-fireworks/index.html"> <img src="./posts/2021-07-04-freaky-fireworks/banner.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-07-04-freaky-fireworks/index.html">
+<h3 class="no-anchor listing-title">
+Let Your Toddler Set Off Freaky Fireworks
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('rants'); return false;">
+rants
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('toys'); return false;">
+toys
+</div>
+</div>
+<a href="./posts/2021-07-04-freaky-fireworks/index.html">
+<div class="listing-description">
+<p>Fireworks, oddity, very small children and national holidays.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-07-04-freaky-fireworks/index.html">
+<div class="listing-date">
+Jul 4, 2021
+</div>
+<div class="listing-author">
+Homer White
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

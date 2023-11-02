@@ -2,7 +2,7 @@
 title: "Welcome!"
 ---
 
-Welcome to my Warmup Website!  It serves an example site for students in CSC 324 at Georgetown College, who are building their own website using the Quarto framework.
+Welcome to my Personal Website!  It serves an example site for students in CSC 324 at Georgetown College, who are building their own website using the Quarto framework.
 
 You can read a bit about me [here](about.html).
 

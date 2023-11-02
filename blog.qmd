@@ -1,0 +1,20 @@
+---
+title: "Homer's Musings"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: false
+# my sidebar conflicts with
+# quarto's treatment of blogs 
+# index pages, so
+# for this page:
+sidebar: false
+---
+::: {.column-page}
+
+:::
