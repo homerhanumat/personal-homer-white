@@ -14,32 +14,31 @@ website:
         text: Articles 
       - href: posts/index.qmd
         text: Blog
-  
-  # The following glob is intended to 
-  # keep the 404.qmd out of the
-  # sidebar.  At root of the project
-  # it limits me to filenames with
-  # letters only.
-  sidebar:
-    contents: "[a-zA-Z]*.qmd"
 
-  # sidebar:
-  #   - id: articles
-  #     title: "Articles"
-  #     style: "docked"
-  #     background: light
-  #     collapse-level: 2
-  #     contents: 
-  #       - text: "Advent of Code 2022"
-  #         href:  articles/article_01.qmd
-  #       - text: "Browser Implementation"
-  #         href:  articles/article_02.qmd
-  #       - text: "Canvas Battleship"
-  #         href:  articles/battleship/index.qmd
-  #       - text: "Observables Scatterplot"
-  #         href: articles/scatterplot/index.qmd
-  #       - text: "Stock Prices"
-  #         href: articles/stocks/index.qmd
+  sidebar:
+
+    - id: none
+      style: "docked"
+      background: light
+      collapse-level: 2
+      contents:
+        - section: "Articles"
+          href: articles/index.qmd
+          contents: 
+            - text: "Advent of Code 2022"
+              href:  articles/article_01.qmd
+            - text: "Browser Implementation"
+              href:  articles/article_02.qmd
+            - text: "Canvas Battleship"
+              href:  articles/battleship/index.qmd
+            - text: "Observables Scatterplot"
+              href: articles/scatterplot/index.qmd
+            - text: "Stock Prices"
+              href: articles/stocks/index.qmd
+        - section: "Posts"
+          href: posts/index.qmd
+          contents: "posts/*/*.qmd"
+
 
 format:
   html:
