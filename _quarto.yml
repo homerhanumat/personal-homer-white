@@ -26,9 +26,9 @@ website:
           href: articles/index.qmd
           contents: 
             - text: "Advent of Code 2022"
-              href:  articles/article_01.qmd
+              href:  articles/advent/index.qmd
             - text: "Browser Implementation"
-              href:  articles/article_02.qmd
+              href:  articles/browser/index.qmd
             - text: "Canvas Battleship"
               href:  articles/battleship/index.qmd
             - text: "Observables Scatterplot"

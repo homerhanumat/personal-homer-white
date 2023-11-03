@@ -171,7 +171,7 @@ We are done!
 
 ## Full Code
 
-A complete solution to the problem may be found [here](/js/advent_2022-01.js), or the reader may view it below:
+A complete solution to the problem may be found [here](main.js), or the reader may view it below:
 
 ```{.javascript filename="advent_2022-01.js"}
 const fs = require("fs");

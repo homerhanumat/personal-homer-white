@@ -1,5 +1,15 @@
 [
   {
+    "listing": "/articles/index.html",
+    "items": [
+      "/articles/browser/index.html",
+      "/articles/advent/index.html",
+      "/articles/scatterplot/index.html",
+      "/articles/battleship/index.html",
+      "/articles/stocks/index.html"
+    ]
+  },
+  {
     "listing": "/posts/index.html",
     "items": [
       "/posts/2023-11-02-yellow-throttles/index.html",
@@ -7,16 +17,6 @@
       "/posts/2022-09-05-pink-parabolas/index.html",
       "/posts/2022-01-01-legos-checkers/index.html",
       "/posts/2021-07-04-freaky-fireworks/index.html"
-    ]
-  },
-  {
-    "listing": "/articles/index.html",
-    "items": [
-      "/articles/article_02.html",
-      "/articles/article_01.html",
-      "/articles/scatterplot/index.html",
-      "/articles/battleship/index.html",
-      "/articles/stocks/index.html"
     ]
   }
 ]

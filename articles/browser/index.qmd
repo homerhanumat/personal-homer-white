@@ -17,5 +17,5 @@ The relevant JavaScript file is [here](/js/advent_in_action.js).  Use the Web In
 **Note:**  You do not have to implement any of your Eloquent JavaScript solutions in the browser.  I wrote this article only to teach myself about reading user-provided files in the browser.
 
 ```{=html}
-<script src="/js/advent_in_action.js"></script>
+<script src="main.js"></script>
 ```
