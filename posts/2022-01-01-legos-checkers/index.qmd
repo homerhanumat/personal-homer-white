@@ -6,9 +6,6 @@ author:
 date: "2022-01-01"
 categories: [rants, toys, fine dining]
 image: banner.jpg
-format: 
-  html:
-    toc: true
 ---
 
 ## Introduction

@@ -6,9 +6,6 @@ author:
 date: "2023-10-15"
 categories: [rants, animals, colors]
 image: banner.jpg
-format: 
-  html:
-    toc: true
 ---
 
 ## Introduction

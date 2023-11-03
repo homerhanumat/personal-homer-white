@@ -6,9 +6,6 @@ author:
 date: "2021-07-04"
 categories: [rants, toys]
 image: banner.jpg
-format: 
-  html:
-    toc: true
 ---
 
 ## Introduction
