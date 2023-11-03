@@ -12,7 +12,7 @@ website:
         text: About
       - href: articles/index.qmd
         text: Articles 
-      - href: blog.qmd
+      - href: posts/index.qmd
         text: Blog
   
   # The following glob is intended to 

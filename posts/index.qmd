@@ -1,7 +1,7 @@
 ---
 title: "Homer's Musings"
 listing:
-  contents: posts
+  contents: .
   sort: "date desc"
   type: default
   categories: true
@@ -9,10 +9,8 @@ listing:
   filter-ui: false
 page-layout: full
 title-block-banner: false
-# my sidebar conflicts with
-# quarto's treatment of blogs 
-# index pages, so
-# for this page:
+# my sidebar conflicts with quarto's treatment of blog 
+# index pages, so for this page:
 sidebar: false
 ---
 ::: {.column-page}
