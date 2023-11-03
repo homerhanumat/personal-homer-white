@@ -1,0 +1,4 @@
+# do not re-proces code-cells in posts
+# unless explicitly commanded to do so:
+execute:
+  freeze: true
