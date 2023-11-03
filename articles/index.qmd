@@ -2,7 +2,8 @@
 title:  "Articles"
 listing:
   contents: .
-  type: grid
+  type: table
+  fields: [title]
 ---
 
 The articles on this site document the use of JavaScript in various contexts, and serve as examples for students looking to write about JavaScript in the Quarto framework.
