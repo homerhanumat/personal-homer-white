@@ -1,6 +1,6 @@
 ---
 title: "Data Wrangling with in Observable With Arquero"
-description: "Arquero is an Observable library that has a dplyr-like grammar."
+description: "Arquero is a JavaScript library that features a dplyr-like grammar."
 author:
   - name: Homer White
 date: "2023-11-03"
