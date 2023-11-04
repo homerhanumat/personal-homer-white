@@ -64,30 +64,36 @@ Plot = import("https://esm.run/@observablehq/plot@0.6.11")
 In the code below, the Arquero `from()` method converts the data from an array-of-objects format into standard tidy-data format:  object of arrays of the columns of data).  (Arquero wrangles data in the tidy format.)  Interestingly, the `viewof` keeps `b` as a tidy table, even though the table has been passed to Arquero's `view()` method.  I'm not sure why all this happens!
 
 ```{ojs}
-viewof b = aq.
-  from(await FileAttachment('Batting.csv')
-    .csv({typed: true})
-  )
-  .select("playerID", "yearID", "teamID", "HR")
-  .view()
+batting = {
+  let b = await aq.loadCSV("Batting.csv");
+  return b.select("playerID", "yearID", "teamID", "HR");
+}
 ```
 
 ```{ojs}
-viewof p = aq.
-  from(await FileAttachment('People.csv')
-    .csv({typed: true})
-  )
-  .select("playerID", "nameFirst", "nameLast", "debut")
-  .view()
+batting.view()
 ```
 
 ```{ojs}
-viewof t = aq.
-  from(await FileAttachment('Teams.csv')
-    .csv({typed: true})
-  )
-  .select("teamID", "yearID", "name")
-  .view()
+players = {
+  let p = await aq.loadCSV("People.csv");
+  return p.select("playerID", "nameFirst", "nameLast", "debut");
+}
+```
+
+```{ojs}
+players.view()
+```
+
+```{ojs}
+teams = {
+  let t = await aq.loadCSV("Teams.csv");
+  return t.select("teamID", "yearID", "name");
+}
+```
+
+```{ojs}
+teams.view()
 ```
 
 ## Wrangling
@@ -95,11 +101,11 @@ viewof t = aq.
 Here is where Arquero feels a lot R's **dplyr**:
 
 ```{ojs}
-hrLeaders = b
+hrLeaders = batting
   // only for 1900 or later season:
   .filter(d => d.yearID >= 1900)
   // join with Players to get name and debut year:
-  .join(p, "playerID")
+  .join(players, "playerID")
   // find HR leaders in each season:
   .groupby("yearID")
   // arrange within each season-group:
@@ -124,20 +130,24 @@ df = hrLeaders.
   // Default for join is to use all columns that appear in both tables
   // https://uwdata.github.io/arquero/api/verbs#join .
   // (We are joining on teamID and yearID):
-  join(t)
+  join(teams)
   // rename for more readable graph:
   .rename({yearID: "season"})
   // create a better debut variable:
   .derive(
-    // As is, debut is a datetime value.
-    // we don't want the time, so we should
-    // consider:
+    // As is, aq.loadCSV brings in debut
+    // as a string.
+    // We should consider making it a Date
+    // and then:
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toDateString
     // But we must also escape, as per
     // https://uwdata.github.io/arquero/api/#escape .
     // Great background discussion here:
     // https://uwdata.github.io/arquero/api/expressions
-    {debutDate: aq.escape(d => d.debut.toDateString())}
+    {debutDate: aq.escape(function (d) {
+      const date = new Date(d.debut);
+      return date.toDateString();
+    })}
   )
   // now assemble the tooltip info:
   .derive(
