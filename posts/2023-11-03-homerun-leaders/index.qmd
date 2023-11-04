@@ -29,13 +29,15 @@ import { aq, op } from '@uwdata/arquero'
 Plot = import("https://esm.run/@observablehq/plot@0.6.11")
 ```
 
+In the code below, the Arquero `from()` method converts the data from an array-of-objects format into standard tidy-data format:  object of arrays of the columns of data).  (Arquero wrangles data in the tidy format.)  Interestingly, the `viewof` keeps `b` as a tidy table, even though the table has been passed to Arquero's `view()` method.
+
 ```{ojs}
 viewof b = aq.
   from(await FileAttachment('Batting.csv')
     .csv({typed: true})
   )
-  .select("playerID", "yearID", "teamID", "HR").
-  view()
+  .select("playerID", "yearID", "teamID", "HR")
+  .view()
 ```
 
 ```{ojs}

@@ -334,13 +334,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>In the code below, the Arquero <code>from()</code> method converts the data from an array-of-objects format into standard tidy-data format: object of arrays of the columns of data). (Arquero wrangles data in the tidy format.) Interestingly, the <code>viewof</code> keeps <code>b</code> as a tidy table, even though the table has been passed to Arquero’s <code>view()</code> method.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3" data-startfrom="32" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 31;"><span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>viewof b <span class="op">=</span> aq<span class="op">.</span></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>  <span class="im">from</span>(<span class="cf">await</span> <span class="fu">FileAttachment</span>(<span class="st">'Batting.csv'</span>)</span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">csv</span>({<span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span>})</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">select</span>(<span class="st">"playerID"</span><span class="op">,</span> <span class="st">"yearID"</span><span class="op">,</span> <span class="st">"teamID"</span><span class="op">,</span> <span class="st">"HR"</span>)<span class="op">.</span></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">view</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3" data-startfrom="34" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 33;"><span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>viewof b <span class="op">=</span> aq<span class="op">.</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  <span class="im">from</span>(<span class="cf">await</span> <span class="fu">FileAttachment</span>(<span class="st">'Batting.csv'</span>)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">csv</span>({<span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span>})</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">select</span>(<span class="st">"playerID"</span><span class="op">,</span> <span class="st">"yearID"</span><span class="op">,</span> <span class="st">"teamID"</span><span class="op">,</span> <span class="st">"HR"</span>)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">view</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-3" data-nodetype="declaration">
 
@@ -348,12 +349,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4" data-startfrom="41" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 40;"><span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>viewof p <span class="op">=</span> aq<span class="op">.</span></span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>  <span class="im">from</span>(<span class="cf">await</span> <span class="fu">FileAttachment</span>(<span class="st">'People.csv'</span>)</span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">csv</span>({<span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span>})</span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">select</span>(<span class="st">"playerID"</span><span class="op">,</span> <span class="st">"nameFirst"</span><span class="op">,</span> <span class="st">"nameLast"</span><span class="op">,</span> <span class="st">"debut"</span>)</span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">view</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4" data-startfrom="43" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 42;"><span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>viewof p <span class="op">=</span> aq<span class="op">.</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>  <span class="im">from</span>(<span class="cf">await</span> <span class="fu">FileAttachment</span>(<span class="st">'People.csv'</span>)</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">csv</span>({<span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span>})</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">select</span>(<span class="st">"playerID"</span><span class="op">,</span> <span class="st">"nameFirst"</span><span class="op">,</span> <span class="st">"nameLast"</span><span class="op">,</span> <span class="st">"debut"</span>)</span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">view</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-4" data-nodetype="declaration">
 
@@ -361,12 +362,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5" data-startfrom="50" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 49;"><span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>viewof t <span class="op">=</span> aq<span class="op">.</span></span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>  <span class="im">from</span>(<span class="cf">await</span> <span class="fu">FileAttachment</span>(<span class="st">'Teams.csv'</span>)</span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">csv</span>({<span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span>})</span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">select</span>(<span class="st">"teamID"</span><span class="op">,</span> <span class="st">"yearID"</span><span class="op">,</span> <span class="st">"name"</span>)</span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">view</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5" data-startfrom="52" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 51;"><span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>viewof t <span class="op">=</span> aq<span class="op">.</span></span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>  <span class="im">from</span>(<span class="cf">await</span> <span class="fu">FileAttachment</span>(<span class="st">'Teams.csv'</span>)</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">csv</span>({<span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span>})</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">select</span>(<span class="st">"teamID"</span><span class="op">,</span> <span class="st">"yearID"</span><span class="op">,</span> <span class="st">"name"</span>)</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">view</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-5" data-nodetype="declaration">
 
@@ -378,20 +379,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="wrangling">Wrangling</h2>
 <p>Here is where Arquero shines:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6" data-startfrom="63" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 62;"><span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>hrLeaders <span class="op">=</span> b</span>
-<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a>  <span class="co">// only for 1900 or later season:</span></span>
-<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">yearID</span> <span class="op">&gt;=</span> <span class="dv">1900</span>)</span>
-<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a>  <span class="co">// join with Players to get name and debut year:</span></span>
-<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">join</span>(p<span class="op">,</span> <span class="st">"playerID"</span>)</span>
-<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a>  <span class="co">// find HR leaders in each season:</span></span>
-<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">groupby</span>(<span class="st">"yearID"</span>)</span>
-<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a>  <span class="co">// arrange within each season-group:</span></span>
-<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">orderby</span>(aq<span class="op">.</span><span class="fu">desc</span>(<span class="st">"HR"</span>))</span>
-<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a>  <span class="co">// take only the top five:</span></span>
-<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">5</span>)</span>
-<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">ungroup</span>()</span>
-<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a>  <span class="co">// for table display:</span></span>
-<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">orderby</span>(<span class="st">"yearID"</span><span class="op">,</span> aq<span class="op">.</span><span class="fu">desc</span>(<span class="st">"HR"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6" data-startfrom="65" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 64;"><span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a>hrLeaders <span class="op">=</span> b</span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a>  <span class="co">// only for 1900 or later season:</span></span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">yearID</span> <span class="op">&gt;=</span> <span class="dv">1900</span>)</span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a>  <span class="co">// join with Players to get name and debut year:</span></span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">join</span>(p<span class="op">,</span> <span class="st">"playerID"</span>)</span>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a>  <span class="co">// find HR leaders in each season:</span></span>
+<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">groupby</span>(<span class="st">"yearID"</span>)</span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a>  <span class="co">// arrange within each season-group:</span></span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">orderby</span>(aq<span class="op">.</span><span class="fu">desc</span>(<span class="st">"HR"</span>))</span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a>  <span class="co">// take only the top five:</span></span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">5</span>)</span>
+<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">ungroup</span>()</span>
+<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a>  <span class="co">// for table display:</span></span>
+<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">orderby</span>(<span class="st">"yearID"</span><span class="op">,</span> aq<span class="op">.</span><span class="fu">desc</span>(<span class="st">"HR"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-6" data-nodetype="declaration">
 
@@ -400,7 +401,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Let’s have a look at the resulting table:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7" data-startfrom="82" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 81;"><span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(hrLeaders)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7" data-startfrom="84" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 83;"><span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(hrLeaders)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-7" data-nodetype="expression">
 
@@ -409,29 +410,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>We need to join with the Teams data:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8" data-startfrom="88" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 87;"><span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> hrLeaders<span class="op">.</span></span>
-<span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Is there an easier way in Arquero to</span></span>
-<span id="cb8-90"><a href="#cb8-90" aria-hidden="true" tabindex="-1"></a>  <span class="co">// join on two columns?</span></span>
-<span id="cb8-91"><a href="#cb8-91" aria-hidden="true" tabindex="-1"></a>  <span class="fu">join</span>(</span>
-<span id="cb8-92"><a href="#cb8-92" aria-hidden="true" tabindex="-1"></a>    t<span class="op">,</span> </span>
-<span id="cb8-93"><a href="#cb8-93" aria-hidden="true" tabindex="-1"></a>    (a<span class="op">,</span> b) <span class="kw">=&gt;</span> op<span class="op">.</span><span class="fu">equal</span>(a<span class="op">.</span><span class="at">yearID</span><span class="op">,</span> b<span class="op">.</span><span class="at">yearID</span>) <span class="op">&amp;</span> op<span class="op">.</span><span class="fu">equal</span>(a<span class="op">.</span><span class="at">teamID</span><span class="op">,</span> b<span class="op">.</span><span class="at">teamID</span>)</span>
-<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb8-95"><a href="#cb8-95" aria-hidden="true" tabindex="-1"></a>  <span class="co">// year_ID gets repeated in the join</span></span>
-<span id="cb8-96"><a href="#cb8-96" aria-hidden="true" tabindex="-1"></a>  <span class="co">// as yearID_1 and yearID_2, same</span></span>
-<span id="cb8-97"><a href="#cb8-97" aria-hidden="true" tabindex="-1"></a>  <span class="co">// for teamID:</span></span>
-<span id="cb8-98"><a href="#cb8-98" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">select</span>(aq<span class="op">.</span><span class="fu">not</span>(<span class="st">"yearID_2"</span><span class="op">,</span> <span class="st">"teamID_2"</span>))</span>
-<span id="cb8-99"><a href="#cb8-99" aria-hidden="true" tabindex="-1"></a>  <span class="co">// rename for more readable graph:</span></span>
-<span id="cb8-100"><a href="#cb8-100" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">rename</span>({<span class="dt">yearID_1</span><span class="op">:</span> <span class="st">"season"</span>})</span>
-<span id="cb8-101"><a href="#cb8-101" aria-hidden="true" tabindex="-1"></a>  <span class="co">// make tool-tip info:</span></span>
-<span id="cb8-102"><a href="#cb8-102" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">derive</span>(</span>
-<span id="cb8-103"><a href="#cb8-103" aria-hidden="true" tabindex="-1"></a>    {<span class="dt">info</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="vs">`Playing for the </span><span class="sc">${</span>d<span class="op">.</span><span class="at">name</span><span class="sc">}</span><span class="vs">, </span><span class="sc">${</span>d<span class="op">.</span><span class="at">nameFirst</span><span class="sc">}</span><span class="vs"> </span><span class="sc">${</span>d<span class="op">.</span><span class="at">nameLast</span><span class="sc">}</span><span class="vs">, who debuted in </span><span class="sc">${</span>d<span class="op">.</span><span class="at">debut</span><span class="sc">}</span><span class="vs">, hit </span><span class="sc">${</span>d<span class="op">.</span><span class="at">HR</span><span class="sc">}</span><span class="vs"> home runs in </span><span class="sc">${</span>d<span class="op">.</span><span class="at">season</span><span class="sc">}</span><span class="vs">.`</span></span>
-<span id="cb8-104"><a href="#cb8-104" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb8-105"><a href="#cb8-105" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb8-106"><a href="#cb8-106" aria-hidden="true" tabindex="-1"></a>  <span class="co">// jitter to avoid over-plotting:</span></span>
-<span id="cb8-107"><a href="#cb8-107" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">derive</span>({</span>
-<span id="cb8-108"><a href="#cb8-108" aria-hidden="true" tabindex="-1"></a>    <span class="dt">jx</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">season</span> <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">-</span> <span class="fl">0.5</span><span class="op">,</span></span>
-<span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a>    <span class="dt">jy</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">HR</span> <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">-</span> <span class="fl">0.5</span></span>
-<span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a>  })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8" data-startfrom="90" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 89;"><span id="cb8-90"><a href="#cb8-90" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> hrLeaders<span class="op">.</span></span>
+<span id="cb8-91"><a href="#cb8-91" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Is there an easier way in Arquero to</span></span>
+<span id="cb8-92"><a href="#cb8-92" aria-hidden="true" tabindex="-1"></a>  <span class="co">// join on two columns?</span></span>
+<span id="cb8-93"><a href="#cb8-93" aria-hidden="true" tabindex="-1"></a>  <span class="fu">join</span>(</span>
+<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a>    t<span class="op">,</span> </span>
+<span id="cb8-95"><a href="#cb8-95" aria-hidden="true" tabindex="-1"></a>    (a<span class="op">,</span> b) <span class="kw">=&gt;</span> op<span class="op">.</span><span class="fu">equal</span>(a<span class="op">.</span><span class="at">yearID</span><span class="op">,</span> b<span class="op">.</span><span class="at">yearID</span>) <span class="op">&amp;</span> op<span class="op">.</span><span class="fu">equal</span>(a<span class="op">.</span><span class="at">teamID</span><span class="op">,</span> b<span class="op">.</span><span class="at">teamID</span>)</span>
+<span id="cb8-96"><a href="#cb8-96" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-97"><a href="#cb8-97" aria-hidden="true" tabindex="-1"></a>  <span class="co">// year_ID gets repeated in the join</span></span>
+<span id="cb8-98"><a href="#cb8-98" aria-hidden="true" tabindex="-1"></a>  <span class="co">// as yearID_1 and yearID_2, same</span></span>
+<span id="cb8-99"><a href="#cb8-99" aria-hidden="true" tabindex="-1"></a>  <span class="co">// for teamID:</span></span>
+<span id="cb8-100"><a href="#cb8-100" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">select</span>(aq<span class="op">.</span><span class="fu">not</span>(<span class="st">"yearID_2"</span><span class="op">,</span> <span class="st">"teamID_2"</span>))</span>
+<span id="cb8-101"><a href="#cb8-101" aria-hidden="true" tabindex="-1"></a>  <span class="co">// rename for more readable graph:</span></span>
+<span id="cb8-102"><a href="#cb8-102" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">rename</span>({<span class="dt">yearID_1</span><span class="op">:</span> <span class="st">"season"</span>})</span>
+<span id="cb8-103"><a href="#cb8-103" aria-hidden="true" tabindex="-1"></a>  <span class="co">// make tool-tip info:</span></span>
+<span id="cb8-104"><a href="#cb8-104" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">derive</span>(</span>
+<span id="cb8-105"><a href="#cb8-105" aria-hidden="true" tabindex="-1"></a>    {<span class="dt">info</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="vs">`Playing for the </span><span class="sc">${</span>d<span class="op">.</span><span class="at">name</span><span class="sc">}</span><span class="vs">, </span><span class="sc">${</span>d<span class="op">.</span><span class="at">nameFirst</span><span class="sc">}</span><span class="vs"> </span><span class="sc">${</span>d<span class="op">.</span><span class="at">nameLast</span><span class="sc">}</span><span class="vs">, who debuted in </span><span class="sc">${</span>d<span class="op">.</span><span class="at">debut</span><span class="sc">}</span><span class="vs">, hit </span><span class="sc">${</span>d<span class="op">.</span><span class="at">HR</span><span class="sc">}</span><span class="vs"> home runs in </span><span class="sc">${</span>d<span class="op">.</span><span class="at">season</span><span class="sc">}</span><span class="vs">.`</span></span>
+<span id="cb8-106"><a href="#cb8-106" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb8-107"><a href="#cb8-107" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-108"><a href="#cb8-108" aria-hidden="true" tabindex="-1"></a>  <span class="co">// jitter to avoid over-plotting:</span></span>
+<span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">derive</span>({</span>
+<span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a>    <span class="dt">jx</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">season</span> <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">-</span> <span class="fl">0.5</span><span class="op">,</span></span>
+<span id="cb8-111"><a href="#cb8-111" aria-hidden="true" tabindex="-1"></a>    <span class="dt">jy</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">HR</span> <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">-</span> <span class="fl">0.5</span></span>
+<span id="cb8-112"><a href="#cb8-112" aria-hidden="true" tabindex="-1"></a>  })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-8" data-nodetype="declaration">
 
@@ -440,7 +441,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Let’s look at the resulting table:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9" data-startfrom="116" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 115;"><span id="cb9-116"><a href="#cb9-116" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9" data-startfrom="118" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 117;"><span id="cb9-118"><a href="#cb9-118" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-9" data-nodetype="expression">
 
@@ -452,21 +453,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="finally-plotting">Finally, Plotting</h2>
 <p>Now we are ready to make a scatterplot of home-run leaders by season, with information about each player displayed when one hovers over the player’s point:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10" data-startfrom="124" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 123;"><span id="cb10-124"><a href="#cb10-124" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb10-125"><a href="#cb10-125" aria-hidden="true" tabindex="-1"></a>  <span class="dt">nice</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb10-126"><a href="#cb10-126" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb10-127"><a href="#cb10-127" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(df<span class="op">,</span> {</span>
-<span id="cb10-128"><a href="#cb10-128" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"jx"</span><span class="op">,</span> </span>
-<span id="cb10-129"><a href="#cb10-129" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"jy"</span><span class="op">,</span> </span>
-<span id="cb10-130"><a href="#cb10-130" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span> <span class="dt">fillOpacity</span><span class="op">:</span> <span class="fl">0.3</span></span>
-<span id="cb10-131"><a href="#cb10-131" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb10-132"><a href="#cb10-132" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">tip</span>(df<span class="op">,</span> Plot<span class="op">.</span><span class="fu">pointer</span>({</span>
-<span id="cb10-133"><a href="#cb10-133" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"jx"</span><span class="op">,</span></span>
-<span id="cb10-134"><a href="#cb10-134" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"jy"</span><span class="op">,</span></span>
-<span id="cb10-135"><a href="#cb10-135" aria-hidden="true" tabindex="-1"></a>      <span class="dt">title</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">info</span></span>
-<span id="cb10-136"><a href="#cb10-136" aria-hidden="true" tabindex="-1"></a>    }))</span>
-<span id="cb10-137"><a href="#cb10-137" aria-hidden="true" tabindex="-1"></a>  ]</span>
-<span id="cb10-138"><a href="#cb10-138" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10" data-startfrom="126" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 125;"><span id="cb10-126"><a href="#cb10-126" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb10-127"><a href="#cb10-127" aria-hidden="true" tabindex="-1"></a>  <span class="dt">nice</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb10-128"><a href="#cb10-128" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb10-129"><a href="#cb10-129" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(df<span class="op">,</span> {</span>
+<span id="cb10-130"><a href="#cb10-130" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"jx"</span><span class="op">,</span> </span>
+<span id="cb10-131"><a href="#cb10-131" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"jy"</span><span class="op">,</span> </span>
+<span id="cb10-132"><a href="#cb10-132" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span> <span class="dt">fillOpacity</span><span class="op">:</span> <span class="fl">0.3</span></span>
+<span id="cb10-133"><a href="#cb10-133" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb10-134"><a href="#cb10-134" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">tip</span>(df<span class="op">,</span> Plot<span class="op">.</span><span class="fu">pointer</span>({</span>
+<span id="cb10-135"><a href="#cb10-135" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"jx"</span><span class="op">,</span></span>
+<span id="cb10-136"><a href="#cb10-136" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"jy"</span><span class="op">,</span></span>
+<span id="cb10-137"><a href="#cb10-137" aria-hidden="true" tabindex="-1"></a>      <span class="dt">title</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">info</span></span>
+<span id="cb10-138"><a href="#cb10-138" aria-hidden="true" tabindex="-1"></a>    }))</span>
+<span id="cb10-139"><a href="#cb10-139" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb10-140"><a href="#cb10-140" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-10" data-nodetype="expression">
 
@@ -489,7 +490,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </main> <!-- /main -->
 
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"import { aq, op } from '@uwdata/arquero'\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"Plot = import(\"https://esm.run/@observablehq/plot@0.6.11\")\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"viewof b = aq.\n  from(await FileAttachment('Batting.csv')\n    .csv({typed: true})\n  )\n  .select(\"playerID\", \"yearID\", \"teamID\", \"HR\").\n  view()\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"viewof p = aq.\n  from(await FileAttachment('People.csv')\n    .csv({typed: true})\n  )\n  .select(\"playerID\", \"nameFirst\", \"nameLast\", \"debut\")\n  .view()\n"},{"methodName":"interpret","cellName":"ojs-cell-5","inline":false,"source":"viewof t = aq.\n  from(await FileAttachment('Teams.csv')\n    .csv({typed: true})\n  )\n  .select(\"teamID\", \"yearID\", \"name\")\n  .view()\n"},{"methodName":"interpret","cellName":"ojs-cell-6","inline":false,"source":"hrLeaders = b\n  // only for 1900 or later season:\n  .filter(d => d.yearID >= 1900)\n  // join with Players to get name and debut year:\n  .join(p, \"playerID\")\n  // find HR leaders in each season:\n  .groupby(\"yearID\")\n  // arrange within each season-group:\n  .orderby(aq.desc(\"HR\"))\n  // take only the top five:\n  .slice(0, 5)\n  .ungroup()\n  // for table display:\n  .orderby(\"yearID\", aq.desc(\"HR\"))\n"},{"methodName":"interpret","cellName":"ojs-cell-7","inline":false,"source":"Inputs.table(hrLeaders)\n"},{"methodName":"interpret","cellName":"ojs-cell-8","inline":false,"source":"df = hrLeaders.\n  // Is there an easier way in Arquero to\n  // join on two columns?\n  join(\n    t, \n    (a, b) => op.equal(a.yearID, b.yearID) & op.equal(a.teamID, b.teamID)\n  )\n  // year_ID gets repeated in the join\n  // as yearID_1 and yearID_2, same\n  // for teamID:\n  .select(aq.not(\"yearID_2\", \"teamID_2\"))\n  // rename for more readable graph:\n  .rename({yearID_1: \"season\"})\n  // make tool-tip info:\n  .derive(\n    {info: d => `Playing for the ${d.name}, ${d.nameFirst} ${d.nameLast}, who debuted in ${d.debut}, hit ${d.HR} home runs in ${d.season}.`\n    }\n  )\n  // jitter to avoid over-plotting:\n  .derive({\n    jx: d => d.season + Math.random() - 0.5,\n    jy: d => d.HR + Math.random() - 0.5\n  })\n"},{"methodName":"interpret","cellName":"ojs-cell-9","inline":false,"source":"Inputs.table(df)\n"},{"methodName":"interpret","cellName":"ojs-cell-10","inline":false,"source":"Plot.plot({\n  nice: true,\n  marks: [\n    Plot.dot(df, {\n      x: \"jx\", \n      y: \"jy\", \n      fill: \"black\", fillOpacity: 0.3\n    }),\n    Plot.tip(df, Plot.pointer({\n      x: \"jx\",\n      y: \"jy\",\n      title: d => d.info\n    }))\n  ]\n})\n"},{"methodName":"interpretQuiet","source":"shinyInput('b')"},{"methodName":"interpretQuiet","source":"shinyInput('p')"},{"methodName":"interpretQuiet","source":"shinyInput('t')"}]}
+{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"import { aq, op } from '@uwdata/arquero'\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"Plot = import(\"https://esm.run/@observablehq/plot@0.6.11\")\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"viewof b = aq.\n  from(await FileAttachment('Batting.csv')\n    .csv({typed: true})\n  )\n  .select(\"playerID\", \"yearID\", \"teamID\", \"HR\")\n  .view()\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"viewof p = aq.\n  from(await FileAttachment('People.csv')\n    .csv({typed: true})\n  )\n  .select(\"playerID\", \"nameFirst\", \"nameLast\", \"debut\")\n  .view()\n"},{"methodName":"interpret","cellName":"ojs-cell-5","inline":false,"source":"viewof t = aq.\n  from(await FileAttachment('Teams.csv')\n    .csv({typed: true})\n  )\n  .select(\"teamID\", \"yearID\", \"name\")\n  .view()\n"},{"methodName":"interpret","cellName":"ojs-cell-6","inline":false,"source":"hrLeaders = b\n  // only for 1900 or later season:\n  .filter(d => d.yearID >= 1900)\n  // join with Players to get name and debut year:\n  .join(p, \"playerID\")\n  // find HR leaders in each season:\n  .groupby(\"yearID\")\n  // arrange within each season-group:\n  .orderby(aq.desc(\"HR\"))\n  // take only the top five:\n  .slice(0, 5)\n  .ungroup()\n  // for table display:\n  .orderby(\"yearID\", aq.desc(\"HR\"))\n"},{"methodName":"interpret","cellName":"ojs-cell-7","inline":false,"source":"Inputs.table(hrLeaders)\n"},{"methodName":"interpret","cellName":"ojs-cell-8","inline":false,"source":"df = hrLeaders.\n  // Is there an easier way in Arquero to\n  // join on two columns?\n  join(\n    t, \n    (a, b) => op.equal(a.yearID, b.yearID) & op.equal(a.teamID, b.teamID)\n  )\n  // year_ID gets repeated in the join\n  // as yearID_1 and yearID_2, same\n  // for teamID:\n  .select(aq.not(\"yearID_2\", \"teamID_2\"))\n  // rename for more readable graph:\n  .rename({yearID_1: \"season\"})\n  // make tool-tip info:\n  .derive(\n    {info: d => `Playing for the ${d.name}, ${d.nameFirst} ${d.nameLast}, who debuted in ${d.debut}, hit ${d.HR} home runs in ${d.season}.`\n    }\n  )\n  // jitter to avoid over-plotting:\n  .derive({\n    jx: d => d.season + Math.random() - 0.5,\n    jy: d => d.HR + Math.random() - 0.5\n  })\n"},{"methodName":"interpret","cellName":"ojs-cell-9","inline":false,"source":"Inputs.table(df)\n"},{"methodName":"interpret","cellName":"ojs-cell-10","inline":false,"source":"Plot.plot({\n  nice: true,\n  marks: [\n    Plot.dot(df, {\n      x: \"jx\", \n      y: \"jy\", \n      fill: \"black\", fillOpacity: 0.3\n    }),\n    Plot.tip(df, Plot.pointer({\n      x: \"jx\",\n      y: \"jy\",\n      title: d => d.info\n    }))\n  ]\n})\n"},{"methodName":"interpretQuiet","source":"shinyInput('b')"},{"methodName":"interpretQuiet","source":"shinyInput('p')"},{"methodName":"interpretQuiet","source":"shinyInput('t')"}]}
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
