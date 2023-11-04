@@ -116,7 +116,7 @@ df = hrLeaders.
   // (We are joining on teamID and yearID):
   join(t)
   // rename for more readable graph:
-  .rename({yearID_1: "season"})
+  .rename({yearID: "season"})
   // create a better debut variable:
   .derive(
     // As is, debut is a datetime value.
