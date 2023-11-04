@@ -111,16 +111,10 @@ We need to join with the Teams data, and we add a column containing material for
 
 ```{ojs}
 df = hrLeaders.
-  // Is there an easier way in Arquero to
-  // join on two columns?
-  join(
-    t, 
-    (a, b) => op.equal(a.yearID, b.yearID) & op.equal(a.teamID, b.teamID)
-  )
-  // year_ID gets repeated in the join
-  // as yearID_1 and yearID_2, same
-  // for teamID:
-  .select(aq.not("yearID_2", "teamID_2"))
+  // Default for join is to use all columns that appear in both tables
+  // https://uwdata.github.io/arquero/api/verbs#join .
+  // (We are joining on teamID and yearID):
+  join(t)
   // rename for more readable graph:
   .rename({yearID_1: "season"})
   // create a better debut variable:
@@ -130,7 +124,9 @@ df = hrLeaders.
     // consider:
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toDateString
     // But we must also escape, as per
-    // https://uwdata.github.io/arquero/api/#escape:
+    // https://uwdata.github.io/arquero/api/#escape .
+    // Great background discussion here:
+    // https://uwdata.github.io/arquero/api/expressions
     {debutDate: aq.escape(d => d.debut.toDateString())}
   )
   // now assemble the tooltip info:
