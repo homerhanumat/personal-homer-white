@@ -1,0 +1,152 @@
+---
+title: "Data Wrangling with in Observable With Arquero"
+description: "Arquero is an Observable library that has a dplyr-like grammar."
+author:
+  - name: Homer White
+date: "2023-11-03"
+categories: [Observable, Arquero]
+#image: banner.jpg
+execute:
+  echo: true
+---
+
+# Home Run Leaders
+
+## Introduction
+
+As an exercise in data wrangling in Observable, we'll use a few datasets (exported from the R package **Lahman**) to produce an interactive graph of home run leaders in Major League baseball.  We'll use the [Arquero](https://observablehq.com/@uwdata/introducing-arquero) library in order to wrangle our data in a way that should be familiar to users of R's [**tidyverse**](https://www.tidyverse.org/) ecosystem.
+
+
+## Setup
+
+We import Arquero and a recent version of Plots, and get the necessary datasets.
+
+```{ojs}
+import { aq, op } from '@uwdata/arquero'
+```
+
+```{ojs}
+Plot = import("https://esm.run/@observablehq/plot@0.6.11")
+```
+
+```{ojs}
+viewof b = aq.
+  from(await FileAttachment('Batting.csv')
+    .csv({typed: true})
+  )
+  .select("playerID", "yearID", "teamID", "HR").
+  view()
+```
+
+```{ojs}
+viewof p = aq.
+  from(await FileAttachment('People.csv')
+    .csv({typed: true})
+  )
+  .select("playerID", "nameFirst", "nameLast", "debut")
+  .view()
+```
+
+```{ojs}
+viewof t = aq.
+  from(await FileAttachment('Teams.csv')
+    .csv({typed: true})
+  )
+  .select("teamID", "yearID", "name")
+  .view()
+```
+
+## Wrangling
+
+Here is where Arquero shines:
+
+```{ojs}
+hrLeaders = b
+  // only for 1900 or later season:
+  .filter(d => d.yearID >= 1900)
+  // join with Players to get name and debut year:
+  .join(p, "playerID")
+  // find HR leaders in each season:
+  .groupby("yearID")
+  // arrange within each season-group:
+  .orderby(aq.desc("HR"))
+  // take only the top five:
+  .slice(0, 5)
+  .ungroup()
+  // for table display:
+  .orderby("yearID", aq.desc("HR"))
+```
+
+Let's have a look at the resulting table:
+
+```{ojs}
+Inputs.table(hrLeaders)
+```
+
+We need to join with the Teams data:
+
+```{ojs}
+df = hrLeaders.
+  // Is there an easier way in Arquero to
+  // join on two columns?
+  join(
+    t, 
+    (a, b) => op.equal(a.yearID, b.yearID) & op.equal(a.teamID, b.teamID)
+  )
+  // year_ID gets repeated in the join
+  // as yearID_1 and yearID_2, same
+  // for teamID:
+  .select(aq.not("yearID_2", "teamID_2"))
+  // rename for more readable graph:
+  .rename({yearID_1: "season"})
+  // make tool-tip info:
+  .derive(
+    {info: d => `Playing for the ${d.name}, ${d.nameFirst} ${d.nameLast}, who debuted in ${d.debut}, hit ${d.HR} home runs in ${d.season}.`
+    }
+  )
+  // jitter to avoid over-plotting:
+  .derive({
+    jx: d => d.season + Math.random() - 0.5,
+    jy: d => d.HR + Math.random() - 0.5
+  })
+```
+
+Let's look at the resulting table:
+
+```{ojs}
+Inputs.table(df)
+```
+
+## Finally, Plotting
+
+Now we are ready to make a scatterplot of home-run leaders by season, with information about each player displayed when one hovers over the player's point:
+
+```{ojs}
+Plot.plot({
+  nice: true,
+  marks: [
+    Plot.dot(df, {
+      x: "jx", 
+      y: "jy", 
+      fill: "black", fillOpacity: 0.3
+    }),
+    Plot.tip(df, Plot.pointer({
+      x: "jx",
+      y: "jy",
+      title: d => d.info
+    }))
+  ]
+})
+```
+
+## Note
+
+The work was originally done in:
+
+>[https://observablehq.com/@homerhanumat/home-run-leaders](https://observablehq.com/@homerhanumat/home-run-leaders)
+
+The Arquero functions for file import did not work in the Quarto setting.  This seems to be another case where the work is much easier to do in Observable.
+
+
+
+
