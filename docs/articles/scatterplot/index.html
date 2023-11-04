@@ -281,14 +281,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="7" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 6;"><span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Plot <span class="op">=</span> <span class="im">import</span>(<span class="st">"https://esm.run/@observablehq/plot@0.6.11"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div id="ojs-cell-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>It is not hard to learn to use <a href="https://observablehq.com">Observables</a> to perform data anlysis and produce interactive graphs like the one shown below.</p>
@@ -299,19 +291,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The plot below is based on data from the 2005 Cherry Blossom Race. For documentation see <a href="https://rdrr.io/cran/mosaicData/man/TenMileRace.html">here</a>.</p>
 <p>The user can choose the sex of the runners plotted, and the opacity of the points. (The latter feature is useful, as over-plotting is an issue in this dataset.)</p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="25" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 24;"><span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>race <span class="op">=</span> {</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> race <span class="op">=</span> <span class="cf">await</span> <span class="fu">FileAttachment</span>(<span class="st">"TenMileRace.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({<span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span>})<span class="op">;</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  race<span class="op">.</span><span class="fu">forEach</span>(<span class="kw">function</span>(runner) {runner<span class="op">.</span><span class="at">timeMinutes</span> <span class="op">=</span> runner<span class="op">.</span><span class="at">time</span> <span class="op">/</span> <span class="dv">60</span><span class="op">;</span>})<span class="op">;</span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> race<span class="op">;</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="21" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 20;"><span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>race <span class="op">=</span> {</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> race <span class="op">=</span> <span class="cf">await</span> <span class="fu">FileAttachment</span>(<span class="st">"TenMileRace.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({<span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span>})<span class="op">;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  race<span class="op">.</span><span class="fu">forEach</span>(<span class="kw">function</span>(runner) {runner<span class="op">.</span><span class="at">timeMinutes</span> <span class="op">=</span> runner<span class="op">.</span><span class="at">time</span> <span class="op">/</span> <span class="dv">60</span><span class="op">;</span>})<span class="op">;</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> race<span class="op">;</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display hidden">
+<div id="ojs-cell-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="30" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 29;"><span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>minTime <span class="op">=</span> d3<span class="op">.</span><span class="fu">min</span>(d3<span class="op">.</span><span class="fu">map</span>(race<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">timeMinutes</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
 <div id="ojs-cell-2" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="34" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 33;"><span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>minTime <span class="op">=</span> d3<span class="op">.</span><span class="fu">min</span>(d3<span class="op">.</span><span class="fu">map</span>(race<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">timeMinutes</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="34" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 33;"><span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>maxTime <span class="op">=</span> d3<span class="op">.</span><span class="fu">max</span>(d3<span class="op">.</span><span class="fu">map</span>(race<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">timeMinutes</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-3" data-nodetype="declaration">
 
@@ -319,7 +319,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="38" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 37;"><span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>maxTime <span class="op">=</span> d3<span class="op">.</span><span class="fu">max</span>(d3<span class="op">.</span><span class="fu">map</span>(race<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">timeMinutes</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="38" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 37;"><span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>minAge <span class="op">=</span> d3<span class="op">.</span><span class="fu">min</span>(d3<span class="op">.</span><span class="fu">map</span>(race<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">age</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-4" data-nodetype="declaration">
 
@@ -327,54 +327,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="42" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 41;"><span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>minAge <span class="op">=</span> d3<span class="op">.</span><span class="fu">min</span>(d3<span class="op">.</span><span class="fu">map</span>(race<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">age</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="42" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 41;"><span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>maxAge <span class="op">=</span> d3<span class="op">.</span><span class="fu">max</span>(d3<span class="op">.</span><span class="fu">map</span>(race<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">age</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-5" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="46" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 45;"><span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>maxAge <span class="op">=</span> d3<span class="op">.</span><span class="fu">max</span>(d3<span class="op">.</span><span class="fu">map</span>(race<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">age</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div id="ojs-cell-6" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
 <div class="cell panel-input card bg-light p-2">
-<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="58" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 57;"><span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>viewof sex <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>([<span class="st">"F"</span><span class="op">,</span> <span class="st">"M"</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Sex of runner: "</span>})</span>
-<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>viewof opacity <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Opacity: "</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="54" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 53;"><span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>viewof sex <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>([<span class="st">"F"</span><span class="op">,</span> <span class="st">"M"</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Sex of runner: "</span>})</span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>viewof opacity <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Opacity: "</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-7-1" data-nodetype="declaration">
+<div id="ojs-cell-6-1" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-7-2" data-nodetype="declaration">
+<div id="ojs-cell-6-2" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="66" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 65;"><span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a>  <span class="dt">inset</span><span class="op">:</span> <span class="dv">8</span><span class="op">,</span></span>
-<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(</span>
-<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a>      d3<span class="op">.</span><span class="fu">filter</span>(race<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">sex</span> <span class="op">==</span> sex)<span class="op">,</span> </span>
-<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a>      {<span class="dt">x</span><span class="op">:</span> <span class="st">"age"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"timeMinutes"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span> <span class="dt">fillOpacity</span><span class="op">:</span> opacity}</span>
-<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
-<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [minAge<span class="op">,</span> maxAge]}<span class="op">,</span></span>
-<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"time (minutes)"</span><span class="op">,</span> <span class="dt">domain</span><span class="op">:</span> [minTime<span class="op">,</span> maxTime]}<span class="op">,</span></span>
-<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="62" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 61;"><span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a>  <span class="dt">inset</span><span class="op">:</span> <span class="dv">8</span><span class="op">,</span></span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(</span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a>      d3<span class="op">.</span><span class="fu">filter</span>(race<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">sex</span> <span class="op">==</span> sex)<span class="op">,</span> </span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>      {<span class="dt">x</span><span class="op">:</span> <span class="st">"age"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"timeMinutes"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span> <span class="dt">fillOpacity</span><span class="op">:</span> opacity}</span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [minAge<span class="op">,</span> maxAge]}<span class="op">,</span></span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"time (minutes)"</span><span class="op">,</span> <span class="dt">domain</span><span class="op">:</span> [minTime<span class="op">,</span> maxTime]}<span class="op">,</span></span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div id="ojs-cell-8" data-nodetype="expression">
+<div id="ojs-cell-7" data-nodetype="expression">
 
 </div>
 </div>
@@ -384,33 +376,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="non-interactive-alternatives">Non-interactive Alternatives</h2>
 <p>To investigate the relationship of age, time and sex all at once, it might be preferable to include <code>sex</code> as an aesthetic property in the graph. The over-plotting could also be addressed by a different sort of glyph: density contours, for example, rather than points. Below is a non-interactive graph of the data:</p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb9" data-startfrom="85" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 84;"><span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [Plot<span class="op">.</span><span class="fu">density</span>(</span>
-<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a>    race<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> ({<span class="dt">age</span><span class="op">:</span> d<span class="op">.</span><span class="at">age</span><span class="op">,</span> <span class="dt">timeMinutes</span><span class="op">:</span> d<span class="op">.</span><span class="at">timeMinutes</span><span class="op">,</span> <span class="dt">sex</span><span class="op">:</span> d<span class="op">.</span><span class="at">sex</span> <span class="op">==</span> <span class="st">"M"</span> <span class="op">?</span> <span class="st">"male"</span> <span class="op">:</span> <span class="st">"female"</span>}))<span class="op">,</span> </span>
-<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a>    {<span class="dt">x</span><span class="op">:</span> <span class="st">"age"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"timeMinutes"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"sex"</span>}</span>
-<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a>  )]<span class="op">,</span></span>
-<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"time (minutes)"</span>}<span class="op">,</span></span>
-<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {<span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span>}</span>
-<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="81" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 80;"><span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [Plot<span class="op">.</span><span class="fu">density</span>(</span>
+<span id="cb8-83"><a href="#cb8-83" aria-hidden="true" tabindex="-1"></a>    race<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> ({<span class="dt">age</span><span class="op">:</span> d<span class="op">.</span><span class="at">age</span><span class="op">,</span> <span class="dt">timeMinutes</span><span class="op">:</span> d<span class="op">.</span><span class="at">timeMinutes</span><span class="op">,</span> <span class="dt">sex</span><span class="op">:</span> d<span class="op">.</span><span class="at">sex</span> <span class="op">==</span> <span class="st">"M"</span> <span class="op">?</span> <span class="st">"male"</span> <span class="op">:</span> <span class="st">"female"</span>}))<span class="op">,</span> </span>
+<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a>    {<span class="dt">x</span><span class="op">:</span> <span class="st">"age"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"timeMinutes"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"sex"</span>}</span>
+<span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a>  )]<span class="op">,</span></span>
+<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"time (minutes)"</span>}<span class="op">,</span></span>
+<span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {<span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span>}</span>
+<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div id="ojs-cell-9" data-nodetype="expression">
+<div id="ojs-cell-8" data-nodetype="expression">
 
 </div>
 </div>
 </div>
 <p>Since the density contours of the two sexes overlay each other somewhat, it may be best to facet by <code>sex</code> rather than making it an aesthetic property of our glyphs:</p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb10" data-startfrom="98" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 97;"><span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb10-99"><a href="#cb10-99" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb10-100"><a href="#cb10-100" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">frame</span>()<span class="op">,</span></span>
-<span id="cb10-101"><a href="#cb10-101" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">density</span>(</span>
-<span id="cb10-102"><a href="#cb10-102" aria-hidden="true" tabindex="-1"></a>      race<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> ({<span class="dt">age</span><span class="op">:</span> d<span class="op">.</span><span class="at">age</span><span class="op">,</span> <span class="dt">timeMinutes</span><span class="op">:</span> d<span class="op">.</span><span class="at">timeMinutes</span><span class="op">,</span> <span class="dt">sex</span><span class="op">:</span> d<span class="op">.</span><span class="at">sex</span> <span class="op">==</span> <span class="st">"M"</span> <span class="op">?</span> <span class="st">"male"</span> <span class="op">:</span> <span class="st">"female"</span>}))<span class="op">,</span> </span>
-<span id="cb10-103"><a href="#cb10-103" aria-hidden="true" tabindex="-1"></a>      {<span class="dt">x</span><span class="op">:</span> <span class="st">"age"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"timeMinutes"</span><span class="op">,</span> <span class="dt">fx</span><span class="op">:</span> <span class="st">"sex"</span>}</span>
-<span id="cb10-104"><a href="#cb10-104" aria-hidden="true" tabindex="-1"></a>    )]<span class="op">,</span></span>
-<span id="cb10-105"><a href="#cb10-105" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"time (minutes)"</span>}</span>
-<span id="cb10-106"><a href="#cb10-106" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb9" data-startfrom="94" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 93;"><span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">frame</span>()<span class="op">,</span></span>
+<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">density</span>(</span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a>      race<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> ({<span class="dt">age</span><span class="op">:</span> d<span class="op">.</span><span class="at">age</span><span class="op">,</span> <span class="dt">timeMinutes</span><span class="op">:</span> d<span class="op">.</span><span class="at">timeMinutes</span><span class="op">,</span> <span class="dt">sex</span><span class="op">:</span> d<span class="op">.</span><span class="at">sex</span> <span class="op">==</span> <span class="st">"M"</span> <span class="op">?</span> <span class="st">"male"</span> <span class="op">:</span> <span class="st">"female"</span>}))<span class="op">,</span> </span>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a>      {<span class="dt">x</span><span class="op">:</span> <span class="st">"age"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"timeMinutes"</span><span class="op">,</span> <span class="dt">fx</span><span class="op">:</span> <span class="st">"sex"</span>}</span>
+<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a>    )]<span class="op">,</span></span>
+<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"time (minutes)"</span>}</span>
+<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div id="ojs-cell-10" data-nodetype="expression">
+<div id="ojs-cell-9" data-nodetype="expression">
 
 </div>
 </div>
@@ -420,14 +412,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="notes">Notes</h2>
 <p>This work was first done as a <a href="https://observablehq.com/d/1664118c11075582">Notebook</a> on the <a href="https://observablehq.com">Observable</a> site. It is often easiest to do one’s development there, then transfer the code to Quarto for publication.</p>
 <p>The version of Plot provided with Quarto often lags well behind the latest version as <a href="https://observablehq.com/plot/">documented</a> by Observables. In order to keep your Quarto project current with what works in your Observables notebooks, it is advisable to import the latest version of Plot, like this:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>Plot <span class="op">=</span> <span class="im">import</span>(<span class="st">"https://esm.run/@observablehq/plot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>Plot <span class="op">=</span> <span class="im">import</span>(<span class="st">"https://esm.run/@observablehq/plot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"Plot = import(\"https://esm.run/@observablehq/plot@0.6.11\")\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"race = {\n  const race = await FileAttachment(\"TenMileRace.csv\").csv({typed: true});\n  race.forEach(function(runner) {runner.timeMinutes = runner.time / 60;});\n  return race;\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"minTime = d3.min(d3.map(race, d => d.timeMinutes))\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"maxTime = d3.max(d3.map(race, d => d.timeMinutes))\n"},{"methodName":"interpret","cellName":"ojs-cell-5","inline":false,"source":"minAge = d3.min(d3.map(race, d => d.age))\n"},{"methodName":"interpret","cellName":"ojs-cell-6","inline":false,"source":"maxAge = d3.max(d3.map(race, d => d.age))\n"},{"methodName":"interpret","cellName":"ojs-cell-7","inline":false,"source":"viewof sex = Inputs.select([\"F\", \"M\"], {label: \"Sex of runner: \"})\nviewof opacity = Inputs.range([0, 1], {label: \"Opacity: \", step: 0.01})\n"},{"methodName":"interpret","cellName":"ojs-cell-8","inline":false,"source":"Plot.plot({\n  inset: 8,\n  grid: true,\n  marks: [\n    Plot.dot(\n      d3.filter(race, d => d.sex == sex), \n      {x: \"age\", y: \"timeMinutes\", fill: \"black\", fillOpacity: opacity}\n    )\n  ],\n  x: {domain: [minAge, maxAge]},\n  y: {label: \"time (minutes)\", domain: [minTime, maxTime]},\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-9","inline":false,"source":"Plot.plot({\n  marks: [Plot.density(\n    race.map(d => ({age: d.age, timeMinutes: d.timeMinutes, sex: d.sex == \"M\" ? \"male\" : \"female\"})), \n    {x: \"age\", y: \"timeMinutes\", stroke: \"sex\"}\n  )],\n  y: {label: \"time (minutes)\"},\n  color: {legend: true}\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-10","inline":false,"source":"Plot.plot({\n  marks: [\n    Plot.frame(),\n    Plot.density(\n      race.map(d => ({age: d.age, timeMinutes: d.timeMinutes, sex: d.sex == \"M\" ? \"male\" : \"female\"})), \n      {x: \"age\", y: \"timeMinutes\", fx: \"sex\"}\n    )],\n  y: {label: \"time (minutes)\"}\n})\n"},{"methodName":"interpretQuiet","source":"shinyInput('sex')"},{"methodName":"interpretQuiet","source":"shinyInput('opacity')"}]}
+{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"race = {\n  const race = await FileAttachment(\"TenMileRace.csv\").csv({typed: true});\n  race.forEach(function(runner) {runner.timeMinutes = runner.time / 60;});\n  return race;\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"minTime = d3.min(d3.map(race, d => d.timeMinutes))\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"maxTime = d3.max(d3.map(race, d => d.timeMinutes))\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"minAge = d3.min(d3.map(race, d => d.age))\n"},{"methodName":"interpret","cellName":"ojs-cell-5","inline":false,"source":"maxAge = d3.max(d3.map(race, d => d.age))\n"},{"methodName":"interpret","cellName":"ojs-cell-6","inline":false,"source":"viewof sex = Inputs.select([\"F\", \"M\"], {label: \"Sex of runner: \"})\nviewof opacity = Inputs.range([0, 1], {label: \"Opacity: \", step: 0.01})\n"},{"methodName":"interpret","cellName":"ojs-cell-7","inline":false,"source":"Plot.plot({\n  inset: 8,\n  grid: true,\n  marks: [\n    Plot.dot(\n      d3.filter(race, d => d.sex == sex), \n      {x: \"age\", y: \"timeMinutes\", fill: \"black\", fillOpacity: opacity}\n    )\n  ],\n  x: {domain: [minAge, maxAge]},\n  y: {label: \"time (minutes)\", domain: [minTime, maxTime]},\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-8","inline":false,"source":"Plot.plot({\n  marks: [Plot.density(\n    race.map(d => ({age: d.age, timeMinutes: d.timeMinutes, sex: d.sex == \"M\" ? \"male\" : \"female\"})), \n    {x: \"age\", y: \"timeMinutes\", stroke: \"sex\"}\n  )],\n  y: {label: \"time (minutes)\"},\n  color: {legend: true}\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-9","inline":false,"source":"Plot.plot({\n  marks: [\n    Plot.frame(),\n    Plot.density(\n      race.map(d => ({age: d.age, timeMinutes: d.timeMinutes, sex: d.sex == \"M\" ? \"male\" : \"female\"})), \n      {x: \"age\", y: \"timeMinutes\", fx: \"sex\"}\n    )],\n  y: {label: \"time (minutes)\"}\n})\n"},{"methodName":"interpretQuiet","source":"shinyInput('sex')"},{"methodName":"interpretQuiet","source":"shinyInput('opacity')"}]}
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }

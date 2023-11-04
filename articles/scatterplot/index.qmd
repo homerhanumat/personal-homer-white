@@ -4,10 +4,6 @@ execute:
   echo: false
 ---
 
-```{ojs}
-Plot = import("https://esm.run/@observablehq/plot@0.6.11")
-```
-
 ## Introduction
 
 It is not hard to learn to use [Observables](https://observablehq.com) to perform data anlysis and produce interactive graphs like the one shown below.

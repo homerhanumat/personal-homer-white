@@ -5,9 +5,11 @@ author:
   - name: Homer White
 date: "2023-11-03"
 categories: [Observable, Arquero]
-#image: banner.jpg
-execute:
-  echo: true
+image: banner.jpg
+format:
+  html:
+    echo: true
+    code-tools: true
 ---
 
 # Home Run Leaders
@@ -20,23 +22,30 @@ Here is the graph we want to make:
 
 ```{ojs}
 //| echo: false
-Plot.plot({
-  nice: true,
-  x: {label: "Season"},
-  y: {label: "Home Runs"},
-  marks: [
-    Plot.dot(df, {
-      x: "jx", 
-      y: "jy", 
-      fill: "black", fillOpacity: 0.3
-    }),
-    Plot.tip(df, Plot.pointer({
-      x: "jx",
-      y: "jy",
-      title: d => d.info
-    }))
-  ]
-})
+// Trying to set up reactives correctly:  browser needs the specified version of plot
+// before it attempts to run
+// the plotting functions!
+goalPlot = {
+  const nPlot = await import("https://esm.run/@observablehq/plot@0.6.11");
+  let p = nPlot.plot({
+    nice: true,
+    x: {label: "Season"},
+    y: {label: "Home Runs"},
+    marks: [
+      nPlot.dot(df, {
+        x: "jx", 
+        y: "jy", 
+        fill: "black", fillOpacity: 0.3
+      }),
+      nPlot.tip(df, nPlot.pointer({
+        x: "jx",
+        y: "jy",
+        title: d => d.info
+      }))
+    ]
+  })
+  return p;
+}
 ```
 
 ## Setup
@@ -48,6 +57,7 @@ import { aq, op } from '@uwdata/arquero'
 ```
 
 ```{ojs}
+//| eval: false
 Plot = import("https://esm.run/@observablehq/plot@0.6.11")
 ```
 
