@@ -365,7 +365,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>In the code below, the Arquero <code>from()</code> method converts the data from an array-of-objects format into standard tidy-data format: object of arrays of the columns of data). (Arquero wrangles data in the tidy format.) Interestingly, the <code>viewof</code> keeps <code>b</code> as a tidy table, even though the table has been passed to Arquero’s <code>view()</code> method. I’m not sure why all this happens!</p>
+<p>We now load in the csv files, and get views of them:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4" data-startfrom="66" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 65;"><span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>batting <span class="op">=</span> {</span>
 <span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> b <span class="op">=</span> <span class="cf">await</span> aq<span class="op">.</span><span class="fu">loadCSV</span>(<span class="st">"Batting.csv"</span>)<span class="op">;</span></span>
@@ -907,7 +907,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb15-67"><a href="#cb15-67" aria-hidden="true" tabindex="-1"></a>Plot <span class="op">=</span> <span class="im">import</span>(<span class="st">"https://esm.run/@observablehq/plot@0.6.11"</span>)</span>
 <span id="cb15-68"><a href="#cb15-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb15-69"><a href="#cb15-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-70"><a href="#cb15-70" aria-hidden="true" tabindex="-1"></a>In the code below, the Arquero <span class="in">`from()`</span> method converts the data from an array-of-objects format into standard tidy-data format:  object of arrays of the columns of data).  (Arquero wrangles data in the tidy format.)  Interestingly, the <span class="in">`viewof`</span> keeps <span class="in">`b`</span> as a tidy table, even though the table has been passed to Arquero's <span class="in">`view()`</span> method.  I'm not sure why all this happens!</span>
+<span id="cb15-70"><a href="#cb15-70" aria-hidden="true" tabindex="-1"></a>We now load in the csv files, and get views of them:</span>
 <span id="cb15-71"><a href="#cb15-71" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-74"><a href="#cb15-74" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
 <span id="cb15-75"><a href="#cb15-75" aria-hidden="true" tabindex="-1"></a>batting <span class="op">=</span> {</span>
