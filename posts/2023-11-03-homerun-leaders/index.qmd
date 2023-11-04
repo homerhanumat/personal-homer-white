@@ -16,6 +16,28 @@ execute:
 
 As an exercise in data wrangling in Observable, we'll use a few datasets (exported from the R package **Lahman**) to produce an interactive graph of home run leaders in Major League baseball.  We'll use the [Arquero](https://observablehq.com/@uwdata/introducing-arquero) library in order to wrangle our data in a way that should be familiar to users of R's [**tidyverse**](https://www.tidyverse.org/) ecosystem.
 
+Here is the graph we want to make:
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  nice: true,
+  x: {label: "Season"},
+  y: {label: "Home Runs"},
+  marks: [
+    Plot.dot(df, {
+      x: "jx", 
+      y: "jy", 
+      fill: "black", fillOpacity: 0.3
+    }),
+    Plot.tip(df, Plot.pointer({
+      x: "jx",
+      y: "jy",
+      title: d => d.info
+    }))
+  ]
+})
+```
 
 ## Setup
 
@@ -29,7 +51,7 @@ import { aq, op } from '@uwdata/arquero'
 Plot = import("https://esm.run/@observablehq/plot@0.6.11")
 ```
 
-In the code below, the Arquero `from()` method converts the data from an array-of-objects format into standard tidy-data format:  object of arrays of the columns of data).  (Arquero wrangles data in the tidy format.)  Interestingly, the `viewof` keeps `b` as a tidy table, even though the table has been passed to Arquero's `view()` method.
+In the code below, the Arquero `from()` method converts the data from an array-of-objects format into standard tidy-data format:  object of arrays of the columns of data).  (Arquero wrangles data in the tidy format.)  Interestingly, the `viewof` keeps `b` as a tidy table, even though the table has been passed to Arquero's `view()` method.  I'm not sure why all this happens!
 
 ```{ojs}
 viewof b = aq.
@@ -60,7 +82,7 @@ viewof t = aq.
 
 ## Wrangling
 
-Here is where Arquero shines:
+Here is where Arquero feels a lot R's **dplyr**:
 
 ```{ojs}
 hrLeaders = b
@@ -85,13 +107,7 @@ Let's have a look at the resulting table:
 Inputs.table(hrLeaders)
 ```
 
-We need to join with the Teams data.  We also plan to add infromation for tool tips.  As a challenge, I would like to include the debut date of th eplayer in this information.  This requires extracting just the date from the `debut` variable, which has datetime values.  Sadly, Arquero cannot handle certain functions in its table computations, so, following the advice in a helpful Arquero error message, I add a function:
-
-```{ojs}
-aq.addFunction('toDateString', date => date.toDateString());
-```
-
-Now for the join and the mutations:
+We need to join with the Teams data, and we add a column containing material for the tool tips.  We must also create "jittered" versions of the season and home-run variables, in order to avoid over-plotting.
 
 ```{ojs}
 df = hrLeaders.
@@ -107,10 +123,17 @@ df = hrLeaders.
   .select(aq.not("yearID_2", "teamID_2"))
   // rename for more readable graph:
   .rename({yearID_1: "season"})
-  // make tool-tip info:
+  // create a better debut variable:
   .derive(
-    {debutDate: d => op.toDateString(d.debut)}
+    // As is, debut is a datetime value.
+    // we don't want the time, so we should
+    // consider:
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toDateString
+    // But we must also escape, as per
+    // https://uwdata.github.io/arquero/api/#escape:
+    {debutDate: aq.escape(d => d.debut.toDateString())}
   )
+  // now assemble the tooltip info:
   .derive(
     {info: d => `Playing for the ${d.name}, ${d.nameFirst} ${d.nameLast}, who debuted on ${d.debutDate}, hit ${d.HR} home runs in ${d.season}.`
     }
@@ -122,17 +145,16 @@ df = hrLeaders.
   })
 ```
 
-Let's look at the resulting table:
+This is the "glyph-ready" table that is used to make the desired plot.  Let's have a look at it:
 
 ```{ojs}
 Inputs.table(df)
 ```
 
-## Finally, Plotting
-
-Now we are ready to make a scatterplot of home-run leaders by season, with information about each player displayed when one hovers over the player's point:
+The code for the plot was:
 
 ```{ojs}
+//| eval: false
 Plot.plot({
   nice: true,
   x: {label: "Season"},
@@ -152,13 +174,16 @@ Plot.plot({
 })
 ```
 
+
+
+
 ## Note
 
-The work was originally done in:
+A first pass at the work is in this Observable notebook:
 
 >[https://observablehq.com/@homerhanumat/home-run-leaders](https://observablehq.com/@homerhanumat/home-run-leaders)
 
-The Arquero functions for file import did not work in the Quarto setting.  This seems to be another case where the work is much easier to do in Observable.
+The Arquero functions for file import used in the notebook did not work in the Quarto setting.  (This seems to be another instance where the work is much easier to do in an Observable notebook than in Quarto.)
 
 
 
