@@ -85,7 +85,13 @@ Let's have a look at the resulting table:
 Inputs.table(hrLeaders)
 ```
 
-We need to join with the Teams data:
+We need to join with the Teams data.  We also plan to add infromation for tool tips.  As a challenge, I would like to include the debut date of th eplayer in this information.  This requires extracting just the date from the `debut` variable, which has datetime values.  Sadly, Arquero cannot handle certain functions in its table computations, so, following the advice in a helpful Arquero error message, I add a function:
+
+```{ojs}
+aq.addFunction('toDateString', date => date.toDateString());
+```
+
+Now for the join and the mutations:
 
 ```{ojs}
 df = hrLeaders.
@@ -103,7 +109,10 @@ df = hrLeaders.
   .rename({yearID_1: "season"})
   // make tool-tip info:
   .derive(
-    {info: d => `Playing for the ${d.name}, ${d.nameFirst} ${d.nameLast}, who debuted in ${d.debut}, hit ${d.HR} home runs in ${d.season}.`
+    {debutDate: d => op.toDateString(d.debut)}
+  )
+  .derive(
+    {info: d => `Playing for the ${d.name}, ${d.nameFirst} ${d.nameLast}, who debuted on ${d.debutDate}, hit ${d.HR} home runs in ${d.season}.`
     }
   )
   // jitter to avoid over-plotting:
@@ -126,6 +135,8 @@ Now we are ready to make a scatterplot of home-run leaders by season, with infor
 ```{ojs}
 Plot.plot({
   nice: true,
+  x: {label: "Season"},
+  y: {label: "Home Runs"},
   marks: [
     Plot.dot(df, {
       x: "jx", 
