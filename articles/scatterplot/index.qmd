@@ -118,5 +118,6 @@ This work was first done as a [Notebook](https://observablehq.com/d/1664118c1107
 The version of Plot provided with Quarto often lags well behind the latest version as [documented](https://observablehq.com/plot/) by Observables.  In order to keep your Quarto project current with what works in your Observables notebooks, it is advisable to import the latest version of Plot, like this:
 
 ```{ojs}
+//| echo: true
 Plot = import("https://esm.run/@observablehq/plot")
 ```
