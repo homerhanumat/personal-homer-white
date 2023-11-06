@@ -36,6 +36,8 @@ website:
               href: articles/scatterplot/index.qmd
             - text: "Stock Prices"
               href: articles/stocks/index.qmd
+            - text: "Arquero Wrangling"
+              href: articles/homerunleaders/index.qmd
         - section: "Posts"
           href: posts/index.qmd
           contents: "posts/*/*.qmd"

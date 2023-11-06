@@ -196,6 +196,17 @@ A first pass at the work is in this Observable notebook:
 
 The Arquero functions for file import used in the notebook did not work in the Quarto setting.  (This seems to be another instance where the work is much easier to do in an Observable notebook than in Quarto.)
 
+```{ojs}
+//| echo: false
+// hack to make Quarto render the csv files to docs:
+stuff = {
+   let b = FileAttachment("Batting.csv").csv({typed: true});
+   let p = FileAttachment("People.csv").csv({typed: true});
+   let t = FileAttachment("Teams.csv").csv({typed: true});
+   return {b, p, t}
+}
+```
+
 
 
 
