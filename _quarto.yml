@@ -47,8 +47,8 @@ format:
     css: styles.css
     toc: true
 
-execute:
-  freeze: true
+# execute:
+#   freeze: true
 
 
 
