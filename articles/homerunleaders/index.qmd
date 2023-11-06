@@ -199,7 +199,9 @@ The Arquero functions for file import used in the notebook did not work in the Q
 ```{ojs}
 //| echo: false
 //| eval: false
-// hack to make Quarto render the csv files to docs:
+// hack once used to make Quarto render the csv files to docs,
+// but for some reason no longer
+// needed:
 stuff = {
    let b = FileAttachment("Batting.csv").csv({typed: true});
    let p = FileAttachment("People.csv").csv({typed: true});
