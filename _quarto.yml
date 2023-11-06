@@ -4,7 +4,7 @@ project:
 
 website:
   title: "Homer White's Website"
-  site-path: "/docs/"
+  # site-path: "/docs/"
   navbar:
     left:
       - href: index.qmd
