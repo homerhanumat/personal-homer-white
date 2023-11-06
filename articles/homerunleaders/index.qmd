@@ -1,5 +1,5 @@
 ---
-title: "Data Wrangling with in Observable With Arquero"
+title: "Data Wrangling in Observable With Arquero"
 #image: banner.jpg
 format:
   html:
@@ -197,7 +197,7 @@ A first pass at the work is in this Observable notebook:
 
 >[https://observablehq.com/@homerhanumat/home-run-leaders](https://observablehq.com/@homerhanumat/home-run-leaders)
 
-The Arquero functions for file import used in the notebook did not work in the Quarto setting.  (This seems to be another instance where the work is much easier to do in an Observable notebook than in Quarto.)
+This seems to be another instance where the work is much easier to do in an Observable notebook than in Quarto.)
 
 ```{ojs}
 //| echo: false
