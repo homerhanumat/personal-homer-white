@@ -28,12 +28,12 @@ goalPlot = {
     y: {label: "Home Runs"},
     marks: [
       nPlot.dot(df, {
-        x: "jx", 
+        x: "seasonAsDate", 
         y: "jy", 
         fill: "black", fillOpacity: 0.3
       }),
       nPlot.tip(df, nPlot.pointer({
-        x: "jx",
+        x: "seasonAsDate",
         y: "jy",
         title: d => d.info
       }))
@@ -93,7 +93,7 @@ teams.view()
 
 ## Wrangling
 
-Here is where Arquero feels a lot R's **dplyr**:
+Here is where Arquero feels a lot like R's **dplyr**:
 
 ```{ojs}
 hrLeaders = batting
@@ -151,8 +151,11 @@ df = hrLeaders.
   )
   // jitter to avoid over-plotting:
   .derive({
-    jx: d => d.season + Math.random() - 0.5,
-    jy: d => d.HR + Math.random() - 0.5
+    jy: d => d.HR + Math.random() - 1
+  })
+  // keep Plot from formatting years with commas:
+  .derive({
+    seasonAsDate: aq.escape(d => new Date(d.season, 0, 1))
   })
 ```
 
@@ -167,22 +170,22 @@ The code for the plot was:
 ```{ojs}
 //| eval: false
 Plot.plot({
-  nice: true,
-  x: {label: "Season"},
-  y: {label: "Home Runs"},
-  marks: [
-    Plot.dot(df, {
-      x: "jx", 
-      y: "jy", 
-      fill: "black", fillOpacity: 0.3
-    }),
-    Plot.tip(df, Plot.pointer({
-      x: "jx",
-      y: "jy",
-      title: d => d.info
-    }))
-  ]
-})
+    nice: true,
+    x: {label: "Season"},
+    y: {label: "Home Runs"},
+    marks: [
+      Plot.dot(df, {
+        x: "seasonAsDate", 
+        y: "jy", 
+        fill: "black", fillOpacity: 0.3
+      }),
+      Plot.tip(df, nPlot.pointer({
+        x: "seasonAsDate",
+        y: "jy",
+        title: d => d.info
+      }))
+    ]
+  })
 ```
 
 
