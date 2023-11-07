@@ -6,6 +6,7 @@ website:
   title: "Homer White's Website"
   site-path: "/personal-homer-white/"
   reader-mode: true
+  repo-url: https://github.com/homerhanumat/personal-homer-white
   repo-actions: issue
   navbar:
     left:
