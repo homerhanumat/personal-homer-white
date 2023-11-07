@@ -5,6 +5,8 @@ project:
 website:
   title: "Homer White's Website"
   site-path: "/personal-homer-white/"
+  reader-mode: true
+  repo-actions: issue
   navbar:
     left:
       - href: index.qmd
