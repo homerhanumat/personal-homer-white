@@ -29,10 +29,7 @@ function handleFileLoad(event) {
   const input = event.target.result;
 
   // We now make an array of the items:
-  const splitLines = function(str) {
-    return str.split(/\n/);
-  };
-  const caloriesAsStrings = splitLines(input);
+  const caloriesAsStrings = input.replace(/\r/g, '').split(/\n/);
 
   // The array is full of strings, so convert them to 
   // numbers.  Blank lines will be converted 
