@@ -45,7 +45,7 @@ website:
           href: posts/index.qmd
           contents: "posts/*/*.qmd"
           sort:
-            - "date"
+            - "date desc"
 
 
 format:
