@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -245,6 +245,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Yellow Throttles Make Terrible Toys for Toddlers</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2023-11-09-footnotes/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Footnotes in Quarto</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -327,7 +333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="reading-in-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="reading-in-the-data">Reading in the Data</h2>
-<p>Suppose that the problem data is contained in a file called <code>input.txt</code> located in the same dirctory as the JavaScript file, for example:</p>
+<p>Suppose that the problem data is contained in a file called <code>input.txt</code> located in the same directory as the JavaScript file, for example:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>input.txt</strong></pre>
@@ -366,7 +372,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We wish to convert the string into an array of values, where each element of the array is the calorie-value of an item.</p>
 <p>To this end, we must split the string along the newlines within it. To this end we define a splitting function:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> splitLines <span class="op">=</span> str <span class="kw">=&gt;</span> str<span class="op">.</span><span class="fu">split</span>(<span class="ss">/</span><span class="sc">\n</span><span class="ss">/</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Note the use of the Javacript regular expression <code>/\n/</code>). (In Javascript regular expressions to not start life as strings, as they do in R. Instead they are a special type of object, delimited by the forward-slash: <code>/</code>. For more on regular expressions in JavaScript, see <a href="https://eloquentjavascript.net/09_regexp.html">Chapter 8</a> of the <em>Eloquent JavaScript</em> textbook.)</p>
+<p>Note the use of the Javacript regular expression <code>/\n/</code>). (In Javascript regular expressions to not start life as strings, as they do in R. Instead they are a special type of object, delimited by the forward-slash: <code>/</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <p>We now apply the function to split the input into an array of strings;</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> caloriesAsStrings <span class="op">=</span> <span class="fu">splitLines</span>(input)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The array is full of strings. (Some of them are the empty strinf—wherever there were two consecutive newlines in the oringal input to separate the pack of one elf from the pack of the next elf.)</p>
@@ -396,7 +402,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="reporting-the-maximum-pack-total">Reporting the Maximum Pack-Total</h2>
 <p>Finally, we compute the maximum of the pack totals:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> maxPackTotal <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="op">...</span>packTotals)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>(Math.max() takes as arguments all of the numbers of whihc we wish to find the maximum. Note the use of the three-dot notation notation <code>...</code> to convert the single array into separate arguments. For a review of the three-dot notation, see the section <a href="https://eloquentjavascript.net/04_data.html#h_hX9DkIBp9y">Rest Parameters</a> in <em>Eloquent JavaScript</em>. )</p>
+<p>(Math.max() takes as arguments all of the numbers of whihc we wish to find the maximum. Note the use of the three-dot notation notation <code>...</code> to convert the single array into separate arguments<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
 <p>Finally, we report the maximum to the console:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(maxPackTotal)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We are done!</p>
@@ -439,7 +445,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>For more on regular expressions in JavaScript, see <a href="https://eloquentjavascript.net/09_regexp.html">Chapter 8</a> of the <em>Eloquent JavaScript</em> textbook.)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>For a review of the three-dot notation, see the section <a href="https://eloquentjavascript.net/04_data.html#h_hX9DkIBp9y">Rest Parameters</a> in <em>Eloquent JavaScript</em>. )<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

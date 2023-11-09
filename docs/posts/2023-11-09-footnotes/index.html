@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Homer White">
-<meta name="dcterms.date" content="2022-09-05">
-<meta name="description" content="Find the area of segments of pink parabolas.">
+<meta name="dcterms.date" content="2023-11-09">
+<meta name="description" content="You can easily write a footnote in the Quarto framework.">
 
-<title>Homer White’s Website - Pink Parabolas Make For the Merriest Mathematics</title>
+<title>Homer White’s Website - Footnotes in Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -116,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../posts/index.html">Posts</a></li><li class="breadcrumb-item"><a href="../../posts/2022-09-05-pink-parabolas/index.html">Pink Parabolas Make For the Merriest Mathematics</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../posts/index.html">Posts</a></li><li class="breadcrumb-item"><a href="../../posts/2023-11-09-footnotes/index.html">Footnotes in Quarto</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -204,7 +238,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/2022-09-05-pink-parabolas/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../posts/2022-09-05-pink-parabolas/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Pink Parabolas Make For the Merriest Mathematics</span></a>
   </div>
 </li>
@@ -216,7 +250,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/2023-11-09-footnotes/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../posts/2023-11-09-footnotes/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Footnotes in Quarto</span></a>
   </div>
 </li>
@@ -233,8 +267,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#incredible" id="toc-incredible" class="nav-link" data-scroll-target="#incredible">Incredible</a></li>
-  <li><a href="#a-sad-day-indeed" id="toc-a-sad-day-indeed" class="nav-link" data-scroll-target="#a-sad-day-indeed">A Sad Day Indeed</a></li>
+  <li><a href="#how-i-did-it" id="toc-how-i-did-it" class="nav-link" data-scroll-target="#how-i-did-it">How I Did It</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/homerhanumat/personal-homer-white/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -243,16 +277,16 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Pink Parabolas Make For the Merriest Mathematics</h1>
+<h1 class="title">Footnotes in Quarto</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">math</div>
-    <div class="quarto-category">colors</div>
+    <div class="quarto-category">quarto</div>
+    <div class="quarto-category">programming</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Find the area of segments of pink parabolas.
+    You can easily write a footnote in the Quarto framework.
   </div>
 </div>
 
@@ -269,7 +303,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 5, 2022</p>
+      <p class="date">November 9, 2023</p>
     </div>
   </div>
   
@@ -281,27 +315,54 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar sem quis maximus condimentum. Aliquam volutpat velit arcu, ut blandit erat iaculis quis. Vestibulum metus leo, condimentum vel fringilla vel, malesuada in mauris. Suspendisse condimentum lorem arcu, congue auctor nisi ullamcorper ut. Nam mollis venenatis odio, a tincidunt metus malesuada quis. Integer euismod ut purus eu euismod. Donec sit amet finibus purus. Proin non nisl in lorem pretium rutrum. Vivamus fringilla nibh in mauris rhoncus varius. Sed ut mi quam. Sed non enim et odio laoreet feugiat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam ac dui nec eros pharetra volutpat.</p>
-<p>Maecenas vitae est vitae tortor egestas sodales. Nullam nec purus vel elit porta consectetur. Fusce nec elementum eros. Duis sollicitudin est quis dui rhoncus, a luctus tortor elementum. Nullam purus eros, semper vitae pellentesque sit amet, rutrum vitae risus. Vestibulum at lectus vitae purus dignissim eleifend. Nam aliquet posuere nunc vel dapibus. Nam eleifend est sapien, eget commodo ante scelerisque ut. Cras vel massa vulputate, feugiat sapien id, porttitor neque. Suspendisse a libero vitae quam molestie vehicula. Nunc dapibus justo pharetra est gravida porttitor. Duis rutrum congue egestas. Maecenas imperdiet risus ac sapien imperdiet mattis a vitae purus.</p>
+<p>I learned how to make footnotes in Quarto, and to display them in a cool way! Hover over the this footnote<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 </section>
-<section id="incredible" class="level2">
-<h2 class="anchored" data-anchor-id="incredible">Incredible</h2>
-<p>Curabitur nibh mi, accumsan quis sodales quis, vestibulum id nisi. Nunc ipsum libero, maximus egestas tellus at, convallis vestibulum ipsum. Nullam at velit enim. Nullam tincidunt magna tincidunt libero vestibulum aliquam. Aenean feugiat lacinia interdum. Curabitur pulvinar ornare aliquet. Donec in blandit est, in accumsan nulla. Nunc finibus placerat velit, sagittis venenatis lacus porta in. Fusce ornare quis erat ut rhoncus.</p>
-<p>Vestibulum nec fringilla ligula. Donec feugiat laoreet lacus, vitae egestas nisl tempus ultricies. Nunc eget turpis velit. Mauris eget tempor elit, nec aliquet velit. Ut hendrerit, orci id sollicitudin auctor, nisi metus pulvinar tellus, quis vehicula magna leo vel quam. Fusce varius massa vel tortor elementum consequat. Ut pulvinar elementum dolor. Mauris pretium sem nec lorem molestie porta. In condimentum gravida nisi, at pretium libero viverra ut. Mauris mollis eros eu gravida finibus. Ut pellentesque turpis felis, sed egestas lacus ullamcorper vel. Sed aliquam eros nec ligula bibendum pharetra.</p>
-<p>Morbi hendrerit augue lorem, at facilisis massa elementum interdum. Vestibulum fermentum maximus mollis. Nulla interdum erat ac nisi sodales sagittis. Sed tempor volutpat neque vel suscipit. Sed nec dapibus dui. Donec eu elementum ipsum. Integer vel cursus justo. Morbi ut tortor ac nibh vestibulum efficitur. Phasellus nec dapibus justo, non dapibus urna. Donec faucibus, magna in tincidunt rutrum, turpis risus posuere arcu, at fermentum magna tortor non metus.</p>
+<section id="how-i-did-it" class="level2">
+<h2 class="anchored" data-anchor-id="how-i-did-it">How I Did It</h2>
+<p>In your <code>_quarto.yml</code> file, indicate that you want footnotes to appear on hover:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_quarto.yml</strong></pre>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">footnotes-hover</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Then make footenotes, like this:</p>
+<pre><code>Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit.[^2]Nullam pulvinar sem 
+quis maximus condimentum. 
+Aliquam volutpat velit arcu, 
+ut blandit erat 
+iaculis quis.[^3]
+
+[^2]: Here is a footnote.
+
+[^3]: Here is the next footnote.</code></pre>
+<p>They will appear as desired:</p>
+<blockquote class="blockquote">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Nullam pulvinar sem quis maximus condimentum. Aliquam volutpat velit arcu, ut blandit erat iaculis quis.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+</blockquote>
 </section>
-<section id="a-sad-day-indeed" class="level2">
-<h2 class="anchored" data-anchor-id="a-sad-day-indeed">A Sad Day Indeed</h2>
-<p>Donec lectus lacus, eleifend vitae mollis eu, laoreet a mi. Maecenas sit amet auctor tellus, vitae accumsan turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce eleifend pharetra commodo. Fusce tempor velit dolor, ac rutrum enim consectetur sed. Sed eget metus eget odio euismod convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam interdum, mauris et imperdiet pellentesque, turpis quam blandit elit, sed ornare nulla lectus a odio. Maecenas eget justo ipsum. Phasellus libero dui, congue eu venenatis et, ullamcorper in odio. Curabitur iaculis lectus est, ac placerat est aliquam blandit. Cras sed elit ac ipsum convallis cursus ut nec tellus. Vestibulum in ipsum ante. Aenean condimentum quam in suscipit pulvinar. Suspendisse auctor id erat non placerat. Nam egestas purus ultrices dolor molestie scelerisque.</p>
-<p>Aenean aliquet augue a dui porta, ut condimentum diam blandit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas faucibus finibus odio ut posuere. Aenean est lorem, lacinia id turpis a, congue bibendum erat. Sed ac nibh lacinia, rutrum dui sed, efficitur tortor. Donec imperdiet, arcu commodo ultricies sagittis, sapien metus auctor sapien, quis venenatis mauris felis non mi. Integer sodales nulla in mi aliquet pretium. Integer ut varius mi. Ut lacinia quis risus vitae suscipit. Maecenas cursus dolor id dolor pretium, sed vestibulum erat accumsan. Mauris purus erat, ultricies nec auctor vel, semper id nulla.</p>
-<p>Donec at est non lectus imperdiet viverra. Vestibulum enim nisi, porttitor sit amet massa ac, lacinia sodales mauris. Aliquam vestibulum sapien ac arcu pellentesque luctus. Sed aliquet efficitur nisl, id ornare ipsum tempus non. In maximus odio vitae dui semper facilisis. Aliquam erat volutpat. Etiam vel justo pulvinar, lacinia magna eget, pharetra dolor. Nunc porta erat in hendrerit suscipit. Fusce felis tellus, rutrum ac dolor nec, iaculis egestas ante. Praesent nisl libero, ultrices ac est ut, consectetur congue ex. Aenean venenatis enim vitae augue tempor vestibulum. Fusce in nulla dolor. Suspendisse fringilla magna et quam consectetur, sed pellentesque tortor bibendum.</p>
-<p>Nunc at viverra lorem, sit amet pulvinar ligula. Sed iaculis odio at commodo consectetur. Proin posuere diam in dapibus pellentesque. Cras vitae egestas ligula. Phasellus tempus porta diam id molestie. Quisque a luctus velit. Suspendisse pellentesque quam a leo auctor, vel tincidunt massa dapibus. Vivamus porttitor, ipsum a congue imperdiet, neque urna finibus eros, in tristique lacus massa sit amet odio. Vestibulum et laoreet purus, pulvinar vulputate mi. Pellentesque ultrices efficitur mauris nec ultricies. Quisque efficitur magna orci, et maximus justo malesuada at. Nulla hendrerit dui et ligula sagittis efficitur. Ut erat dolor, rutrum ac ex eget, malesuada molestie turpis.</p>
-<p>Aenean eget vehicula mi, in rutrum elit. Mauris pulvinar est non sagittis tempor. Sed quis finibus nisi. Pellentesque commodo, nibh at sagittis vulputate, tortor massa iaculis mi, quis sodales risus lorem vel enim. Nunc faucibus ante ut dolor eleifend, tempor efficitur lacus aliquet. Praesent nec sapien et lacus fermentum ultricies. Aenean ut pharetra lectus. Sed et lacus a nisl gravida cursus.</p>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><a href="https://quarto.org/docs/output-formats/html-basics.html#reference-popups">Quarto Reference Popups</a></li>
+<li><a href="https://quarto.org/docs/authoring/footnotes-and-citations.html">Quarto Footnotes</a></li>
+</ul>
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Ta-da, here I am, a footnote! (You can also find me at the bottom of the page.)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Here is a footnote.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Here is the next footnote.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

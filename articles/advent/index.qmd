@@ -51,7 +51,7 @@ In the remainder of the article we provide a detailed explanation of the solutio
 
 ## Reading in the Data
 
-Suppose that the problem data is contained in a file called `input.txt` located in the same dirctory as the JavaScript file, for example:
+Suppose that the problem data is contained in a file called `input.txt` located in the same directory as the JavaScript file, for example:
 
 ```{filename="input.txt"}
 1000
@@ -106,7 +106,9 @@ To this end, we must split the string along the newlines within it.  To this end
 const splitLines = str => str.split(/\n/);
 ```
 
-Note the use of the Javacript regular expression `/\n/`).  (In Javascript regular expressions to not start life as strings, as they do in R.  Instead they are a special type of object, delimited by the forward-slash: `/`.  For more on regular expressions in JavaScript, see [Chapter 8](https://eloquentjavascript.net/09_regexp.html) of the *Eloquent JavaScript* textbook.)
+Note the use of the Javacript regular expression `/\n/`).  (In Javascript regular expressions to not start life as strings, as they do in R.  Instead they are a special type of object, delimited by the forward-slash: `/`[^1]. 
+
+[^1]: For more on regular expressions in JavaScript, see [Chapter 8](https://eloquentjavascript.net/09_regexp.html) of the *Eloquent JavaScript* textbook.)
 
 We now apply the function to split the input into an array of strings;
 
@@ -159,7 +161,9 @@ Finally, we compute the maximum of the pack totals:
 let maxPackTotal = Math.max(...packTotals);
 ```
 
-(Math.max() takes as arguments all of the numbers of whihc we wish to find the maximum.  Note the use of the three-dot notation notation `...` to convert the single array into separate arguments. For a review of the three-dot notation, see the section [Rest Parameters](https://eloquentjavascript.net/04_data.html#h_hX9DkIBp9y) in *Eloquent JavaScript*. )
+(Math.max() takes as arguments all of the numbers of whihc we wish to find the maximum.  Note the use of the three-dot notation notation `...` to convert the single array into separate arguments[^2].
+
+[^2]: For a review of the three-dot notation, see the section [Rest Parameters](https://eloquentjavascript.net/04_data.html#h_hX9DkIBp9y) in *Eloquent JavaScript*. )
 
 Finally, we report the maximum to the console:
 

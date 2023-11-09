@@ -51,6 +51,7 @@ format:
     theme: flatly
     css: styles.css
     toc: true
+    footnotes-hover: true
 
 # execute:
 #   freeze: true

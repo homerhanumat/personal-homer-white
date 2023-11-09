@@ -1,0 +1,54 @@
+---
+title: "Footnotes in Quarto"
+description: "You can easily write a footnote in the Quarto framework."
+author:
+  - name: Homer White
+date: "2023-11-09"
+categories: [quarto, programming]
+image: banner.png
+---
+
+## Introduction
+
+I learned how to make footnotes in Quarto, and to display them in a cool way! Hover over the this footnote[^1].
+
+[^1]: Ta-da, here I am, a footnote!  (You can also find me at the bottom of the page.)
+
+## How I Did It
+
+In your `_quarto.yml` file, indicate that you want footnotes to appear on hover:
+
+```{.yml filename="_quarto.yml"}
+format:
+  html:
+    footnotes-hover: true
+```
+
+Then make footenotes, like this:
+
+```
+Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit.[^2]Nullam pulvinar sem 
+quis maximus condimentum. 
+Aliquam volutpat velit arcu, 
+ut blandit erat 
+iaculis quis.[^3]
+
+[^2]: Here is a footnote.
+
+[^3]: Here is the next footnote.
+```
+
+They will appear as desired:
+
+>Lorem ipsum dolor sit amet, consectetur adipiscing elit.[^2]
+Nullam pulvinar sem quis maximus condimentum. Aliquam volutpat velit arcu, ut blandit erat iaculis quis.[^3]
+
+[^2]: Here is a footnote.
+
+[^3]: Here is the next footnote.
+
+## References
+
+* [Quarto Reference Popups](https://quarto.org/docs/output-formats/html-basics.html#reference-popups)
+* [Quarto Footnotes](https://quarto.org/docs/authoring/footnotes-and-citations.html)
