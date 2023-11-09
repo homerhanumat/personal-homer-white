@@ -4,7 +4,7 @@ description: "You can easily write a footnote in the Quarto framework."
 author:
   - name: Homer White
 date: "2023-11-09"
-categories: [quarto, programming]
+categories: [quarto, programming, substantive]
 image: banner.png
 ---
 
