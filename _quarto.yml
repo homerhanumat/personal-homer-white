@@ -44,6 +44,8 @@ website:
         - section: "Posts"
           href: posts/index.qmd
           contents: "posts/*/*.qmd"
+          sort:
+            - "date"
 
 
 format:
