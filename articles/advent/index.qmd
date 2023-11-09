@@ -4,7 +4,7 @@ title: "Advent of Code 2022, Day 1:  A Solution Using Javascript"
 
 ## Introduction to the Problem
 
-We describe a solution, in the JavaScrpt running in the Node environment, to the Day 1 problem of the 2022 edition of the highly-popular Advent of Code challenge.
+We describe a solution, in JavaScript running in the Node environment, to the Day 1 problem of the 2022 edition of the hugely-popular Advent of Code challenge.
 
 The problem is described in full [here](https://adventofcode.com/2022/day/1).  (The reader may need to create an account in order to view it.)  A band of elves is on a quest to provide energy to Santa's reindeer.  Their quest begins with a hike through a jungle area. Below is an excerpt from the Advent of Code website that describes the problem.
 
