@@ -151,7 +151,7 @@ df = hrLeaders.
   )
   // jitter to avoid over-plotting:
   .derive({
-    jy: d => d.HR + Math.random() - 1
+    jy: d => d.HR + Math.random() - 0.5
   })
   // keep Plot from formatting years with commas:
   .derive({
