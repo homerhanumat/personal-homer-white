@@ -1,0 +1,34 @@
+---
+title: "Emdedding Observable Cells in a Web Page"
+description: "Observable's Embeds features makes this easy!"
+author:
+  - name: Homer White
+date: "2023-11-11"
+categories: [observable, substantive]
+image: banner.jpg
+---
+
+## Introduction
+
+Below is an interactive plot embedded from [an Observable notebook](https://observablehq.com/@homerhanumat/stock-price-graphs):
+
+```{=html}
+<iframe width="100%" height="604" frameborder="0"
+  src="https://observablehq.com/embed/3a58ee9173151885@29?cells=viewof+stockName%2Cviewof+n%2Cviewof+r%2CmyPlot"></iframe>
+```
+
+Developing in Observable notebooks is usually easier than in Quarto, so embeds are good to keep in mind! (But it seems they sometimes take a while to load.)
+
+## How I Did It
+
+I simply went to the notebook, clicked on the settings for any named cell, and chose which named cells I wanted to embed.  I then copied the embed code into this page, as follows:
+
+````
+```{=html}
+<iframe width="100%" height="604" frameborder="0"
+  src="https://observablehq.com/embed/3a58ee9173151885@29?cells=viewof+stockName%2Cviewof+n%2Cviewof+r%2CmyPlot">
+</iframe>
+```
+````
+
+For more details consult the [documentation](https://observablehq.com/documentation/embeds/).

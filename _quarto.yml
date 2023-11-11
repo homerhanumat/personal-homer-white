@@ -55,8 +55,8 @@ format:
     toc: true
     footnotes-hover: true
 
-# execute:
-#   freeze: true
+execute:
+  freeze: true
 
 
 
