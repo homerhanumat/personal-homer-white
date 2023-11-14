@@ -105,11 +105,7 @@
     "href": "articles/battleship/index.html",
     "title": "Battleship with Canvas",
     "section": "",
-    "text": "Here is a simple game of Battleship!\nYou play against the computer. Select a point at which to drop a bomb by clicking in the computer’s area, which is the upper part of the “ocean” shown belw. The bomb explodes, and any ship that is within a set radius of the point of explosion sustains a hit. Each ship has a hit-capacity; when it takes a number of hits equal to its capacity it is sunk.\nThe game is a work in progress (see the Github repository). It is implemented in the browser with the Canvas API.\ngame intended here\n\n\n\n    Show shot history:\n  \n    \n      \n      Yours\n    \n  \n    \n      \n      Computer's",
-    "crumbs": [
-      "Articles",
-      "Canvas Battleship"
-    ]
+    "text": "Here is a simple game of Battleship!\nYou play against the computer. Select a point at which to drop a bomb by clicking in the computer’s area, which is the upper part of the “ocean” shown belw. The bomb explodes, and any ship that is within a set radius of the point of explosion sustains a hit. Each ship has a hit-capacity; when it takes a number of hits equal to its capacity it is sunk.\nThe game is a work in progress (see the Github repository). It is implemented in the browser with the Canvas API.\ngame intended here\n\n\n\n\n    Show shot history:\n\n  \n    \n    \n       Yours\n    \n  \n\n  \n    \n    \n       Computer's"
   },
   {
     "objectID": "articles/advent/index.html",
@@ -314,33 +310,21 @@
     "href": "posts/2023-11-11-observable-embeds/index.html",
     "title": "Emdedding Observable Cells in a Web Page",
     "section": "",
-    "text": "Below is an interactive plot embedded from an Observable notebook:\n\nDeveloping in Observable notebooks is usually easier than in Quarto, so embeds are good to keep in mind! (But it seems they sometimes take a while to load.)",
-    "crumbs": [
-      "Posts",
-      "Emdedding Observable Cells in a Web Page"
-    ]
+    "text": "Below is an interactive plot embedded from an Observable notebook:\n\nDeveloping in Observable notebooks is usually easier than in Quarto, so embeds are good to keep in mind! (But it seems they sometimes take a while to load.)"
   },
   {
     "objectID": "posts/2023-11-11-observable-embeds/index.html#introduction",
     "href": "posts/2023-11-11-observable-embeds/index.html#introduction",
     "title": "Emdedding Observable Cells in a Web Page",
     "section": "",
-    "text": "Below is an interactive plot embedded from an Observable notebook:\n\nDeveloping in Observable notebooks is usually easier than in Quarto, so embeds are good to keep in mind! (But it seems they sometimes take a while to load.)",
-    "crumbs": [
-      "Posts",
-      "Emdedding Observable Cells in a Web Page"
-    ]
+    "text": "Below is an interactive plot embedded from an Observable notebook:\n\nDeveloping in Observable notebooks is usually easier than in Quarto, so embeds are good to keep in mind! (But it seems they sometimes take a while to load.)"
   },
   {
     "objectID": "posts/2023-11-11-observable-embeds/index.html#how-i-did-it",
     "href": "posts/2023-11-11-observable-embeds/index.html#how-i-did-it",
     "title": "Emdedding Observable Cells in a Web Page",
     "section": "How I Did It",
-    "text": "How I Did It\nI simply went to the notebook, clicked on the settings for any named cell, and chose which named cells I wanted to embed. I then copied the embed code into this page, as follows:\n```{=html}\n&lt;iframe width=\"100%\" height=\"604\" frameborder=\"0\"\n  src=\"https://observablehq.com/embed/3a58ee9173151885@29?cells=viewof+stockName%2Cviewof+n%2Cviewof+r%2CmyPlot\"&gt;\n&lt;/iframe&gt;\n```\nFor more details consult the documentation.",
-    "crumbs": [
-      "Posts",
-      "Emdedding Observable Cells in a Web Page"
-    ]
+    "text": "How I Did It\nI simply went to the notebook, clicked on the settings for any named cell, and chose which named cells I wanted to embed. I then copied the embed code into this page, as follows:\n```{=html}\n&lt;iframe width=\"100%\" height=\"604\" frameborder=\"0\"\n  src=\"https://observablehq.com/embed/3a58ee9173151885@29?cells=viewof+stockName%2Cviewof+n%2Cviewof+r%2CmyPlot\"&gt;\n&lt;/iframe&gt;\n```\nFor more details consult the documentation."
   },
   {
     "objectID": "posts/2021-07-04-freaky-fireworks/index.html",

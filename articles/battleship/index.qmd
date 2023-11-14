@@ -4,8 +4,8 @@ format:
   html: 
     grid:
       sidebar-width: 250px
-      body-width: 450px
-      margin-width: 600px
+      body-width: 500px
+      margin-width: 550px
       gutter-width: 1.5rem
     page-layout: full
 ---
@@ -27,21 +27,25 @@ The game is a work in progress (see the [Github repository](https://github.com/h
 ```{=html}
 <fieldset style="margin-bottom: 20px">
     <legend style="font-size: 1.1em">Show shot history:</legend>
-  
-    <div>
-      <input type="checkbox" id="user-shots" name="user-shots" />
-      <label for="user-shots">Yours</label>
-    </div>
-  
-    <div>
-      <input type="checkbox" id="computer-shots" name="computer-shots" />
-      <label for="computer-shots">Computer's</label>
-    </div>
-  </fieldset>
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="user-shots">
+    <label class="form-check-label" for="user-shots">
+     &nbsp; Yours
+    </label>
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="computer-shots">
+    <label class="form-check-label" for="computer-shots">
+     &nbsp; Computer's
+    </label>
+  </div>
+</fieldset>
 
 <p id="narrative" style="margin-bottom: 20px"></p>
 
-<table id="ship-report"></table>
+<table class="table table-bordered table-hover" id="ship-report"></table>
 ```
 :::
 
