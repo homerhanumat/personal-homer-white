@@ -1,0 +1,12 @@
+.thumbnail-image {
+  transition: all 0.5s;
+}
+
+.thumbnail-image:hover {
+  transform: scale(1.25);
+  transition: transform 0.8s;
+}
+
+.thumbnail {
+  overflow: hidden;
+}

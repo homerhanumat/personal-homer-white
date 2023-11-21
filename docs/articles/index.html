@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.489">
+<meta name="generator" content="quarto-1.4.502">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -309,32 +309,32 @@ Title
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1699372286944" data-listing-reading-time-sort="1" data-listing-word-count-sort="144" data-listing-title-sort="Advent Solution in the Browser" data-listing-filename-sort="index.qmd">
+<tr data-index="0" data-listing-file-modified-sort="1699380876278" data-listing-reading-time-sort="1" data-listing-word-count-sort="144" data-listing-title-sort="Advent Solution in the Browser" data-listing-filename-sort="index.qmd">
 <td>
 <a href="../articles/browser/index.html" class="title listing-title">Advent Solution in the Browser</a>
 </td>
 </tr>
-<tr data-index="1" data-listing-file-modified-sort="1699573901882" data-listing-reading-time-sort="5" data-listing-word-count-sort="976" data-listing-title-sort="Advent of Code 2022, Day 1:  A Solution Using Javascript" data-listing-filename-sort="index.qmd">
+<tr data-index="1" data-listing-file-modified-sort="1699558964450" data-listing-reading-time-sort="5" data-listing-word-count-sort="976" data-listing-title-sort="Advent of Code 2022, Day 1:  A Solution Using Javascript" data-listing-filename-sort="index.qmd">
 <td>
 <a href="../articles/advent/index.html" class="title listing-title">Advent of Code 2022, Day 1: A Solution Using Javascript</a>
 </td>
 </tr>
-<tr data-index="2" data-listing-file-modified-sort="1699269362970" data-listing-reading-time-sort="3" data-listing-word-count-sort="511" data-listing-title-sort="An Interactive Scatterplot Using Observables" data-listing-filename-sort="index.qmd">
+<tr data-index="2" data-listing-file-modified-sort="1699380876335" data-listing-reading-time-sort="3" data-listing-word-count-sort="511" data-listing-title-sort="An Interactive Scatterplot Using Observables" data-listing-filename-sort="index.qmd">
 <td>
 <a href="../articles/scatterplot/index.html" class="title listing-title">An Interactive Scatterplot Using Observables</a>
 </td>
 </tr>
-<tr data-index="3" data-listing-file-modified-sort="1699006112078" data-listing-reading-time-sort="1" data-listing-word-count-sort="176" data-listing-title-sort="Battleship with Canvas" data-listing-filename-sort="index.qmd">
+<tr data-index="3" data-listing-file-modified-sort="1699988330870" data-listing-reading-time-sort="1" data-listing-word-count-sort="181" data-listing-title-sort="Battleship with Canvas" data-listing-filename-sort="index.qmd">
 <td>
 <a href="../articles/battleship/index.html" class="title listing-title">Battleship with Canvas</a>
 </td>
 </tr>
-<tr data-index="4" data-listing-file-modified-sort="1699577276863" data-listing-reading-time-sort="5" data-listing-word-count-sort="872" data-listing-title-sort="Data Wrangling in Observable With Arquero" data-listing-filename-sort="index.qmd">
+<tr data-index="4" data-listing-file-modified-sort="1699985582070" data-listing-reading-time-sort="5" data-listing-word-count-sort="872" data-listing-title-sort="Data Wrangling in Observable With Arquero" data-listing-filename-sort="index.qmd">
 <td>
 <a href="../articles/homerunleaders/index.html" class="title listing-title">Data Wrangling in Observable With Arquero</a>
 </td>
 </tr>
-<tr data-index="5" data-listing-file-modified-sort="1699006112081" data-listing-reading-time-sort="2" data-listing-word-count-sort="386" data-listing-title-sort="Stock Prices" data-listing-filename-sort="index.qmd">
+<tr data-index="5" data-listing-file-modified-sort="1698976315699" data-listing-reading-time-sort="2" data-listing-word-count-sort="386" data-listing-title-sort="Stock Prices" data-listing-filename-sort="index.qmd">
 <td>
 <a href="../articles/stocks/index.html" class="title listing-title">Stock Prices</a>
 </td>
@@ -498,8 +498,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
         }
         typesetMath(container);
         return container.innerHTML

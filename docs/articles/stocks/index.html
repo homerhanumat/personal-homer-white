@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.489">
+<meta name="generator" content="quarto-1.4.502">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -402,7 +402,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"// Now we begin work with Observable:\nPlot = import(\"https://esm.run/@observablehq/plot@0.6.11\")\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"/*****************************\n * We should transpose from an\n * array of variable-values to\n * an  array of trading days.\n * Also, the dates conme into\n * Observables as strings, so we\n * must convert them back to dates:\n ******************************/\nallStocks = {\n  const df2 = transpose(df);\n  const parseTime = d3.utcParse(\"%Y-%m-%d\")\n  df2.forEach(function(d) {\n    d.date = parseTime(d.date)\n  });\n  return df2;\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"/****************************\n * Create an array of names of the stocks:\n *****************************/\nstockNames = {\n  let names = [];\n  allStocks.forEach(function(d) {\n    if (!names.includes(d.name)) {\n      names.push(d.name)\n    }\n  });\n  return names;\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"viewof stockName = Inputs.select(stockNames, {label: \"Select a stock: \"})\nviewof n = Inputs.range([1, 30], {label:\"Window size: \", step: 1, value: 10})\nviewof r = Inputs.range([1, 5], {label: \"Radius: \", step: 0.1, value: 2})\n"},{"methodName":"interpret","cellName":"ojs-cell-5","inline":false,"source":"Plot.plot({\n    caption: `Closing prices for ${stockName}`,\n    marks: [\n      Plot.frame(),\n      Plot.bollingerY(\n        allStocks.filter(d => d.name == stockName), \n        {x: \"date\", y: \"close\", n: n, k: r}\n        )  \n    ]\n})\n"},{"methodName":"interpretQuiet","source":"shinyInput('stockName')"},{"methodName":"interpretQuiet","source":"shinyInput('n')"},{"methodName":"interpretQuiet","source":"shinyInput('r')"}]}
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vIE5vdyB3ZSBiZWdpbiB3b3JrIHdpdGggT2JzZXJ2YWJsZTpcblBsb3QgPSBpbXBvcnQoXCJodHRwczovL2VzbS5ydW4vQG9ic2VydmFibGVocS9wbG90QDAuNi4xMVwiKVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLyoqKioqKioqKioqKioqKioqKioqKioqKioqKioqXG4gKiBXZSBzaG91bGQgdHJhbnNwb3NlIGZyb20gYW5cbiAqIGFycmF5IG9mIHZhcmlhYmxlLXZhbHVlcyB0b1xuICogYW4gIGFycmF5IG9mIHRyYWRpbmcgZGF5cy5cbiAqIEFsc28sIHRoZSBkYXRlcyBjb25tZSBpbnRvXG4gKiBPYnNlcnZhYmxlcyBhcyBzdHJpbmdzLCBzbyB3ZVxuICogbXVzdCBjb252ZXJ0IHRoZW0gYmFjayB0byBkYXRlczpcbiAqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiovXG5hbGxTdG9ja3MgPSB7XG4gIGNvbnN0IGRmMiA9IHRyYW5zcG9zZShkZik7XG4gIGNvbnN0IHBhcnNlVGltZSA9IGQzLnV0Y1BhcnNlKFwiJVktJW0tJWRcIilcbiAgZGYyLmZvckVhY2goZnVuY3Rpb24oZCkge1xuICAgIGQuZGF0ZSA9IHBhcnNlVGltZShkLmRhdGUpXG4gIH0pO1xuICByZXR1cm4gZGYyO1xufVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLyoqKioqKioqKioqKioqKioqKioqKioqKioqKipcbiAqIENyZWF0ZSBhbiBhcnJheSBvZiBuYW1lcyBvZiB0aGUgc3RvY2tzOlxuICoqKioqKioqKioqKioqKioqKioqKioqKioqKioqL1xuc3RvY2tOYW1lcyA9IHtcbiAgbGV0IG5hbWVzID0gW107XG4gIGFsbFN0b2Nrcy5mb3JFYWNoKGZ1bmN0aW9uKGQpIHtcbiAgICBpZiAoIW5hbWVzLmluY2x1ZGVzKGQubmFtZSkpIHtcbiAgICAgIG5hbWVzLnB1c2goZC5uYW1lKVxuICAgIH1cbiAgfSk7XG4gIHJldHVybiBuYW1lcztcbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBzdG9ja05hbWUgPSBJbnB1dHMuc2VsZWN0KHN0b2NrTmFtZXMsIHtsYWJlbDogXCJTZWxlY3QgYSBzdG9jazogXCJ9KVxudmlld29mIG4gPSBJbnB1dHMucmFuZ2UoWzEsIDMwXSwge2xhYmVsOlwiV2luZG93IHNpemU6IFwiLCBzdGVwOiAxLCB2YWx1ZTogMTB9KVxudmlld29mIHIgPSBJbnB1dHMucmFuZ2UoWzEsIDVdLCB7bGFiZWw6IFwiUmFkaXVzOiBcIiwgc3RlcDogMC4xLCB2YWx1ZTogMn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTUiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJQbG90LnBsb3Qoe1xuICAgIGNhcHRpb246IGBDbG9zaW5nIHByaWNlcyBmb3IgJHtzdG9ja05hbWV9YCxcbiAgICBtYXJrczogW1xuICAgICAgUGxvdC5mcmFtZSgpLFxuICAgICAgUGxvdC5ib2xsaW5nZXJZKFxuICAgICAgICBhbGxTdG9ja3MuZmlsdGVyKGQgPT4gZC5uYW1lID09IHN0b2NrTmFtZSksIFxuICAgICAgICB7eDogXCJkYXRlXCIsIHk6IFwiY2xvc2VcIiwgbjogbiwgazogcn1cbiAgICAgICAgKSAgXG4gICAgXVxufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnc3RvY2tOYW1lJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ24nKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgncicpIn1dfQ==
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -616,8 +616,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
         }
         typesetMath(container);
         return container.innerHTML

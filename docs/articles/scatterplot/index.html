@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.489">
+<meta name="generator" content="quarto-1.4.502">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -457,7 +457,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"race = {\n  const race = await FileAttachment(\"TenMileRace.csv\").csv({typed: true});\n  race.forEach(function(runner) {runner.timeMinutes = runner.time / 60;});\n  return race;\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"minTime = d3.min(d3.map(race, d => d.timeMinutes))\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"maxTime = d3.max(d3.map(race, d => d.timeMinutes))\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"minAge = d3.min(d3.map(race, d => d.age))\n"},{"methodName":"interpret","cellName":"ojs-cell-5","inline":false,"source":"maxAge = d3.max(d3.map(race, d => d.age))\n"},{"methodName":"interpret","cellName":"ojs-cell-6","inline":false,"source":"viewof sex = Inputs.select([\"F\", \"M\"], {label: \"Sex of runner: \"})\nviewof opacity = Inputs.range([0, 1], {label: \"Opacity: \", step: 0.01})\n"},{"methodName":"interpret","cellName":"ojs-cell-7","inline":false,"source":"Plot.plot({\n  inset: 8,\n  grid: true,\n  marks: [\n    Plot.dot(\n      d3.filter(race, d => d.sex == sex), \n      {x: \"age\", y: \"timeMinutes\", fill: \"black\", fillOpacity: opacity}\n    )\n  ],\n  x: {domain: [minAge, maxAge]},\n  y: {label: \"time (minutes)\", domain: [minTime, maxTime]},\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-8","inline":false,"source":"Plot.plot({\n  marks: [Plot.density(\n    race.map(d => ({age: d.age, timeMinutes: d.timeMinutes, sex: d.sex == \"M\" ? \"male\" : \"female\"})), \n    {x: \"age\", y: \"timeMinutes\", stroke: \"sex\"}\n  )],\n  y: {label: \"time (minutes)\"},\n  color: {legend: true}\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-9","inline":false,"source":"Plot.plot({\n  marks: [\n    Plot.frame(),\n    Plot.density(\n      race.map(d => ({\n        age: d.age, \n        timeMinutes: d.timeMinutes, \n        sex: d.sex == \"M\" ? \"male\" : \"female\"\n      })), \n      {x: \"age\", y: \"timeMinutes\", fx: \"sex\"}\n    )],\n  y: {label: \"time (minutes)\"},\n  facet: {label: null},\n  nice: true\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-10","inline":false,"source":"Plot = import(\"https://esm.run/@observablehq/plot\")\n"},{"methodName":"interpretQuiet","source":"shinyInput('sex')"},{"methodName":"interpretQuiet","source":"shinyInput('opacity')"}]}
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InJhY2UgPSB7XG4gIGNvbnN0IHJhY2UgPSBhd2FpdCBGaWxlQXR0YWNobWVudChcIlRlbk1pbGVSYWNlLmNzdlwiKS5jc3Yoe3R5cGVkOiB0cnVlfSk7XG4gIHJhY2UuZm9yRWFjaChmdW5jdGlvbihydW5uZXIpIHtydW5uZXIudGltZU1pbnV0ZXMgPSBydW5uZXIudGltZSAvIDYwO30pO1xuICByZXR1cm4gcmFjZTtcbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Im1pblRpbWUgPSBkMy5taW4oZDMubWFwKHJhY2UsIGQgPT4gZC50aW1lTWludXRlcykpXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJtYXhUaW1lID0gZDMubWF4KGQzLm1hcChyYWNlLCBkID0+IGQudGltZU1pbnV0ZXMpKVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC00IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoibWluQWdlID0gZDMubWluKGQzLm1hcChyYWNlLCBkID0+IGQuYWdlKSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Im1heEFnZSA9IGQzLm1heChkMy5tYXAocmFjZSwgZCA9PiBkLmFnZSkpXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTYiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2Ygc2V4ID0gSW5wdXRzLnNlbGVjdChbXCJGXCIsIFwiTVwiXSwge2xhYmVsOiBcIlNleCBvZiBydW5uZXI6IFwifSlcbnZpZXdvZiBvcGFjaXR5ID0gSW5wdXRzLnJhbmdlKFswLCAxXSwge2xhYmVsOiBcIk9wYWNpdHk6IFwiLCBzdGVwOiAwLjAxfSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlBsb3QucGxvdCh7XG4gIGluc2V0OiA4LFxuICBncmlkOiB0cnVlLFxuICBtYXJrczogW1xuICAgIFBsb3QuZG90KFxuICAgICAgZDMuZmlsdGVyKHJhY2UsIGQgPT4gZC5zZXggPT0gc2V4KSwgXG4gICAgICB7eDogXCJhZ2VcIiwgeTogXCJ0aW1lTWludXRlc1wiLCBmaWxsOiBcImJsYWNrXCIsIGZpbGxPcGFjaXR5OiBvcGFjaXR5fVxuICAgIClcbiAgXSxcbiAgeDoge2RvbWFpbjogW21pbkFnZSwgbWF4QWdlXX0sXG4gIHk6IHtsYWJlbDogXCJ0aW1lIChtaW51dGVzKVwiLCBkb21haW46IFttaW5UaW1lLCBtYXhUaW1lXX0sXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC04IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiUGxvdC5wbG90KHtcbiAgbWFya3M6IFtQbG90LmRlbnNpdHkoXG4gICAgcmFjZS5tYXAoZCA9PiAoe2FnZTogZC5hZ2UsIHRpbWVNaW51dGVzOiBkLnRpbWVNaW51dGVzLCBzZXg6IGQuc2V4ID09IFwiTVwiID8gXCJtYWxlXCIgOiBcImZlbWFsZVwifSkpLCBcbiAgICB7eDogXCJhZ2VcIiwgeTogXCJ0aW1lTWludXRlc1wiLCBzdHJva2U6IFwic2V4XCJ9XG4gICldLFxuICB5OiB7bGFiZWw6IFwidGltZSAobWludXRlcylcIn0sXG4gIGNvbG9yOiB7bGVnZW5kOiB0cnVlfVxufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtOSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlBsb3QucGxvdCh7XG4gIG1hcmtzOiBbXG4gICAgUGxvdC5mcmFtZSgpLFxuICAgIFBsb3QuZGVuc2l0eShcbiAgICAgIHJhY2UubWFwKGQgPT4gKHtcbiAgICAgICAgYWdlOiBkLmFnZSwgXG4gICAgICAgIHRpbWVNaW51dGVzOiBkLnRpbWVNaW51dGVzLCBcbiAgICAgICAgc2V4OiBkLnNleCA9PSBcIk1cIiA/IFwibWFsZVwiIDogXCJmZW1hbGVcIlxuICAgICAgfSkpLCBcbiAgICAgIHt4OiBcImFnZVwiLCB5OiBcInRpbWVNaW51dGVzXCIsIGZ4OiBcInNleFwifVxuICAgICldLFxuICB5OiB7bGFiZWw6IFwidGltZSAobWludXRlcylcIn0sXG4gIGZhY2V0OiB7bGFiZWw6IG51bGx9LFxuICBuaWNlOiB0cnVlXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xMCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlBsb3QgPSBpbXBvcnQoXCJodHRwczovL2VzbS5ydW4vQG9ic2VydmFibGVocS9wbG90XCIpXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3NleCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdvcGFjaXR5JykifV19
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -620,8 +620,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
         }
         typesetMath(container);
         return container.innerHTML
